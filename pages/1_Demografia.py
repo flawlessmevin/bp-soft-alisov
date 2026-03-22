@@ -112,7 +112,7 @@ df_grouped = df_grouped.sort_values("vekova_skupina")
 st.header("Veková štruktúra obyvateľstva")
 
 st.subheader("Náhľad datasetu")
-st.dataframe(df, use_container_width=True)
+st.dataframe(df, use_container_width=True, hide_index=True)
 
 
 
@@ -186,6 +186,7 @@ st.header("Vývoj populácie mesta Nitra")
 df_pop = load_population_data()
 
 
+
 numeric_cols = [
     "Počet občanov spolu",
     "Počet mužov",
@@ -207,7 +208,7 @@ df_pop["Saldo"] = df_pop["Prírastok"] - df_pop["Úbytok"]
 df_pop["Zmena_%"] = df_pop["Počet občanov spolu"].pct_change() * 100
 
 st.subheader("Náhľad datasetu o vývoji populácie")
-st.dataframe(df_pop, use_container_width=True)
+st.dataframe(df_pop, use_container_width=True, hide_index=True)
 
 st.subheader("Základné ukazovatele vývoja populácie")
 
@@ -252,7 +253,9 @@ st.plotly_chart(fig6, use_container_width=True)
 
 st.subheader("Demografické saldo")
 
+#df_pop_filtered = df_pop.iloc[3:]
 fig7 = px.bar(
+    #df_pop_filtered,
     df_pop,
     x="Rok",
     y="Saldo",
@@ -263,6 +266,9 @@ st.plotly_chart(fig7, use_container_width=True)
 
 st.subheader("Percentuálna zmena populácie")
 
+
+
+
 fig8 = px.line(
     df_pop,
     x="Rok",
@@ -271,3 +277,15 @@ fig8 = px.line(
     title="Percentuálna zmena populácie (%)"
 )
 st.plotly_chart(fig8, use_container_width=True)
+
+
+
+st.subheader("Stručné zhrnutie analýzy")
+
+st.write("""
+Na základe spracovaných demografických údajov je možné pozorovať vekovú štruktúru obyvateľstva mesta Nitra,
+rozdelenie populácie podľa pohlavia a vývoj počtu obyvateľov v čase.
+Vizualizácie umožňujú identifikovať dominantné vekové skupiny, porovnať zastúpenie mužov a žien
+a sledovať demografické saldo v jednotlivých rokoch.
+Táto časť aplikácie predstavuje základ pre ďalšie rozšírenie analytického dashboardu o ďalšie datasety.
+""")

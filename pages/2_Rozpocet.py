@@ -20,7 +20,7 @@ def load_budget_data():
 df = load_budget_data()
 
 st.subheader("Náhľad datasetu")
-st.dataframe(df, use_container_width=True)
+st.dataframe(df, use_container_width=True, hide_index=True)
 
 
 fig1 = px.line(

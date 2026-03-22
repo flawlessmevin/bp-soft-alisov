@@ -18,11 +18,7 @@ Aplikácia obsahuje tri hlavné časti:
 - Kvalita ovzdušia
 """)
 
-st.info("Vyberte sekciu v ľavom menu.")
+st.info("Vyberte sekciu v lavom menu.")
 
 with st.sidebar:
     st.title("Nitra Open Data")
-    dataset = st.selectbox(
-        "Vyber dataset",
-        ["Demografia", "Rozpočet", "Ovzdušie"]
-    )
