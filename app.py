@@ -11,7 +11,6 @@ st.title("Analýza otvorených dát mesta Nitra")
 st.write("""
 Táto aplikácia slúži na vizualizáciu vybraných otvorených dát mesta Nitra.
 
-Projekt bol vytvorený v rámci bakalárskej práce na Fakulte prírodných vied a informatiky UKF v Nitre.
 
 Aplikácia obsahuje tri hlavné časti:
 - Demografia mesta
