@@ -73,6 +73,11 @@ def categorize_age(age):
 def clean_number(x):
     return float(str(x).replace(" ", "").replace(",", "."))
 
+def reset_filters():
+    st.session_state["age_range"] = (min_age, max_age)
+    st.session_state["gender_view"] = "Spolu"
+    st.session_state["year_range"] = (min_year, max_year)
+
 
 # =============================
 # LOAD DATA
@@ -113,18 +118,17 @@ selected_age_range = st.sidebar.slider(
     "Vekový rozsah",
     min_age,
     max_age,
-    (min_age, max_age)
+    (min_age, max_age),
+    key="age_range"
 )
 
 selected_gender_view = st.sidebar.selectbox(
     "Zobrazenie",
-    ["Spolu", "Muži", "Ženy"]
+    ["Spolu", "Muži", "Ženy"],
+    key= "gender_view"
 )
 
-chart_type = st.sidebar.radio(
-    "Typ grafu",
-    ["Stĺpcový", "Čiarový"]
-)
+
 
 st.sidebar.subheader("Vývoj populácie")
 
@@ -135,11 +139,13 @@ selected_year_range = st.sidebar.slider(
     "Rozsah rokov",
     min_year,
     max_year,
-    (min_year, max_year)
+    (min_year, max_year),
+    key= "year_range"
 )
 
-st.sidebar.subheader("Dáta")
-show_raw_data = st.sidebar.checkbox("Zobraziť tabuľky", value=False)
+st.sidebar.markdown("---")
+st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
+
 
 
 # =============================
@@ -223,22 +229,14 @@ with tab1:
 
     st.subheader("Hlavný graf vekovej štruktúry")
 
-    if chart_type == "Stĺpcový":
-        fig_overview = px.bar(
-            df_filtered,
-            x="vek",
-            y=y_column,
-            labels={"vek": "Vek", y_column: y_label},
-            title=f"{y_label} podľa veku"
-        )
-    else:
-        fig_overview = px.line(
-            df_filtered,
-            x="vek",
-            y=y_column,
-            labels={"vek": "Vek", y_column: y_label},
-            title=f"{y_label} podľa veku"
-        )
+
+    fig_overview = px.line(
+        df_filtered,
+        x="vek",
+        y=y_column,
+        labels={"vek": "Vek", y_column: y_label},
+        title=f"{y_label} podľa veku"
+    )
 
     st.plotly_chart(fig_overview, use_container_width=True, key="overview_chart")
 
@@ -273,22 +271,13 @@ with tab2:
 
     st.subheader(f"{y_label} podľa veku")
 
-    if chart_type == "Stĺpcový":
-        fig1 = px.bar(
-            df_filtered,
-            x="vek",
-            y=y_column,
-            labels={"vek": "Vek", y_column: y_label},
-            title=f"{y_label} podľa veku"
-        )
-    else:
-        fig1 = px.line(
-            df_filtered,
-            x="vek",
-            y=y_column,
-            labels={"vek": "Vek", y_column: y_label},
-            title=f"{y_label} podľa veku"
-        )
+    fig1 = px.line(
+        df_filtered,
+        x="vek",
+        y=y_column,
+        labels={"vek": "Vek", y_column: y_label},
+        title=f"{y_label} podľa veku"
+    )
 
     st.plotly_chart(fig1, use_container_width=True)
 
