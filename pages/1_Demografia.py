@@ -11,7 +11,6 @@ na základe dostupných datasetov vo formáte JSON a XLSX.
 
 
 @st.cache_data
-@st.cache_data
 def load_demography_data():
     file_path = "data/demografia/pocet_obcanov_podla_veku_DATA.json"
     df = pd.read_json(file_path)
@@ -36,9 +35,7 @@ def load_demography_data():
     df["muzi"] = clean_numeric(df["muzi"])
     df["zeny"] = clean_numeric(df["zeny"])
 
-
     df = df.dropna(subset=["vek"])
-
 
     df["pocet_spolu"] = df["pocet_spolu"].fillna(0)
     df["muzi"] = df["muzi"].fillna(0)
@@ -58,10 +55,7 @@ def load_demography_data():
 def load_population_data():
     file_path = "data/demografia/pocety_obcanov_v_jednotlivych_rokoch.xlsx"
     df = pd.read_excel(file_path)
-
     return df
-
-
 
 
 def categorize_age(age):
@@ -81,17 +75,10 @@ def clean_number(x):
     return float(str(x).replace(" ", "").replace(",", "."))
 
 
-#################################
+# -----------------------------
 # DATASET 1: veková štruktúra
-#####################################
+# -----------------------------
 df = load_demography_data()
-
-#st.write("Počet riadkov po čistení:", len(df))
-#st.write("Min vek:", df["vek"].min(), "Max vek:", df["vek"].max())
-#st.write("Chýbajúce veky:")
-
-#missing_ages = sorted(set(range(df["vek"].min(), df["vek"].max() + 1)) - set(df["vek"]))
-#st.write(missing_ages)
 
 df["vekova_skupina"] = df["vek"].apply(categorize_age)
 
@@ -109,27 +96,157 @@ df_grouped["vekova_skupina"] = pd.Categorical(
 )
 df_grouped = df_grouped.sort_values("vekova_skupina")
 
+
+# -----------------------------
+# DATASET 2: vývoj populácie
+# -----------------------------
+df_pop = load_population_data()
+
+numeric_cols = [
+    "Počet občanov spolu",
+    "Počet mužov",
+    "Počet žien",
+    "Úbytok",
+    "Prírastok"
+]
+
+for col in numeric_cols:
+    df_pop[col] = df_pop[col].apply(clean_number)
+
+df_pop["Rok"] = df_pop["Rok"].astype(int)
+df_pop = df_pop.sort_values("Rok").reset_index(drop=True)
+
+df_pop["Saldo"] = df_pop["Prírastok"] - df_pop["Úbytok"]
+df_pop["Zmena_%"] = df_pop["Počet občanov spolu"].pct_change() * 100
+
+
+# -----------------------------
+# SIDEBAR FILTRE
+# -----------------------------
+st.sidebar.header("Filtre")
+
+min_age = int(df["vek"].min())
+max_age = int(df["vek"].max())
+
+selected_age_range = st.sidebar.slider(
+    "Vyber vekový rozsah",
+    min_age,
+    max_age,
+    (min_age, max_age)
+)
+
+selected_gender_view = st.sidebar.selectbox(
+    "Zobrazenie podľa pohlavia",
+    ["Spolu", "Muži", "Ženy"]
+)
+
+chart_type = st.sidebar.radio(
+    "Typ grafu pre vekovú distribúciu",
+    ["Stĺpcový", "Čiarový"]
+)
+
+min_year = int(df_pop["Rok"].min())
+max_year = int(df_pop["Rok"].max())
+
+selected_year_range = st.sidebar.slider(
+    "Vyber rozsah rokov",
+    min_year,
+    max_year,
+    (min_year, max_year)
+)
+
+show_raw_data = st.sidebar.checkbox("Zobraziť surové dáta", value=False)
+
+
+# -----------------------------
+# FILTROVANÉ DÁTA
+# -----------------------------
+df_filtered = df[
+    (df["vek"] >= selected_age_range[0]) &
+    (df["vek"] <= selected_age_range[1])
+].copy()
+
+df_pop_filtered = df_pop[
+    (df_pop["Rok"] >= selected_year_range[0]) &
+    (df_pop["Rok"] <= selected_year_range[1])
+].copy()
+
+df_grouped_filtered = (
+    df_filtered.groupby("vekova_skupina")[["pocet_spolu", "muzi", "zeny"]]
+    .sum()
+    .reset_index()
+)
+
+df_grouped_filtered["vekova_skupina"] = pd.Categorical(
+    df_grouped_filtered["vekova_skupina"],
+    categories=age_order,
+    ordered=True
+)
+df_grouped_filtered = df_grouped_filtered.sort_values("vekova_skupina")
+
+
+# -----------------------------
+# NASTAVENIE PRE GRAFY PODĽA POHLAVIA
+# -----------------------------
+y_column = "pocet_spolu"
+y_label = "Počet obyvateľov"
+
+if selected_gender_view == "Muži":
+    y_column = "muzi"
+    y_label = "Počet mužov"
+elif selected_gender_view == "Ženy":
+    y_column = "zeny"
+    y_label = "Počet žien"
+
+
+# -----------------------------
+# VEKOVÁ ŠTRUKTÚRA
+# -----------------------------
 st.header("Veková štruktúra obyvateľstva")
 
-st.subheader("Náhľad datasetu")
-st.dataframe(df, use_container_width=True, hide_index=True)
+st.subheader("Štatistiky podľa filtrov")
 
+col1, col2, col3 = st.columns(3)
 
+with col1:
+    st.metric("Počet zobrazených vekov", len(df_filtered))
 
-st.subheader("Počet obyvateľov podľa veku")
+with col2:
+    st.metric("Súčet v zvolenom rozsahu", int(df_filtered[y_column].sum()))
 
-fig1 = px.bar(
-    df,
-    x="vek",
-    y="pocet_spolu",
-    labels={"vek": "Vek", "pocet_spolu": "Počet obyvateľov"},
-    title="Počet obyvateľov podľa veku"
-)
+with col3:
+    if len(df_filtered) > 0:
+        max_row = df_filtered.loc[df_filtered[y_column].idxmax()]
+        st.metric("Najsilnejší vek", int(max_row["vek"]))
+
+if show_raw_data:
+    st.subheader("Filtrovaný náhľad datasetu")
+    st.dataframe(df_filtered, use_container_width=True, hide_index=True)
+
+st.subheader(f"{y_label} podľa veku")
+
+if chart_type == "Stĺpcový":
+    fig1 = px.bar(
+        df_filtered,
+        x="vek",
+        y=y_column,
+        labels={"vek": "Vek", y_column: y_label},
+        title=f"{y_label} podľa veku"
+    )
+else:
+    fig1 = px.line(
+        df_filtered,
+        x="vek",
+        y=y_column,
+        labels={"vek": "Vek", y_column: y_label},
+        title=f"{y_label} podľa veku"
+    )
+
 st.plotly_chart(fig1, use_container_width=True)
 
 st.subheader("Porovnanie mužov a žien podľa veku")
 
-df_gender = df.melt(
+df_gender = df_filtered.melt(
     id_vars="vek",
     value_vars=["muzi", "zeny"],
     var_name="pohlavie",
@@ -149,7 +266,7 @@ st.plotly_chart(fig2, use_container_width=True)
 st.subheader("Rozdelenie obyvateľov podľa vekových skupín")
 
 fig3 = px.bar(
-    df_grouped,
+    df_grouped_filtered,
     x="vekova_skupina",
     y="pocet_spolu",
     labels={"vekova_skupina": "Veková skupina", "pocet_spolu": "Počet obyvateľov"},
@@ -160,7 +277,7 @@ st.plotly_chart(fig3, use_container_width=True)
 st.subheader("Porovnanie mužov a žien podľa vekových skupín")
 
 fig4 = px.bar(
-    df_grouped,
+    df_grouped_filtered,
     x="vekova_skupina",
     y=["muzi", "zeny"],
     barmode="group",
@@ -173,66 +290,62 @@ fig4 = px.bar(
 )
 st.plotly_chart(fig4, use_container_width=True)
 
+csv_data = df_filtered.to_csv(index=False).encode("utf-8")
+st.download_button(
+    label="Stiahnuť filtrované dáta (CSV)",
+    data=csv_data,
+    file_name="demografia_filtrovana.csv",
+    mime="text/csv"
+)
 
-##################################
-# DATASET 2: vývoj populácie
-#############################
+st.subheader("Automatické zhrnutie")
+
+if len(df_filtered) > 0:
+    top_age_row = df_filtered.loc[df_filtered[y_column].idxmax()]
+    st.write(
+        f"V zvolenom vekovom rozsahu sa najvyššia hodnota nachádza pri veku "
+        f"**{int(top_age_row['vek'])}**, kde bolo evidovaných **{int(top_age_row[y_column])}** osôb."
+    )
 
 
-
-
+# -----------------------------
+# VÝVOJ POPULÁCIE
+# -----------------------------
 st.header("Vývoj populácie mesta Nitra")
 
-df_pop = load_population_data()
-
-
-
-numeric_cols = [
-    "Počet občanov spolu",
-    "Počet mužov",
-    "Počet žien",
-    "Úbytok",
-    "Prírastok"
-]
-
-for col in numeric_cols:
-    df_pop[col] = df_pop[col].apply(clean_number)
-
-df_pop["Rok"] = df_pop["Rok"].astype(int)
-
-
-df_pop = df_pop.sort_values("Rok")
-
-
-df_pop["Saldo"] = df_pop["Prírastok"] - df_pop["Úbytok"]
-df_pop["Zmena_%"] = df_pop["Počet občanov spolu"].pct_change() * 100
-
-st.subheader("Náhľad datasetu o vývoji populácie")
-st.dataframe(df_pop, use_container_width=True, hide_index=True)
+if show_raw_data:
+    st.subheader("Náhľad datasetu o vývoji populácie")
+    st.dataframe(df_pop_filtered, use_container_width=True, hide_index=True)
 
 st.subheader("Základné ukazovatele vývoja populácie")
 
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    st.metric("Posledný evidovaný rok", int(df_pop["Rok"].max()))
+    st.metric("Posledný evidovaný rok", int(df_pop_filtered["Rok"].max()))
 
 with col5:
     st.metric(
         "Počet obyvateľov v poslednom roku",
-        int(df_pop.loc[df_pop["Rok"] == df_pop["Rok"].max(), "Počet občanov spolu"].iloc[0])
+        int(df_pop_filtered.loc[
+            df_pop_filtered["Rok"] == df_pop_filtered["Rok"].max(),
+            "Počet občanov spolu"
+        ].iloc[0])
     )
 
 with col6:
     st.metric(
         "Saldo v poslednom roku",
-        int(df_pop.loc[df_pop["Rok"] == df_pop["Rok"].max(), "Saldo"].iloc[0])
+        int(df_pop_filtered.loc[
+            df_pop_filtered["Rok"] == df_pop_filtered["Rok"].max(),
+            "Saldo"
+        ].iloc[0])
     )
 
 st.subheader("Vývoj počtu obyvateľov mesta Nitra")
 
 fig5 = px.line(
-    df_pop,
+    df_pop_filtered,
     x="Rok",
     y="Počet občanov spolu",
     labels={"Rok": "Rok", "Počet občanov spolu": "Počet obyvateľov"},
@@ -243,7 +356,7 @@ st.plotly_chart(fig5, use_container_width=True)
 st.subheader("Vývoj počtu mužov a žien")
 
 fig6 = px.line(
-    df_pop,
+    df_pop_filtered,
     x="Rok",
     y=["Počet mužov", "Počet žien"],
     labels={"Rok": "Rok", "value": "Počet osôb", "variable": "Pohlavie"},
@@ -253,10 +366,8 @@ st.plotly_chart(fig6, use_container_width=True)
 
 st.subheader("Demografické saldo")
 
-#df_pop_filtered = df_pop.iloc[3:]
 fig7 = px.bar(
-    #df_pop_filtered,
-    df_pop,
+    df_pop_filtered[df_pop_filtered["Rok"] != df_pop_filtered["Rok"].min()],
     x="Rok",
     y="Saldo",
     labels={"Rok": "Rok", "Saldo": "Saldo"},
@@ -266,19 +377,14 @@ st.plotly_chart(fig7, use_container_width=True)
 
 st.subheader("Percentuálna zmena populácie")
 
-
-
-
 fig8 = px.line(
-    df_pop,
+    df_pop_filtered[df_pop_filtered["Rok"] != df_pop_filtered["Rok"].min()],
     x="Rok",
     y="Zmena_%",
     labels={"Rok": "Rok", "Zmena_%": "Zmena (%)"},
     title="Percentuálna zmena populácie (%)"
 )
 st.plotly_chart(fig8, use_container_width=True)
-
-
 
 st.subheader("Stručné zhrnutie analýzy")
 
