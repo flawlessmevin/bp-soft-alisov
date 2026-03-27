@@ -1,5 +1,7 @@
 import streamlit as st
 
+
+
 st.set_page_config(
     page_title="Otvorené dáta mesta Nitra",
     page_icon="📊",
@@ -9,7 +11,7 @@ st.set_page_config(
 st.title("Analýza otvorených dát mesta Nitra")
 
 st.write("""
-Táto aplikácia slúži na vizualizáciu vybraných otvorených dát mesta Nitra.
+Táto aplikácia slúži na vizualizáciu a prehlad otvorených dát mesta Nitra.
 
 
 Aplikácia obsahuje tri hlavné časti:
@@ -18,7 +20,7 @@ Aplikácia obsahuje tri hlavné časti:
 - Kvalita ovzdušia
 """)
 
-st.info("Vyberte sekciu v lavom menu.")
+
 
 with st.sidebar:
     st.title("Nitra Open Data")
