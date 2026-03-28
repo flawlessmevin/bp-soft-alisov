@@ -556,61 +556,67 @@ with tab4:
 
     st.subheader("Detail vybranej ulice")
 
+    street_options_with_empty = [""] + street_options
+
     selected_street = st.selectbox(
         "Vyber ulicu",
-        street_options,
+        street_options_with_empty,
         key="selected_street"
     )
 
-    street_detail = df_street[df_street["ulica"] == selected_street].iloc[0]
+    if selected_street:
+        street_detail = df_street[df_street["ulica"] == selected_street].iloc[0]
 
-    col4, col5, col6 = st.columns(3)
-    with col4:
-        st.metric("Spolu", int(street_detail["spolu"]))
-    with col5:
-        st.metric("Muži", int(street_detail["muzi"]))
-    with col6:
-        st.metric("Ženy", int(street_detail["zeny"]))
+        col4, col5, col6 = st.columns(3)
+        with col4:
+            st.metric("Spolu", int(street_detail["spolu"]))
+        with col5:
+            st.metric("Muži", int(street_detail["muzi"]))
+        with col6:
+            st.metric("Ženy", int(street_detail["zeny"]))
 
-    col7, col8, col9 = st.columns(3)
-    with col7:
-        st.metric("Trvalý pobyt", int(street_detail["trvaly_pobyt"]))
-    with col8:
-        st.metric("Prechodný pobyt", int(street_detail["prechodny_pobyt"]))
-    with col9:
-        st.metric("Produktívny vek", int(street_detail["produktivny"]))
+        col7, col8, col9 = st.columns(3)
+        with col7:
+            st.metric("Trvalý pobyt", int(street_detail["trvaly_pobyt"]))
+        with col8:
+            st.metric("Prechodný pobyt", int(street_detail["prechodny_pobyt"]))
+        with col9:
+            st.metric("Produktívny vek", int(street_detail["produktivny"]))
 
-    st.subheader("Pohlavie na vybranej ulici")
+        st.subheader("Pohlavie na vybranej ulici")
 
-    street_gender_df = pd.DataFrame({
-        "kategoria": ["Muži", "Ženy"],
-        "pocet": [street_detail["muzi"], street_detail["zeny"]]
-    })
+        street_gender_df = pd.DataFrame({
+            "kategoria": ["Muži", "Ženy"],
+            "pocet": [street_detail["muzi"], street_detail["zeny"]]
+        })
 
-    fig_street_3 = px.pie(
-        street_gender_df,
-        names="kategoria",
-        values="pocet",
-        title=f"Pohlavie na ulici {selected_street}"
-    )
-    st.plotly_chart(fig_street_3, use_container_width=True, key="street_gender_pie")
+        fig_street_3 = px.pie(
+            street_gender_df,
+            names="kategoria",
+            values="pocet",
+            title=f"Pohlavie na ulici {selected_street}"
+        )
+        st.plotly_chart(fig_street_3, use_container_width=True, key="street_gender_pie")
 
-    st.subheader("Vekové kategórie na vybranej ulici")
+        st.subheader("Vekové kategórie na vybranej ulici")
 
-    street_age_detail_df = pd.DataFrame({
-        "kategoria": ["Predproduktívny vek", "Produktívny vek", "Poproduktívny vek"],
-        "pocet": [
-            street_detail["predproduktivny"],
-            street_detail["produktivny"],
-            street_detail["poproduktivny"]
-        ]
-    })
+        street_age_detail_df = pd.DataFrame({
+            "kategoria": ["Predproduktívny vek", "Produktívny vek", "Poproduktívny vek"],
+            "pocet": [
+                street_detail["predproduktivny"],
+                street_detail["produktivny"],
+                street_detail["poproduktivny"]
+            ]
+        })
 
-    fig_street_4 = px.bar(
-        street_age_detail_df,
-        x="kategoria",
-        y="pocet",
-        labels={"kategoria": "Kategória", "pocet": "Počet osôb"},
-        title=f"Vekové kategórie na ulici {selected_street}"
-    )
-    st.plotly_chart(fig_street_4, use_container_width=True, key="street_age_detail_bar")
+        fig_street_4 = px.bar(
+            street_age_detail_df,
+            x="kategoria",
+            y="pocet",
+            labels={"kategoria": "Kategória", "pocet": "Počet osôb"},
+            title=f"Vekové kategórie na ulici {selected_street}"
+        )
+        st.plotly_chart(fig_street_4, use_container_width=True, key="street_age_detail_bar")
+
+    else:
+        st.info("Vyberte ulicu zo zoznamu, aby sa zobrazili podrobné informácie.")
