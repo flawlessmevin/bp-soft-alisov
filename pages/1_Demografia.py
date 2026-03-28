@@ -78,6 +78,11 @@ def reset_filters():
     st.session_state["gender_view"] = "Spolu"
     st.session_state["year_range"] = (min_year, max_year)
 
+    #TAB 4
+    st.session_state["street_metric"] = "Spolu"
+    st.session_state["top_n_streets"] = 10
+    st.session_state["street_search"] = ""
+
 @st.cache_data
 def load_street_data():
     file_path = "data/demografia/pocet_obcanov_podla_ulic.json"
@@ -117,6 +122,10 @@ def load_street_data():
 
     df["spolu"] = df["trvaly_pobyt"] + df["prechodny_pobyt"]
 
+
+    df = df[df["ulica"] != "* mesto Nitra"].copy()
+
+    df = df.sort_values("spolu", ascending=False).reset_index(drop=True)
     return df
 
 
@@ -174,26 +183,21 @@ selected_gender_view = st.sidebar.selectbox(
 
 st.sidebar.subheader("Podľa ulíc")
 
-street_search = st.sidebar.text_input("Hľadať ulicu", "")
-
-min_people = st.sidebar.slider(
-    "Minimálny počet obyvateľov na ulici",
-    0,
-    int(df_street["spolu"].max()),
-    0
-)
-
-street_view = st.sidebar.selectbox(
-    "Typ zobrazenia ulíc",
-    ["Spolu", "Na trvalom pobyte", "Na prechodnom pobyte"]
+street_metric = st.sidebar.selectbox(
+    "Ukazovateľ pre ulice",
+    ["Spolu", "Na trvalom pobyte", "Na prechodnom pobyte"],
+    key="street_metric"
 )
 
 top_n_streets = st.sidebar.slider(
-    "Počet zobrazených ulíc",
+    "Počet ulíc v grafe",
     5,
-    100,
-    10
+    20,
+    10,
+    key="top_n_streets"
 )
+
+
 
 
 
@@ -245,28 +249,25 @@ df_pop_filtered = df_pop[
 
 df_street_filtered = df_street.copy()
 
-if street_search:
-    df_street_filtered = df_street_filtered[
-        df_street_filtered["ulica"].str.contains(street_search, case=False, na=False)
-    ]
-
-df_street_filtered = df_street_filtered[
-    df_street_filtered["spolu"] >= min_people
-].copy()
-
 street_y_column = "spolu"
 street_y_label = "Počet obyvateľov"
 
-if street_view == "Na trvalom pobyte":
+if street_metric == "Na trvalom pobyte":
     street_y_column = "trvaly_pobyt"
     street_y_label = "Počet obyvateľov s trvalým pobytom"
-elif street_view == "Na prechodnom pobyte":
+elif street_metric == "Na prechodnom pobyte":
     street_y_column = "prechodny_pobyt"
     street_y_label = "Počet obyvateľov s prechodným pobytom"
+
+df_street_filtered = df_street.copy()
+
 
 df_street_top = df_street_filtered.sort_values(
     street_y_column, ascending=False
 ).head(top_n_streets)
+
+street_options = sorted(df_street["ulica"].dropna().unique().tolist())
+selected_street = st.session_state.get("selected_street", street_options[0] if street_options else None)
 
 
 # =============================
@@ -500,13 +501,22 @@ with tab3:
 with tab4:
     st.header("Demografia podľa ulíc")
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric("Počet zobrazených ulíc", len(df_street_top))
 
     with col2:
-        st.metric("Najvyššia hodnota", int(df_street_top[street_y_column].max()) if len(df_street_top) > 0 else 0)
+        st.metric(
+            "Najvyššia hodnota",
+            int(df_street_top[street_y_column].max()) if len(df_street_top) > 0 else 0
+        )
+
+    with col3:
+        st.metric(
+            "Súčet v rebríčku",
+            int(df_street_top[street_y_column].sum()) if len(df_street_top) > 0 else 0
+        )
 
     st.subheader(f"Top ulice podľa ukazovateľa: {street_y_label}")
 
@@ -520,27 +530,7 @@ with tab4:
     )
     st.plotly_chart(fig_street_1, use_container_width=True, key="street_top_chart")
 
-    st.subheader("Porovnanie mužov a žien na uliciach")
-
-    df_street_gender = df_street_top.melt(
-        id_vars="ulica",
-        value_vars=["muzi", "zeny"],
-        var_name="pohlavie",
-        value_name="pocet"
-    )
-
-    fig_street_2 = px.bar(
-        df_street_gender,
-        x="ulica",
-        y="pocet",
-        color="pohlavie",
-        barmode="group",
-        labels={"ulica": "Ulica", "pocet": "Počet osôb", "pohlavie": "Pohlavie"},
-        title="Porovnanie mužov a žien na vybraných uliciach"
-    )
-    st.plotly_chart(fig_street_2, use_container_width=True, key="street_gender_chart")
-
-    st.subheader("Veková štruktúra na uliciach")
+    st.subheader("Vekové skupiny na top uliciach")
 
     df_street_age = df_street_top.melt(
         id_vars="ulica",
@@ -549,7 +539,7 @@ with tab4:
         value_name="pocet"
     )
 
-    fig_street_3 = px.bar(
+    fig_street_2 = px.bar(
         df_street_age,
         x="ulica",
         y="pocet",
@@ -560,14 +550,67 @@ with tab4:
             "pocet": "Počet osôb",
             "vekova_kategoria": "Veková kategória"
         },
-        title="Veková štruktúra na vybraných uliciach"
+        title="Veková štruktúra na top uliciach"
     )
-    st.plotly_chart(fig_street_3, use_container_width=True, key="street_age_chart")
+    st.plotly_chart(fig_street_2, use_container_width=True, key="street_age_chart")
 
-    if len(df_street_top) > 0:
-        top_street = df_street_top.sort_values(street_y_column, ascending=False).iloc[0]
-        st.subheader("Stručné zhrnutie")
-        st.write(
-            f"Najvyššia hodnota ukazovateľa **{street_y_label.lower()}** bola zaznamenaná na ulici "
-            f"**{top_street['ulica']}**, kde bolo evidovaných **{int(top_street[street_y_column])}** osôb."
-        )
+    st.subheader("Detail vybranej ulice")
+
+    selected_street = st.selectbox(
+        "Vyber ulicu",
+        street_options,
+        key="selected_street"
+    )
+
+    street_detail = df_street[df_street["ulica"] == selected_street].iloc[0]
+
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.metric("Spolu", int(street_detail["spolu"]))
+    with col5:
+        st.metric("Muži", int(street_detail["muzi"]))
+    with col6:
+        st.metric("Ženy", int(street_detail["zeny"]))
+
+    col7, col8, col9 = st.columns(3)
+    with col7:
+        st.metric("Trvalý pobyt", int(street_detail["trvaly_pobyt"]))
+    with col8:
+        st.metric("Prechodný pobyt", int(street_detail["prechodny_pobyt"]))
+    with col9:
+        st.metric("Produktívny vek", int(street_detail["produktivny"]))
+
+    st.subheader("Pohlavie na vybranej ulici")
+
+    street_gender_df = pd.DataFrame({
+        "kategoria": ["Muži", "Ženy"],
+        "pocet": [street_detail["muzi"], street_detail["zeny"]]
+    })
+
+    fig_street_3 = px.pie(
+        street_gender_df,
+        names="kategoria",
+        values="pocet",
+        title=f"Pohlavie na ulici {selected_street}"
+    )
+    st.plotly_chart(fig_street_3, use_container_width=True, key="street_gender_pie")
+
+    st.subheader("Vekové kategórie na vybranej ulici")
+
+    street_age_detail_df = pd.DataFrame({
+        "kategoria": ["Predproduktívny vek", "Produktívny vek", "Poproduktívny vek"],
+        "pocet": [
+            street_detail["predproduktivny"],
+            street_detail["produktivny"],
+            street_detail["poproduktivny"]
+        ]
+    })
+
+    fig_street_4 = px.bar(
+        street_age_detail_df,
+        x="kategoria",
+        y="pocet",
+        labels={"kategoria": "Kategória", "pocet": "Počet osôb"},
+        title=f"Vekové kategórie na ulici {selected_street}"
+    )
+    st.plotly_chart(fig_street_4, use_container_width=True, key="street_age_detail_bar")
