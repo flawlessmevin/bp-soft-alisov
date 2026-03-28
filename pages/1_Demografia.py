@@ -78,7 +78,7 @@ def reset_filters():
     st.session_state["gender_view"] = "Spolu"
     st.session_state["year_range"] = (min_year, max_year)
 
-    #TAB 4
+    # FOR TAB 4
     st.session_state["street_metric"] = "Spolu"
     st.session_state["top_n_streets"] = 10
     st.session_state["street_search"] = ""
@@ -530,30 +530,49 @@ with tab4:
     )
     st.plotly_chart(fig_street_1, use_container_width=True, key="street_top_chart")
 
-    st.subheader("Vekové skupiny na top uliciach")
+    st.subheader("Vekové skupiny na top uliciach podľa celkového počtu obyvateľov")
 
-    df_street_age = df_street_top.melt(
+
+    df_street_top_spolu = df_street.sort_values("spolu", ascending=False).head(top_n_streets).copy()
+
+    street_order_spolu = df_street_top_spolu["ulica"].tolist()
+
+    df_street_age = df_street_top_spolu.melt(
         id_vars="ulica",
         value_vars=["predproduktivny", "produktivny", "poproduktivny"],
         var_name="vekova_kategoria",
         value_name="pocet"
     )
 
+    df_street_age["ulica"] = pd.Categorical(
+        df_street_age["ulica"],
+        categories=street_order_spolu,
+        ordered=True
+    )
+
+    df_street_age["vekova_kategoria"] = df_street_age["vekova_kategoria"].replace({
+        "predproduktivny": "Predproduktívny vek",
+        "produktivny": "Produktívny vek",
+        "poproduktivny": "Poproduktívny vek"
+    })
+
     fig_street_2 = px.bar(
         df_street_age,
-        x="ulica",
-        y="pocet",
+        x="pocet",
+        y="ulica",
         color="vekova_kategoria",
+        orientation="h",
         barmode="stack",
+        category_orders={"ulica": street_order_spolu},
         labels={
             "ulica": "Ulica",
             "pocet": "Počet osôb",
             "vekova_kategoria": "Veková kategória"
         },
-        title="Veková štruktúra na top uliciach"
+        title="Veková štruktúra na top uliciach podľa celkového počtu obyvateľov"
     )
-    st.plotly_chart(fig_street_2, use_container_width=True, key="street_age_chart")
 
+    st.plotly_chart(fig_street_2, use_container_width=True, key="street_age_chart")
     st.subheader("Detail vybranej ulice")
 
     street_options_with_empty = [""] + street_options
