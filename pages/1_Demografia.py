@@ -287,19 +287,20 @@ elif selected_gender_view == "Ženy":
 # =============================
 # TABS
 # =============================
-tab1, tab2, tab3, tab4 = st.tabs([
-    "Prehľad",
+tab1, tab2, tab3 = st.tabs([
     "Veková štruktúra",
     "Vývoj populácie",
     "Ulice mesta"
 ])
 
 
+
+
 # =============================
-# TAB 1 - PREHĽAD
+# TAB 1 - VEKOVÁ ŠTRUKTÚRA
 # =============================
 with tab1:
-    st.header("Rýchly prehľad")
+    st.header("Veková štruktúra obyvateľstva")
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -322,51 +323,9 @@ with tab1:
         )
         st.metric("Počet obyvateľov v poslednom roku", latest_population)
 
-    st.subheader("Hlavný graf vekovej štruktúry")
-
-
-    fig_overview = px.line(
-        df_filtered,
-        x="vek",
-        y=y_column,
-        labels={"vek": "Vek", y_column: y_label},
-        title=f"{y_label} podľa veku"
-    )
-
-    st.plotly_chart(fig_overview, use_container_width=True, key="overview_chart")
-
-    st.subheader("Stručné zhrnutie")
-
-    if len(df_filtered) > 0:
-        top_age_row = df_filtered.loc[df_filtered[y_column].idxmax()]
-        st.write(
-            f"V zvolenom vekovom rozsahu sa najvyššia hodnota nachádza pri veku "
-            f"**{int(top_age_row['vek'])}**, kde bolo evidovaných **{int(top_age_row[y_column])}** osôb."
-        )
-
-    latest_saldo = int(
-        df_pop_filtered.loc[
-            df_pop_filtered["Rok"] == latest_year,
-            "Saldo"
-        ].iloc[0]
-    )
-
-    st.write(
-        f"V poslednom dostupnom roku **{latest_year}** bol zaznamenaný celkový počet "
-        f"**{latest_population}** obyvateľov a demografické saldo dosiahlo hodnotu "
-        f"**{latest_saldo}**."
-    )
-
-
-# =============================
-# TAB 2 - VEKOVÁ ŠTRUKTÚRA
-# =============================
-with tab2:
-    st.header("Veková štruktúra obyvateľstva")
-
     st.subheader(f"{y_label} podľa veku")
 
-    fig1 = px.line(
+    fig1 = px.bar(
         df_filtered,
         x="vek",
         y=y_column,
@@ -424,9 +383,9 @@ with tab2:
 
 
 # =============================
-# TAB 3 - VÝVOJ POPULÁCIE
+# TAB 2 - VÝVOJ POPULÁCIE
 # =============================
-with tab3:
+with tab2:
     st.header("Vývoj populácie mesta Nitra")
 
     st.subheader("Základné ukazovatele vývoja populácie")
@@ -496,9 +455,9 @@ with tab3:
 
 
 # =============================
-# TAB 4 - Demografia podľa ulíc
+# TAB 3 - Demografia podľa ulíc
 # =============================
-with tab4:
+with tab3:
     st.header("Demografia podľa ulíc")
 
     col1, col2, col3 = st.columns(3)
