@@ -181,10 +181,10 @@ selected_gender_view = st.sidebar.selectbox(
 )
 
 
-st.sidebar.subheader("Podľa ulíc")
+st.sidebar.subheader("Ulice mesta")
 
 street_metric = st.sidebar.selectbox(
-    "Ukazovateľ pre ulice",
+    "Typ ubytovania",
     ["Spolu", "Na trvalom pobyte", "Na prechodnom pobyte"],
     key="street_metric"
 )
@@ -291,7 +291,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "Prehľad",
     "Veková štruktúra",
     "Vývoj populácie",
-    "Podľa ulíc"
+    "Ulice mesta"
 ])
 
 
