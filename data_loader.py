@@ -3,6 +3,8 @@ import requests
 from io import BytesIO
 
 
+def clean_number(x):
+    return float(str(x).replace(" ", "").replace(",", "."))
 
 
 # =============================
@@ -111,6 +113,26 @@ def load_street_data():
 def load_population_data():
     file_path = "data/demografia/pocety_obcanov_v_jednotlivych_rokoch.xlsx"
     df = pd.read_excel(file_path)
+
+    df["Rok"] = df["Rok"].astype(int)
+    df = df.sort_values("Rok").reset_index(drop=True)
+    df["Saldo"] = df["Prírastok"] - df["Úbytok"]
+    df["Zmena_%"] = df["Počet občanov spolu"].pct_change() * 100
+
+
+
+    numeric_cols = [
+        "Počet občanov spolu",
+        "Počet mužov",
+        "Počet žien",
+        "Úbytok",
+        "Prírastok"
+    ]
+
+    for col in numeric_cols:
+        df[col] = df[col].apply(clean_number)
+
+
     return df
 
 
@@ -131,11 +153,10 @@ def load_population_data():
 
 
 def load_budget_data():
-    file_path = "data/Rozpocet.xlsx"
+    file_path = "data/rozpocet/Rozpocet.xlsx"
     df = pd.read_excel(file_path)
 
-    def clean_number(x):
-        return float(str(x).replace(" ", "").replace(",", "."))
+
 
     df["Príjmy"] = df["Príjmy"].apply(clean_number)
     df["Výdavky"] = df["Výdavky"].apply(clean_number)
@@ -150,3 +171,50 @@ def load_budget_data():
 
 
     return df
+
+
+
+def load_debtors_data():
+    df = pd.read_json("data/rozpocet/Zoznam_Zoznam_daňových_dlžníkov.json")
+
+    df = df.rename(columns={
+        "Dlžník": "dlznik",
+        "Adresa_dlžníka": "adresa",
+        "Mesto": "mesto",
+        "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "nedoplatok_minuly",
+        "Suma_daňových_nedoplatkov": "nedoplatok",
+        "Mena": "mena"
+    })
+
+    df["nedoplatok"] = df["nedoplatok"].apply(clean_number)
+    df["nedoplatok_minuly"] = df["nedoplatok_minuly"].apply(clean_number)
+
+    return df
+
+
+
+def load_orders_data():
+    df = pd.read_json("data/rozpocet/Zoznam_Dodávateľské_faktúry.json")
+
+    df = df.rename(columns={
+        "Číslo_faktúry": "cislo_faktury",
+        "Dodávateľ": "dodavatel",
+        "Predmet_faktúry": "predmet",
+        "Celková_cena": "cena",
+        "Mena": "mena",
+        "Dátum_vystavenia": "datum_vystavenia",
+        "Dátum_zverejnenia": "datum_zverejnenia",
+        "IČO": "ico"
+    })
+
+    df["cena"] = df["cena"].apply(clean_number)
+    df["datum_vystavenia"] = pd.to_datetime(
+        df["datum_vystavenia"],
+        format="%d.%m.%Y",
+        errors="coerce"
+    )
+
+    df["rok"] = df["datum_vystavenia"].dt.year
+
+    return df
+

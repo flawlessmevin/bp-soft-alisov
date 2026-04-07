@@ -13,9 +13,20 @@ na základe dostupných datasetov vo formáte JSON a XLSX.
 
 
 
-def clean_number(x):
-    return float(str(x).replace(" ", "").replace(",", "."))
 
+
+
+
+# =============================
+# LOAD DATA
+# =============================
+df_age = load_age_data()
+df_pop = load_population_data()
+df_street = load_street_data()
+
+# =============================
+# SIDEBAR
+# =============================
 def reset_filters():
     st.session_state["age_range"] = (min_age, max_age)
     st.session_state["gender_view"] = "Spolu"
@@ -28,55 +39,8 @@ def reset_filters():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# =============================
-# LOAD DATA
-# =============================
-df_age = load_age_data()
-
-
-df_pop = load_population_data()
-df_street = load_street_data()
-
-
-numeric_cols = [
-    "Počet občanov spolu",
-    "Počet mužov",
-    "Počet žien",
-    "Úbytok",
-    "Prírastok"
-]
-
-for col in numeric_cols:
-    df_pop[col] = df_pop[col].apply(clean_number)
-
-df_pop["Rok"] = df_pop["Rok"].astype(int)
-df_pop = df_pop.sort_values("Rok").reset_index(drop=True)
-df_pop["Saldo"] = df_pop["Prírastok"] - df_pop["Úbytok"]
-df_pop["Zmena_%"] = df_pop["Počet občanov spolu"].pct_change() * 100
-
-
-# =============================
-# SIDEBAR
-# =============================
 st.sidebar.header("Filtre stránky")
+
 
 st.sidebar.subheader("Veková štruktúra")
 
@@ -96,8 +60,7 @@ selected_gender_view = st.sidebar.selectbox(
     ["Spolu", "Muži", "Ženy"],
     key= "gender_view"
 )
-
-
+st.sidebar.markdown("---")
 st.sidebar.subheader("Ulice mesta")
 
 street_metric = st.sidebar.selectbox(
@@ -116,7 +79,7 @@ top_n_streets = st.sidebar.slider(
 
 
 
-
+st.sidebar.markdown("---")
 
 st.sidebar.subheader("Vývoj populácie")
 
@@ -209,9 +172,6 @@ tab1, tab2, tab3 = st.tabs([
     "Vývoj populácie",
     "Ulice mesta"
 ])
-
-
-
 
 # =============================
 # TAB 1 - VEKOVÁ ŠTRUKTÚRA
