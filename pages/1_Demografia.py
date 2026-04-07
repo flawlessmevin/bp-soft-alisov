@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+from data_loader import load_age_data, load_street_data, load_population_data
 st.title("Demografia mesta Nitra")
 
 st.write("""
@@ -10,64 +11,6 @@ na základe dostupných datasetov vo formáte JSON a XLSX.
 """)
 
 
-@st.cache_data
-def load_demography_data():
-    file_path = "data/demografia/pocet_obcanov_podla_veku_DATA.json"
-    df = pd.read_json(file_path)
-
-    df = df.rename(columns={
-        "Vek": "vek",
-        "Počet_občanov_v_danom_veku": "pocet_spolu",
-        "Počet_mužov": "muzi",
-        "Počet_žien": "zeny"
-    })
-
-    def clean_numeric(series):
-        return pd.to_numeric(
-            series.astype(str)
-            .str.replace(r"[^\d,.\-]", "", regex=True)
-            .str.replace(",", ".", regex=False),
-            errors="coerce"
-        )
-
-    df["vek"] = clean_numeric(df["vek"])
-    df["pocet_spolu"] = clean_numeric(df["pocet_spolu"])
-    df["muzi"] = clean_numeric(df["muzi"])
-    df["zeny"] = clean_numeric(df["zeny"])
-
-    df = df.dropna(subset=["vek"])
-
-    df["pocet_spolu"] = df["pocet_spolu"].fillna(0)
-    df["muzi"] = df["muzi"].fillna(0)
-    df["zeny"] = df["zeny"].fillna(0)
-
-    df["vek"] = df["vek"].astype(int)
-    df["pocet_spolu"] = df["pocet_spolu"].astype(int)
-    df["muzi"] = df["muzi"].astype(int)
-    df["zeny"] = df["zeny"].astype(int)
-
-    df = df.sort_values("vek").reset_index(drop=True)
-    return df
-
-
-@st.cache_data
-def load_population_data():
-    file_path = "data/demografia/pocety_obcanov_v_jednotlivych_rokoch.xlsx"
-    df = pd.read_excel(file_path)
-    return df
-
-
-def categorize_age(age):
-    if age <= 14:
-        return "0-14"
-    elif age <= 24:
-        return "15-24"
-    elif age <= 44:
-        return "25-44"
-    elif age <= 64:
-        return "45-64"
-    else:
-        return "65+"
 
 
 def clean_number(x):
@@ -83,57 +26,31 @@ def reset_filters():
     st.session_state["top_n_streets"] = 10
     st.session_state["street_search"] = ""
 
-@st.cache_data
-def load_street_data():
-    file_path = "data/demografia/pocet_obcanov_podla_ulic.json"
-    df = pd.read_json(file_path)
-
-    df = df.rename(columns={
-        "Ulica": "ulica",
-        "Na_trvalom_pobyte": "trvaly_pobyt",
-        "Na_prechodnom_pobyte": "prechodny_pobyt",
-        "Ženy": "zeny",
-        "Muži": "muzi",
-        "V_predproduktívnom_veku": "predproduktivny",
-        "V_produktívnom_veku": "produktivny",
-        "V_poproduktívnom_veku": "poproduktivny"
-    })
-
-    def clean_numeric(series):
-        return pd.to_numeric(
-            series.astype(str)
-            .str.replace(r"[^\d,.\-]", "", regex=True)
-            .str.replace(",", ".", regex=False),
-            errors="coerce"
-        )
-
-    numeric_cols = [
-        "trvaly_pobyt",
-        "prechodny_pobyt",
-        "zeny",
-        "muzi",
-        "predproduktivny",
-        "produktivny",
-        "poproduktivny"
-    ]
-
-    for col in numeric_cols:
-        df[col] = clean_numeric(df[col]).fillna(0).astype(int)
-
-    df["spolu"] = df["trvaly_pobyt"] + df["prechodny_pobyt"]
 
 
-    df = df[df["ulica"] != "* mesto Nitra"].copy()
 
-    df = df.sort_values("spolu", ascending=False).reset_index(drop=True)
-    return df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # =============================
 # LOAD DATA
 # =============================
-df = load_demography_data()
-df["vekova_skupina"] = df["vek"].apply(categorize_age)
+df_age = load_age_data()
+
 
 df_pop = load_population_data()
 df_street = load_street_data()
@@ -163,8 +80,8 @@ st.sidebar.header("Filtre stránky")
 
 st.sidebar.subheader("Veková štruktúra")
 
-min_age = int(df["vek"].min())
-max_age = int(df["vek"].max())
+min_age = int(df_age["vek"].min())
+max_age = int(df_age["vek"].max())
 
 selected_age_range = st.sidebar.slider(
     "Vekový rozsah",
@@ -222,9 +139,9 @@ st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
 # =============================
 # FILTERED DATA
 # =============================
-df_filtered = df[
-    (df["vek"] >= selected_age_range[0]) &
-    (df["vek"] <= selected_age_range[1])
+df_filtered = df_age[
+    (df_age["vek"] >= selected_age_range[0]) &
+    (df_age["vek"] <= selected_age_range[1])
 ].copy()
 
 df_grouped_filtered = (
@@ -323,19 +240,19 @@ with tab1:
         )
         st.metric("Počet obyvateľov v poslednom roku", latest_population)
 
-    st.subheader(f"{y_label} podľa veku")
+
 
     fig1 = px.bar(
         df_filtered,
         x="vek",
         y=y_column,
         labels={"vek": "Vek", y_column: y_label},
-        title=f"{y_label} podľa veku"
+        title = f"{y_label} podľa veku"
     )
 
     st.plotly_chart(fig1, use_container_width=True)
 
-    st.subheader("Porovnanie mužov a žien podľa veku")
+
 
     df_gender = df_filtered.melt(
         id_vars="vek",
@@ -350,22 +267,22 @@ with tab1:
         y="pocet",
         color="pohlavie",
         labels={"vek": "Vek", "pocet": "Počet osôb", "pohlavie": "Pohlavie"},
-        title="Porovnanie mužov a žien podľa veku"
+        title = "Porovnanie mužov a žien podľa veku"
     )
     st.plotly_chart(fig2, use_container_width=True, key="gender_chart")
 
-    st.subheader("Rozdelenie obyvateľov podľa vekových skupín")
+
 
     fig3 = px.bar(
         df_grouped_filtered,
         x="vekova_skupina",
         y="pocet_spolu",
         labels={"vekova_skupina": "Veková skupina", "pocet_spolu": "Počet obyvateľov"},
-        title="Rozdelenie obyvateľov podľa vekových skupín"
+        title = "Rozdelenie obyvateľov podľa vekových skupín"
     )
     st.plotly_chart(fig3, use_container_width=True, key="group_chart")
 
-    st.subheader("Porovnanie mužov a žien podľa vekových skupín")
+
 
     fig4 = px.bar(
         df_grouped_filtered,
@@ -377,7 +294,7 @@ with tab1:
             "value": "Počet osôb",
             "variable": "Pohlavie"
         },
-        title="Porovnanie mužov a žien podľa vekových skupín"
+        title = "Porovnanie mužov a žien podľa vekových skupín"
     )
     st.plotly_chart(fig4, use_container_width=True, key="group_gender_chart")
 
@@ -408,40 +325,40 @@ with tab2:
         )
         st.metric("Saldo v poslednom roku", latest_saldo_tab3)
 
-    st.subheader("Vývoj počtu obyvateľov mesta Nitra")
+
 
     fig5 = px.line(
         df_pop_filtered,
         x="Rok",
         y="Počet občanov spolu",
         labels={"Rok": "Rok", "Počet občanov spolu": "Počet obyvateľov"},
-        title="Vývoj počtu obyvateľov mesta Nitra"
+        title = "Vývoj počtu obyvateľov mesta Nitra"
     )
     st.plotly_chart(fig5, use_container_width=True, key="pop_total")
 
-    st.subheader("Vývoj počtu mužov a žien")
+
 
     fig6 = px.line(
         df_pop_filtered,
         x="Rok",
         y=["Počet mužov", "Počet žien"],
         labels={"Rok": "Rok", "value": "Počet osôb", "variable": "Pohlavie"},
-        title="Vývoj počtu mužov a žien"
+        title = "Vývoj počtu mužov a žien"
     )
     st.plotly_chart(fig6, use_container_width=True, key="pop_gender")
 
-    st.subheader("Demografické saldo")
+
 
     fig7 = px.bar(
         df_pop_filtered[df_pop_filtered["Rok"] != df_pop_filtered["Rok"].min()],
         x="Rok",
         y="Saldo",
         labels={"Rok": "Rok", "Saldo": "Saldo"},
-        title="Demografické saldo (prírastok - úbytok)"
+        title ="Demografické saldo"
     )
     st.plotly_chart(fig7, use_container_width=True, key="pop_saldo")
 
-    st.subheader("Percentuálna zmena populácie")
+
 
     fig8 = px.line(
         df_pop_filtered[df_pop_filtered["Rok"] != df_pop_filtered["Rok"].min()],
@@ -477,7 +394,7 @@ with tab3:
             int(df_street_top[street_y_column].sum()) if len(df_street_top) > 0 else 0
         )
 
-    st.subheader(f"Top ulice podľa ukazovateľa: {street_y_label}")
+
 
     fig_street_1 = px.bar(
         df_street_top.sort_values(street_y_column, ascending=True),
@@ -489,7 +406,7 @@ with tab3:
     )
     st.plotly_chart(fig_street_1, use_container_width=True, key="street_top_chart")
 
-    st.subheader("Vekové skupiny na top uliciach podľa celkového počtu obyvateľov")
+
 
 
     df_street_top_spolu = df_street.sort_values("spolu", ascending=False).head(top_n_streets).copy()

@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+from data_loader import load_budget_data
+
 st.title("Rozpočet mesta Nitra")
 
 st.write("""
@@ -9,32 +11,16 @@ Táto sekcia zobrazuje analýzu rozpočtových údajov mesta Nitra.
 """)
 
 
-@st.cache_data
-def load_budget_data():
-    file_path = "data/Rozpocet.xlsx"
-    df = pd.read_excel(file_path)
-    return df
 
 
-def clean_number(x):
-    return float(str(x).replace(" ", "").replace(",", "."))
 
 
-# =============================
-# LOAD + CLEAN DATA
-# =============================
+
+
+
 df = load_budget_data()
 
-df["Príjmy"] = df["Príjmy"].apply(clean_number)
-df["Výdavky"] = df["Výdavky"].apply(clean_number)
-df["Rozdiel"] = df["Rozdiel"].apply(clean_number)
-df["Rok"] = df["Rok"].astype(int)
 
-df = df.sort_values("Rok").reset_index(drop=True)
-
-df["Efektivita"] = df["Príjmy"] / df["Výdavky"]
-df["Príjmy_change_%"] = df["Príjmy"].pct_change() * 100
-df["Výdavky_change_%"] = df["Výdavky"].pct_change() * 100
 
 
 # =============================
