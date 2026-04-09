@@ -56,30 +56,14 @@ selected_age_range = st.sidebar.slider(
 )
 
 selected_gender_view = st.sidebar.selectbox(
-    "Zobrazenie",
-    ["Spolu", "Muži", "Ženy"],
+    "Pohlavie obyvateľa",
+    ["Všetci", "Muži", "Ženy"],
     key= "gender_view"
 )
 st.sidebar.markdown("---")
-st.sidebar.subheader("Ulice mesta")
-
-street_metric = st.sidebar.selectbox(
-    "Typ ubytovania",
-    ["Spolu", "Na trvalom pobyte", "Na prechodnom pobyte"],
-    key="street_metric"
-)
-
-top_n_streets = st.sidebar.slider(
-    "Počet ulíc v grafe",
-    5,
-    20,
-    10,
-    key="top_n_streets"
-)
 
 
 
-st.sidebar.markdown("---")
 
 st.sidebar.subheader("Vývoj populácie")
 
@@ -93,6 +77,24 @@ selected_year_range = st.sidebar.slider(
     (min_year, max_year),
     key= "year_range"
 )
+st.sidebar.markdown("---")
+
+st.sidebar.subheader("Ulice mesta")
+
+street_metric = st.sidebar.selectbox(
+    "Typ ubytovania",
+    ["Všetci", "Na trvalom pobyte", "Na prechodnom pobyte"],
+    key="street_metric"
+)
+
+top_n_streets = st.sidebar.slider(
+    "Počet ulíc v grafe",
+    5,
+    20,
+    10,
+    key="top_n_streets"
+)
+
 
 st.sidebar.markdown("---")
 st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)

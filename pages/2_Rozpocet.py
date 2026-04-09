@@ -59,11 +59,7 @@ selected_order_year = st.sidebar.selectbox(
     key="selected_order_year"
 )
 
-order_sort_by = st.sidebar.selectbox(
-    "Triediť objednávky podľa",
-    ["Dátum vystavenia", "Cena - vzostupne", "Cena - zostupne"],
-    key="order_sort_by"
-)
+
 
 
 
@@ -113,12 +109,7 @@ if selected_order_year != "Všetky":
         df_orders_filtered["rok"] == selected_order_year
     ]
 
-if order_sort_by == "Dátum vystavenia":
-    df_orders_filtered = df_orders_filtered.sort_values("datum_vystavenia")
-elif order_sort_by == "Cena - vzostupne":
-    df_orders_filtered = df_orders_filtered.sort_values("cena", ascending=True)
-elif order_sort_by == "Cena - zostupne":
-    df_orders_filtered = df_orders_filtered.sort_values("cena", ascending=False)
+
 
 
 
@@ -136,7 +127,7 @@ tab1, tab2, tab3,  = st.tabs([
 # TAB 1 - PRÍJMY A VÝDAVKY
 # =============================
 with tab1:
-    st.header("Príjmy a výdavky")
+
 
     df_melt = df_filtered.melt(
         id_vars="Rok",
@@ -145,7 +136,7 @@ with tab1:
         value_name="Hodnota"
     )
 
-    st.subheader("Porovnanie príjmov a výdavkov")
+
 
     fig2 = px.bar(
         df_melt,
@@ -157,7 +148,7 @@ with tab1:
     )
     st.plotly_chart(fig2, use_container_width=True, key="budget_compare_chart")
 
-    st.subheader("Rozdiel medzi príjmami a výdavkami")
+
 
     fig3 = px.bar(
         df_filtered,
@@ -250,7 +241,7 @@ with tab2:
     with col3:
         st.metric("Najvyšší nedoplatok", f"{df_debtors_filtered['nedoplatok'].max():,.2f}".replace(",", " "))
 
-    st.subheader("Top 10 daňových dlžníkov")
+
 
     fig_debt_1 = px.bar(
         top_debtors.sort_values("nedoplatok", ascending=True),
@@ -262,7 +253,7 @@ with tab2:
     )
     st.plotly_chart(fig_debt_1, use_container_width=True, key="debtors_top_chart")
 
-    st.subheader("Porovnanie minulého a aktuálneho nedoplatku")
+
 
     debt_compare = top_debtors.melt(
         id_vars="dlznik",
@@ -287,7 +278,7 @@ with tab2:
     )
     st.plotly_chart(fig_debt_2, use_container_width=True, key="debtors_compare_chart")
 
-    st.subheader("Súčet nedoplatkov podľa mesta")
+
 
     debt_by_city = (
         df_debtors_filtered.groupby("mesto", as_index=False)["nedoplatok"]
@@ -329,7 +320,7 @@ with tab3:
     # =============================
     # 1. Vývoj objemu objednávok v čase
     # =============================
-    st.subheader("Vývoj objemu objednávok v čase")
+
 
     orders_by_date = (
         df_orders_filtered.groupby("datum_vystavenia", as_index=False)["cena"]
@@ -349,7 +340,7 @@ with tab3:
     # =============================
     # 2. Top dodávatelia
     # =============================
-    st.subheader("Top dodávatelia podľa celkovej sumy")
+
 
     top_suppliers = (
         df_orders_filtered.groupby("dodavatel", as_index=False)["cena"]
@@ -363,27 +354,74 @@ with tab3:
         x="cena",
         y="dodavatel",
         orientation="h",
+        text="cena",
         labels={"dodavatel": "Dodávateľ", "cena": "Celková suma"},
         title="Top dodávatelia podľa objemu objednávok"
     )
+
+    fig_orders_2.update_traces(
+        texttemplate="%{text:.2f} €",
+        textposition="outside"
+    )
+
     st.plotly_chart(fig_orders_2, use_container_width=True, key="orders_supplier_chart")
+
+    
+
+    top_suppliers_count = (
+        df_orders_filtered.groupby("dodavatel", as_index=False)
+        .size()
+        .rename(columns={"size": "pocet_objednavok"})
+        .sort_values("pocet_objednavok", ascending=False)
+        .head(10)
+    )
+
+    fig_orders_3 = px.bar(
+        top_suppliers_count.sort_values("pocet_objednavok", ascending=True),
+        x="pocet_objednavok",
+        y="dodavatel",
+        orientation="h",
+        text="pocet_objednavok",
+        labels={
+            "dodavatel": "Dodávateľ",
+            "pocet_objednavok": "Počet objednávok"
+        },
+        title="Top dodávatelia podľa počtu objednávok"
+    )
+    fig_orders_3.update_traces(textposition="outside")
+
+    st.plotly_chart(fig_orders_3, use_container_width=True, key="orders_supplier_count_chart")
 
     # =============================
     # 3. Najväčšie jednotlivé objednávky
     # =============================
-    st.subheader("Najväčšie jednotlivé objednávky")
 
-    top_orders = df_orders_filtered.sort_values("cena", ascending=False).head(10)
 
-    fig_orders_3 = px.bar(
-        top_orders,
-        x="dodavatel",
-        y="cena",
-        hover_data=["predmet", "datum_vystavenia"],
-        labels={"dodavatel": "Dodávateľ", "cena": "Cena"},
-        title="Najväčšie jednotlivé objednávky"
+    top_orders = (
+        df_orders_filtered
+        .sort_values("cena", ascending=False)
+        .head(10)
+        .copy()
     )
-    st.plotly_chart(fig_orders_3, use_container_width=True, key="orders_top_chart")
+
+    top_orders_table = top_orders[[
+        "cena",
+        "predmet",
+        "dodavatel",
+        "datum_vystavenia"
+
+    ]].rename(columns={
+        "datum_vystavenia": "Dátum vystavenia",
+        "dodavatel": "Dodávateľ",
+        "predmet": "Predmet",
+        "cena": "Cena (€)"
+    })
+
+    st.dataframe(
+        top_orders_table,
+        use_container_width=True,
+        hide_index=True
+    )
 
 
 
