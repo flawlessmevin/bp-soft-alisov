@@ -6,9 +6,7 @@ from data_loader import load_budget_data, load_orders_data, load_debtors_data
 
 st.title("Rozpočet mesta Nitra")
 
-st.write("""
-Táto sekcia zobrazuje analýzu rozpočtových údajov mesta Nitra.
-""")
+
 
 
 
@@ -190,58 +188,9 @@ with tab1:
 with tab2:
     st.header("Daňoví dlžníci")
 
-    with st.expander("Filtre daňových dlžníkov", expanded=False):
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            debtor_search = st.text_input("Vyhľadať dlžníka", "", key="debtor_search")
-
-        with col2:
-            debtor_city = st.selectbox(
-                "Mesto",
-                ["Všetky"] + sorted(df_debtors["mesto"].dropna().unique().tolist()),
-                key="debtor_city"
-            )
-
-        with col3:
-            min_debt = st.slider(
-                "Minimálna suma nedoplatku",
-                0.0,
-                float(df_debtors["nedoplatok"].max()),
-                0.0,
-                key="min_debt"
-            )
-
     df_debtors_filtered = df_debtors.copy()
 
-    if debtor_search:
-        df_debtors_filtered = df_debtors_filtered[
-            df_debtors_filtered["dlznik"].str.contains(debtor_search, case=False, na=False)
-        ]
-
-    if debtor_city != "Všetky":
-        df_debtors_filtered = df_debtors_filtered[
-            df_debtors_filtered["mesto"] == debtor_city
-            ]
-
-    df_debtors_filtered = df_debtors_filtered[
-        df_debtors_filtered["nedoplatok"] >= min_debt
-        ]
-
     top_debtors = df_debtors_filtered.sort_values("nedoplatok", ascending=False).head(10)
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.metric("Počet dlžníkov", len(df_debtors_filtered))
-
-    with col2:
-        st.metric("Súčet nedoplatkov", f"{df_debtors_filtered['nedoplatok'].sum():,.2f}".replace(",", " "))
-
-    with col3:
-        st.metric("Najvyšší nedoplatok", f"{df_debtors_filtered['nedoplatok'].max():,.2f}".replace(",", " "))
-
-
 
     fig_debt_1 = px.bar(
         top_debtors.sort_values("nedoplatok", ascending=True),
@@ -300,26 +249,6 @@ with tab2:
 with tab3:
     st.header("Objednávky")
 
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.metric("Počet objednávok", len(df_orders_filtered))
-
-    with col2:
-        st.metric(
-            "Celková suma",
-            f"{df_orders_filtered['cena'].sum():,.2f}".replace(",", " ")
-        )
-
-    with col3:
-        st.metric(
-            "Najväčšia objednávka",
-            f"{df_orders_filtered['cena'].max():,.2f}".replace(",", " ")
-        )
-
-    # =============================
-    # 1. Vývoj objemu objednávok v čase
-    # =============================
 
 
     orders_by_date = (
@@ -337,9 +266,7 @@ with tab3:
     )
     st.plotly_chart(fig_orders_1, use_container_width=True, key="orders_time_chart")
 
-    # =============================
-    # 2. Top dodávatelia
-    # =============================
+
 
 
     top_suppliers = (
@@ -366,7 +293,7 @@ with tab3:
 
     st.plotly_chart(fig_orders_2, use_container_width=True, key="orders_supplier_chart")
 
-    
+
 
     top_suppliers_count = (
         df_orders_filtered.groupby("dodavatel", as_index=False)
@@ -392,9 +319,7 @@ with tab3:
 
     st.plotly_chart(fig_orders_3, use_container_width=True, key="orders_supplier_count_chart")
 
-    # =============================
-    # 3. Najväčšie jednotlivé objednávky
-    # =============================
+
 
 
     top_orders = (
@@ -427,7 +352,7 @@ with tab3:
 
 
 
-    st.subheader("Detail objednávky / dodávateľa")
+    st.subheader("Detail dodávateľa")
     supplier_options = sorted(df_orders["dodavatel"].dropna().unique().tolist())
     supplier_options_with_empty = ["-- Vyber dodávateľa --"] + supplier_options
 
@@ -505,3 +430,198 @@ with tab3:
     else:
         st.info("Vyberte dodávateľa, aby sa zobrazili podrobné informácie.")
 
+    st.subheader("Detail objednávky")
+
+    df_order_detail = df_orders_filtered.copy()
+
+    df_order_detail["datum_vystavenia"] = pd.to_datetime(
+        df_order_detail["datum_vystavenia"],
+        errors="coerce"
+    )
+
+    df_order_detail["dodavatel"] = df_order_detail["dodavatel"].fillna("").astype(str)
+    df_order_detail["predmet"] = df_order_detail["predmet"].fillna("").astype(str)
+    df_order_detail["cislo_faktury"] = df_order_detail["cislo_faktury"].fillna("").astype(str)
+    df_order_detail["ico"] = df_order_detail["ico"].fillna("").astype(str)
+
+    valid_dates = df_order_detail["datum_vystavenia"].dropna()
+    min_price = float(df_order_detail["cena"].min())
+    max_price = float(df_order_detail["cena"].max())
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        supplier_filter_order = st.selectbox(
+            "Dodávateľ",
+            ["Všetci dodávatelia"] + sorted(
+                df_order_detail["dodavatel"].replace("", pd.NA).dropna().unique().tolist()
+            ),
+            key="supplier_filter_order"
+        )
+
+        search_invoice = st.text_input(
+            "Číslo faktúry alebo IČO",
+            key="search_invoice_order",
+            placeholder="Napr. 2024-001 alebo 12345678"
+        )
+
+    with col2:
+        search_subject = st.text_input(
+            "Predmet objednávky",
+            key="search_subject_order",
+            placeholder="Zadajte časť názvu predmetu"
+        )
+
+        if not valid_dates.empty:
+            date_range_order = st.date_input(
+                "Rozsah dátumu vystavenia",
+                value=(valid_dates.min().date(), valid_dates.max().date()),
+                key="date_range_order"
+            )
+        else:
+            date_range_order = ()
+
+    search_all_order = st.text_input(
+        "Rýchle fulltextové vyhľadávanie",
+        key="search_all_order",
+        placeholder="Dodávateľ, predmet, číslo faktúry, IČO, dátum..."
+    )
+
+    price_range_order = st.slider(
+        "Rozsah ceny (€)",
+        min_value=min_price,
+        max_value=max_price,
+        value=(min_price, max_price),
+        key="price_range_order"
+    )
+
+    filtered_order_detail = df_order_detail.copy()
+
+    if supplier_filter_order != "Všetci dodávatelia":
+        filtered_order_detail = filtered_order_detail[
+            filtered_order_detail["dodavatel"] == supplier_filter_order
+            ]
+
+    if search_invoice:
+        search_invoice_lower = search_invoice.lower()
+        filtered_order_detail = filtered_order_detail[
+            filtered_order_detail["cislo_faktury"].str.lower().str.contains(search_invoice_lower, na=False)
+            | filtered_order_detail["ico"].str.lower().str.contains(search_invoice_lower, na=False)
+            ]
+
+    if search_subject:
+        search_subject_lower = search_subject.lower()
+        filtered_order_detail = filtered_order_detail[
+            filtered_order_detail["predmet"].str.lower().str.contains(search_subject_lower, na=False)
+        ]
+
+    if len(date_range_order) == 2:
+        start_date, end_date = date_range_order
+        filtered_order_detail = filtered_order_detail[
+            filtered_order_detail["datum_vystavenia"].dt.date.between(start_date, end_date)
+        ]
+
+    filtered_order_detail = filtered_order_detail[
+        filtered_order_detail["cena"].between(price_range_order[0], price_range_order[1])
+    ]
+
+    if search_all_order:
+        search_all_lower = search_all_order.lower()
+        datum_text = filtered_order_detail["datum_vystavenia"].dt.strftime("%d.%m.%Y").fillna("")
+
+        filtered_order_detail = filtered_order_detail[
+            filtered_order_detail["dodavatel"].str.lower().str.contains(search_all_lower, na=False)
+            | filtered_order_detail["predmet"].str.lower().str.contains(search_all_lower, na=False)
+            | filtered_order_detail["cislo_faktury"].str.lower().str.contains(search_all_lower, na=False)
+            | filtered_order_detail["ico"].str.lower().str.contains(search_all_lower, na=False)
+            | datum_text.str.lower().str.contains(search_all_lower, na=False)
+            ]
+
+    filtered_order_detail = filtered_order_detail.sort_values(
+        ["datum_vystavenia", "cena"],
+        ascending=[False, False]
+    ).copy()
+
+    st.caption(f"Nájdených objednávok: {len(filtered_order_detail)}")
+
+    if not filtered_order_detail.empty:
+        table_df = filtered_order_detail[[
+            "cislo_faktury",
+            "dodavatel",
+            "predmet",
+            "cena",
+            "datum_vystavenia",
+            "ico"
+        ]].copy()
+
+        table_df = table_df.rename(columns={
+            "cislo_faktury": "Číslo faktúry",
+            "dodavatel": "Dodávateľ",
+            "predmet": "Predmet",
+            "cena": "Cena (€)",
+            "datum_vystavenia": "Dátum vystavenia",
+            "ico": "IČO"
+        })
+
+        table_df["Dátum vystavenia"] = pd.to_datetime(
+            table_df["Dátum vystavenia"],
+            errors="coerce"
+        ).dt.strftime("%d.%m.%Y")
+
+        event = st.dataframe(
+            table_df,
+            use_container_width=True,
+            hide_index=True,
+            on_select="rerun",
+            selection_mode="single-row",
+            key="orders_detail_table"
+        )
+
+        selected_rows = event.selection["rows"]
+
+        if selected_rows:
+            selected_row_position = selected_rows[0]
+            selected_order = filtered_order_detail.iloc[selected_row_position]
+
+            st.markdown("### Vybraná objednávka")
+
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+                st.metric("Cena objednávky", f"{selected_order['cena']:,.2f} €".replace(",", " "))
+
+            with col2:
+                order_date = selected_order["datum_vystavenia"]
+                st.metric(
+                    "Dátum vystavenia",
+                    order_date.strftime("%d.%m.%Y") if pd.notna(order_date) else "-"
+                )
+
+            with col3:
+                st.metric("Dodávateľ", selected_order["dodavatel"] if selected_order["dodavatel"] else "-")
+
+            detail_table = pd.DataFrame({
+                "Pole": [
+                    "Číslo faktúry",
+                    "Dodávateľ",
+                    "Predmet",
+                    "Cena (€)",
+                    "Dátum vystavenia",
+                    "IČO"
+                ],
+                "Hodnota": [
+                    selected_order["cislo_faktury"] if selected_order["cislo_faktury"] else "-",
+                    selected_order["dodavatel"] if selected_order["dodavatel"] else "-",
+                    selected_order["predmet"] if selected_order["predmet"] else "-",
+                    f"{selected_order['cena']:,.2f}".replace(",", " "),
+                    order_date.strftime("%d.%m.%Y") if pd.notna(order_date) else "-",
+                    selected_order["ico"] if selected_order["ico"] else "-"
+                ]
+            })
+
+            st.dataframe(detail_table, use_container_width=True, hide_index=True)
+        else:
+            st.info("Kliknite na riadok v tabuľke, aby sa zobrazili podrobnosti objednávky.")
+
+    else:
+        st.warning("Pre zadané filtre sa nenašla žiadna objednávka.")
