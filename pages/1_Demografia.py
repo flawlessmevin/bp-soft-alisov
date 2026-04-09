@@ -5,10 +5,6 @@ import plotly.express as px
 from data_loader import load_age_data, load_street_data, load_population_data
 st.title("Demografia mesta Nitra")
 
-st.write("""
-Táto sekcia zobrazuje demografické údaje mesta Nitra
-na základe dostupných datasetov vo formáte JSON a XLSX.
-""")
 
 
 
@@ -179,28 +175,7 @@ tab1, tab2, tab3 = st.tabs([
 # TAB 1 - VEKOVÁ ŠTRUKTÚRA
 # =============================
 with tab1:
-    st.header("Veková štruktúra obyvateľstva")
 
-    col1, col2, col3, col4 = st.columns(4)
-
-    with col1:
-        st.metric("Počet vekových záznamov", len(df_filtered))
-
-    with col2:
-        st.metric("Súčet v zvolenom rozsahu", int(df_filtered[y_column].sum()))
-
-    with col3:
-        st.metric("Posledný evidovaný rok", int(df_pop_filtered["Rok"].max()))
-
-    with col4:
-        latest_year = df_pop_filtered["Rok"].max()
-        latest_population = int(
-            df_pop_filtered.loc[
-                df_pop_filtered["Rok"] == latest_year,
-                "Počet občanov spolu"
-            ].iloc[0]
-        )
-        st.metric("Počet obyvateľov v poslednom roku", latest_population)
 
 
 
@@ -267,25 +242,7 @@ with tab1:
 with tab2:
     st.header("Vývoj populácie mesta Nitra")
 
-    st.subheader("Základné ukazovatele vývoja populácie")
 
-    col5, col6, col7 = st.columns(3)
-
-    with col5:
-        st.metric("Počiatočný rok", int(df_pop_filtered["Rok"].min()))
-
-    with col6:
-        st.metric("Posledný rok", int(df_pop_filtered["Rok"].max()))
-
-    with col7:
-        latest_year_tab3 = df_pop_filtered["Rok"].max()
-        latest_saldo_tab3 = int(
-            df_pop_filtered.loc[
-                df_pop_filtered["Rok"] == latest_year_tab3,
-                "Saldo"
-            ].iloc[0]
-        )
-        st.metric("Saldo v poslednom roku", latest_saldo_tab3)
 
 
 
@@ -339,22 +296,6 @@ with tab2:
 with tab3:
     st.header("Demografia podľa ulíc")
 
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.metric("Počet zobrazených ulíc", len(df_street_top))
-
-    with col2:
-        st.metric(
-            "Najvyššia hodnota",
-            int(df_street_top[street_y_column].max()) if len(df_street_top) > 0 else 0
-        )
-
-    with col3:
-        st.metric(
-            "Súčet v rebríčku",
-            int(df_street_top[street_y_column].sum()) if len(df_street_top) > 0 else 0
-        )
 
 
 

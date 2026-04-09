@@ -386,7 +386,7 @@ with tab3:
                 f"{df_supplier_detail['cena'].max():,.2f}".replace(",", " ")
             )
 
-        st.subheader("Objednávky vybraného dodávateľa")
+
 
         st.dataframe(
             df_supplier_detail[
@@ -396,7 +396,7 @@ with tab3:
             hide_index=True
         )
 
-        st.subheader("Vývoj objednávok dodávateľa v čase")
+
 
         supplier_by_date = (
             df_supplier_detail.groupby("datum_vystavenia", as_index=False)["cena"]
@@ -413,7 +413,7 @@ with tab3:
         )
         st.plotly_chart(fig_supplier_detail_1, use_container_width=True, key="supplier_detail_time")
 
-        st.subheader("Najväčšie objednávky dodávateľa")
+
 
         top_supplier_orders = df_supplier_detail.sort_values("cena", ascending=False).head(10)
 
