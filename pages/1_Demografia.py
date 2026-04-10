@@ -5,21 +5,12 @@ import plotly.express as px
 from data_loader import load_age_data, load_street_data, load_population_data
 st.title("Demografia mesta Nitra")
 
-
-
-
-
-
-
-
-
 # =============================
 # LOAD DATA
 # =============================
 df_age = load_age_data()
 df_pop = load_population_data()
 df_street = load_street_data()
-
 # =============================
 # SIDEBAR
 # =============================
@@ -28,7 +19,7 @@ def reset_filters():
     st.session_state["gender_view"] = "Spolu"
     st.session_state["year_range"] = (min_year, max_year)
 
-    # FOR TAB 4
+    # FOR TAB 3
     st.session_state["street_metric"] = "Spolu"
     st.session_state["top_n_streets"] = 10
     st.session_state["street_search"] = ""
@@ -57,9 +48,6 @@ selected_gender_view = st.sidebar.selectbox(
     key= "gender_view"
 )
 st.sidebar.markdown("---")
-
-
-
 
 st.sidebar.subheader("Vývoj populácie")
 
@@ -94,60 +82,6 @@ top_n_streets = st.sidebar.slider(
 
 st.sidebar.markdown("---")
 st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
-
-
-
-# =============================
-# FILTERED DATA
-# =============================
-df_filtered = df_age[
-    (df_age["vek"] >= selected_age_range[0]) &
-    (df_age["vek"] <= selected_age_range[1])
-].copy()
-
-df_grouped_filtered = (
-    df_filtered.groupby("vekova_skupina")[["pocet_spolu", "muzi", "zeny"]]
-    .sum()
-    .reset_index()
-)
-
-age_order = ["0-14", "15-24", "25-44", "45-64", "65+"]
-df_grouped_filtered["vekova_skupina"] = pd.Categorical(
-    df_grouped_filtered["vekova_skupina"],
-    categories=age_order,
-    ordered=True
-)
-df_grouped_filtered = df_grouped_filtered.sort_values("vekova_skupina")
-
-df_pop_filtered = df_pop[
-    (df_pop["Rok"] >= selected_year_range[0]) &
-    (df_pop["Rok"] <= selected_year_range[1])
-].copy()
-
-
-df_street_filtered = df_street.copy()
-
-street_y_column = "spolu"
-street_y_label = "Počet obyvateľov"
-
-if street_metric == "Na trvalom pobyte":
-    street_y_column = "trvaly_pobyt"
-    street_y_label = "Počet obyvateľov s trvalým pobytom"
-elif street_metric == "Na prechodnom pobyte":
-    street_y_column = "prechodny_pobyt"
-    street_y_label = "Počet obyvateľov s prechodným pobytom"
-
-df_street_filtered = df_street.copy()
-
-
-df_street_top = df_street_filtered.sort_values(
-    street_y_column, ascending=False
-).head(top_n_streets)
-
-street_options = sorted(df_street["ulica"].dropna().unique().tolist())
-selected_street = st.session_state.get("selected_street", street_options[0] if street_options else None)
-
-
 # =============================
 # DISPLAY SETTINGS
 # =============================
@@ -170,11 +104,28 @@ tab1, tab2, tab3 = st.tabs([
     "Vývoj populácie",
     "Ulice mesta"
 ])
-
 # =============================
 # TAB 1 - VEKOVÁ ŠTRUKTÚRA
 # =============================
 with tab1:
+    df_filtered = df_age[
+        (df_age["vek"] >= selected_age_range[0]) &
+        (df_age["vek"] <= selected_age_range[1])
+        ].copy()
+
+    df_grouped_filtered = (
+        df_filtered.groupby("vekova_skupina")[["pocet_spolu", "muzi", "zeny"]]
+        .sum()
+        .reset_index()
+    )
+
+    age_order = ["0-14", "15-24", "25-44", "45-64", "65+"]
+    df_grouped_filtered["vekova_skupina"] = pd.Categorical(
+        df_grouped_filtered["vekova_skupina"],
+        categories=age_order,
+        ordered=True
+    )
+    df_grouped_filtered = df_grouped_filtered.sort_values("vekova_skupina")
 
 
 
@@ -235,6 +186,7 @@ with tab1:
     )
     st.plotly_chart(fig4, use_container_width=True, key="group_gender_chart")
 
+    st.markdown("---")
     st.subheader("Súhrnné štatistiky vekovej štruktúry")
 
     max_age_row = df_filtered.loc[df_filtered["pocet_spolu"].idxmax() ]
@@ -285,9 +237,10 @@ with tab1:
 with tab2:
     st.header("Vývoj populácie mesta Nitra")
 
-
-
-
+    df_pop_filtered = df_pop[
+        (df_pop["Rok"] >= selected_year_range[0]) &
+        (df_pop["Rok"] <= selected_year_range[1])
+        ].copy()
 
     fig5 = px.line(
         df_pop_filtered,
@@ -331,6 +284,8 @@ with tab2:
     )
     st.plotly_chart(fig8, use_container_width=True, key="pop_change")
 
+
+    st.markdown("---")
     st.subheader("Súhrnné štatistiky populácie")
 
     max_population_row = df_pop_filtered.loc[df_pop_filtered["Počet občanov spolu"].idxmax()]
@@ -377,6 +332,27 @@ with tab2:
 # =============================
 with tab3:
     st.header("Demografia podľa ulíc")
+
+    df_street_filtered = df_street.copy()
+
+    street_y_column = "spolu"
+    street_y_label = "Počet obyvateľov"
+
+    if street_metric == "Na trvalom pobyte":
+        street_y_column = "trvaly_pobyt"
+        street_y_label = "Počet obyvateľov s trvalým pobytom"
+    elif street_metric == "Na prechodnom pobyte":
+        street_y_column = "prechodny_pobyt"
+        street_y_label = "Počet obyvateľov s prechodným pobytom"
+
+    df_street_filtered = df_street.copy()
+
+    df_street_top = df_street_filtered.sort_values(
+        street_y_column, ascending=False
+    ).head(top_n_streets)
+
+    street_options = sorted(df_street["ulica"].dropna().unique().tolist())
+    selected_street = st.session_state.get("selected_street", street_options[0] if street_options else None)
 
 
 
@@ -501,6 +477,7 @@ with tab3:
     else:
         st.info("Vyberte ulicu zo zoznamu, aby sa zobrazili podrobné informácie.")
 
+    st.markdown("---")
     st.subheader("Súhrnné štatistiky ulíc")
 
     largest_street_row = df_street.loc[df_street["spolu"].idxmax()]

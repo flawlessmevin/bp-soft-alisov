@@ -5,26 +5,18 @@ import plotly.express as px
 from data_loader import load_budget_data, load_orders_data, load_debtors_data
 
 st.title("Rozpočet mesta Nitra")
-
-
-
-
-
 # =============================
 # LOAD DATA
 # =============================
 df = load_budget_data()
 df_debtors = load_debtors_data()
 df_orders = load_orders_data()
-
-
-
-min_year = int(df["Rok"].min())
-max_year = int(df["Rok"].max())
-
 # =============================
 # SIDEBAR
 # =============================
+
+min_year = int(df["Rok"].min())
+max_year = int(df["Rok"].max())
 def reset_filters():
     st.session_state["budget_year_range"] = (min_year, max_year)
     st.session_state["budget_view"] = "Oboje"
@@ -58,40 +50,6 @@ selected_order_year = st.sidebar.selectbox(
 )
 
 
-
-
-
-
-
-
-
-
-
-
-st.sidebar.markdown("---")
-st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
-
-# =============================
-# FILTERS
-# =============================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# =============================
-# FILTERED DATA
-# =============================
 df_filtered = df[
     (df["Rok"] >= selected_year_range[0]) &
     (df["Rok"] <= selected_year_range[1])
@@ -112,6 +70,14 @@ if selected_order_year != "Všetky":
 
 
 
+
+
+
+
+st.sidebar.markdown("---")
+st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
+
+
 # =============================
 # TABS
 # =============================
@@ -120,7 +86,6 @@ tab1, tab2, tab3,  = st.tabs([
     "Daňoví dlžníci",
     "Objednávky"
 ])
-
 # =============================
 # TAB 1 - PRÍJMY A VÝDAVKY
 # =============================
