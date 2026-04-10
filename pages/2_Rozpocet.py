@@ -204,46 +204,44 @@ with tab2:
 
 
 
-    debt_compare = top_debtors.melt(
-        id_vars="dlznik",
-        value_vars=["nedoplatok_minuly", "nedoplatok"],
-        var_name="obdobie",
-        value_name="suma"
-    )
-
-    debt_compare["obdobie"] = debt_compare["obdobie"].replace({
-        "nedoplatok_minuly": "Predchádzajúci rok",
-        "nedoplatok": "Aktuálny stav"
-    })
-
-    fig_debt_2 = px.bar(
-        debt_compare,
-        x="dlznik",
-        y="suma",
-        color="obdobie",
-        barmode="group",
-        labels={"dlznik": "Dlžník", "suma": "Suma", "obdobie": "Obdobie"},
-        title="Porovnanie nedoplatkov"
-    )
-    st.plotly_chart(fig_debt_2, use_container_width=True, key="debtors_compare_chart")
 
 
 
-    debt_by_city = (
-        df_debtors_filtered.groupby("mesto", as_index=False)["nedoplatok"]
-        .sum()
+
+    top_debtors = (
+        df_debtors_filtered[
+            df_debtors_filtered["mesto"].astype(str).str.strip().str.lower() == "nitra"
+            ]
         .sort_values("nedoplatok", ascending=False)
         .head(10)
+        .copy()
     )
 
     fig_debt_3 = px.bar(
-        debt_by_city,
-        x="mesto",
-        y="nedoplatok",
-        labels={"mesto": "Mesto", "nedoplatok": "Suma nedoplatku"},
-        title="Top mestá podľa sumy daňových nedoplatkov"
+        top_debtors.sort_values("nedoplatok", ascending=True),
+        x="nedoplatok",
+        y="dlznik",
+        orientation="h",
+        text="nedoplatok",
+        labels={
+            "dlznik": "Dlžník",
+            "nedoplatok": "Suma nedoplatku (€)"
+        },
+        title="Top dlžníci podľa výšky nedoplatku v meste Nitra"
     )
-    st.plotly_chart(fig_debt_3, use_container_width=True, key="debtors_city_chart")
+
+    fig_debt_3.update_traces(
+        texttemplate="%{text:.2f} €",
+        textposition="outside"
+    )
+
+    fig_debt_3.update_layout(
+        xaxis_title="Suma nedoplatku (€)",
+        yaxis_title="Dlžník",
+        height=600
+    )
+
+    st.plotly_chart(fig_debt_3, use_container_width=True, key="debtors_nitra_top_chart")
 
 
 with tab3:
