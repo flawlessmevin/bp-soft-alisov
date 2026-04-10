@@ -235,6 +235,49 @@ with tab1:
     )
     st.plotly_chart(fig4, use_container_width=True, key="group_gender_chart")
 
+    st.subheader("Súhrnné štatistiky vekovej štruktúry")
+
+    max_age_row = df_filtered.loc[df_filtered["pocet_spolu"].idxmax() ]
+    oldest_row = df_filtered.loc[df_filtered["vek"].idxmax()]
+
+    average_age = (
+            (df_filtered["vek"] * df_filtered["pocet_spolu"]).sum()
+            / df_filtered["pocet_spolu"].sum()
+    )
+
+    total_men = df_filtered["muzi"].sum()
+    total_women = df_filtered["zeny"].sum()
+    total_population = df_filtered["pocet_spolu"].sum()
+
+    men_share = (total_men / total_population) * 100 if total_population > 0 else 0
+    women_share = (total_women / total_population) * 100 if total_population > 0 else 0
+
+    largest_group_row = df_grouped_filtered.loc[df_grouped_filtered["pocet_spolu"].idxmax()]
+    smallest_group_row = df_grouped_filtered.loc[df_grouped_filtered["pocet_spolu"].idxmin()]
+
+    summary_table_tab1 = pd.DataFrame({
+        "Ukazovateľ": [
+            "Vek s najvyšším počtom obyvateľov",
+            "Najstarší obyvateľ",
+            "Priemerný vek",
+            "Podiel mužov",
+            "Podiel žien",
+            "Najpočetnejšia veková skupina",
+            "Najmenej početná veková skupina"
+        ],
+        "Hodnota": [
+            f"{int(max_age_row['vek'])} rokov ({int(max_age_row['pocet_spolu']):,})".replace(",", " "),
+            f"{int(oldest_row['vek'])} rokov ({int(oldest_row['pocet_spolu']):,})".replace(",", " "),
+            f"{average_age:.1f} roka",
+            f"{men_share:.2f} %",
+            f"{women_share:.2f} %",
+            f"{largest_group_row['vekova_skupina']} ({int(largest_group_row['pocet_spolu']):,})".replace(",", " "),
+            f"{smallest_group_row['vekova_skupina']} ({int(smallest_group_row['pocet_spolu']):,})".replace(",", " ")
+        ]
+    })
+
+    st.dataframe(summary_table_tab1, use_container_width=True, hide_index=True)
+
 
 # =============================
 # TAB 2 - VÝVOJ POPULÁCIE
@@ -288,6 +331,45 @@ with tab2:
     )
     st.plotly_chart(fig8, use_container_width=True, key="pop_change")
 
+    st.subheader("Súhrnné štatistiky populácie")
+
+    max_population_row = df_pop_filtered.loc[df_pop_filtered["Počet občanov spolu"].idxmax()]
+    min_population_row = df_pop_filtered.loc[df_pop_filtered["Počet občanov spolu"].idxmin()]
+    max_growth_row = df_pop_filtered.loc[df_pop_filtered["Zmena_%"].idxmax()]
+    min_growth_row = df_pop_filtered.loc[df_pop_filtered["Zmena_%"].idxmin()]
+
+    avg_population = df_pop_filtered["Počet občanov spolu"].mean()
+    avg_change = df_pop_filtered["Zmena_%"].dropna().mean()
+    avg_saldo = df_pop_filtered["Saldo"].dropna().mean()
+
+    first_population = df_pop_filtered["Počet občanov spolu"].iloc[0]
+    last_population = df_pop_filtered["Počet občanov spolu"].iloc[-1]
+    total_change = last_population - first_population
+
+    summary_table = pd.DataFrame({
+        "Ukazovateľ": [
+            "Rok s najvyšším počtom obyvateľov",
+            "Rok s najnižším počtom obyvateľov",
+            "Priemerný počet obyvateľov",
+            "Priemerná percentuálna zmena (%)",
+            "Priemerné saldo",
+            "Celková zmena za sledované obdobie",
+            "Najväčší medziročný rast (%)",
+            "Najväčší medziročný pokles (%)"
+        ],
+        "Hodnota": [
+            f"{int(max_population_row['Rok'])} ({int(max_population_row['Počet občanov spolu']):,})".replace(",", " "),
+            f"{int(min_population_row['Rok'])} ({int(min_population_row['Počet občanov spolu']):,})".replace(",", " "),
+            f"{avg_population:,.0f}".replace(",", " "),
+            f"{avg_change:.2f} %",
+            f"{avg_saldo:,.0f}".replace(",", " "),
+            f"{total_change:,.0f}".replace(",", " "),
+            f"{int(max_growth_row['Rok'])} ({max_growth_row['Zmena_%']:.2f} %)",
+            f"{int(min_growth_row['Rok'])} ({min_growth_row['Zmena_%']:.2f} %)"
+        ]
+    })
+
+    st.dataframe(summary_table, use_container_width=True, hide_index=True)
 
 
 # =============================
@@ -418,3 +500,42 @@ with tab3:
 
     else:
         st.info("Vyberte ulicu zo zoznamu, aby sa zobrazili podrobné informácie.")
+
+    st.subheader("Súhrnné štatistiky ulíc")
+
+    largest_street_row = df_street.loc[df_street["spolu"].idxmax()]
+    smallest_street_row = df_street.loc[df_street["spolu"].idxmin()]
+    largest_productive_row = df_street.loc[df_street["produktivny"].idxmax()]
+    largest_permanent_row = df_street.loc[df_street["trvaly_pobyt"].idxmax()]
+
+    largest_preproductive_row = df_street.loc[df_street["predproduktivny"].idxmax()]
+    largest_postproductive_row = df_street.loc[df_street["poproduktivny"].idxmax()]
+
+    average_population_street = df_street["spolu"].mean()
+    total_streets = df_street["ulica"].nunique()
+
+    productive_share = (
+        df_street["produktivny"].sum() / df_street["spolu"].sum() * 100
+        if df_street["spolu"].sum() > 0 else 0
+    )
+
+    summary_table_tab3 = pd.DataFrame({
+        "Ukazovateľ": [
+            "Počet ulíc v datasete",
+            "Priemerný počet obyvateľov na ulicu",
+            "Ulica s najvyšším počtom obyvateľov",
+            "Ulica s najvyšším počtom obyvateľov v predproduktívnom veku",
+            "Ulica s najvyšším počtom obyvateľov v poproduktívnom veku",
+            "Podiel produktívneho veku zo všetkých obyvateľov"
+        ],
+        "Hodnota": [
+            f"{total_streets}",
+            f"{average_population_street:,.0f}".replace(",", " "),
+            f"{largest_street_row['ulica']} ({int(largest_street_row['spolu']):,})".replace(",", " "),
+            f"{largest_preproductive_row['ulica']} ({int(largest_preproductive_row['predproduktivny']):,})".replace(",", " "),
+            f"{largest_postproductive_row['ulica']} ({int(largest_postproductive_row['poproduktivny']):,})".replace(",", " "),
+            f"{productive_share:.2f} %"
+        ]
+    })
+
+    st.dataframe(summary_table_tab3, use_container_width=True, hide_index=True)
