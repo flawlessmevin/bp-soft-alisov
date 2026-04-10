@@ -125,7 +125,7 @@ tab1, tab2, tab3,  = st.tabs([
 # TAB 1 - PRÍJMY A VÝDAVKY
 # =============================
 with tab1:
-
+    st.subheader("Príjmy a výdavky")
 
     df_melt = df_filtered.melt(
         id_vars="Rok",
@@ -180,6 +180,46 @@ with tab1:
     )
     st.plotly_chart(fig6, use_container_width=True, key="budget_expense_change_chart")
 
+    st.markdown("---")
+
+    st.subheader("Súhrnné štatistiky príjmov a výdavok ")
+
+    max_income_row = df_filtered.loc[df_filtered["Príjmy"].idxmax()]
+    max_expense_row = df_filtered.loc[df_filtered["Výdavky"].idxmax()]
+    max_surplus_row = df_filtered.loc[df_filtered["Rozdiel"].idxmax()]
+    min_surplus_row = df_filtered.loc[df_filtered["Rozdiel"].idxmin()]
+
+    total_income = df_filtered["Príjmy"].sum()
+    total_expense = df_filtered["Výdavky"].sum()
+    average_efficiency = df_filtered["Efektivita"].mean()
+
+    overall_balance = total_income - total_expense
+
+    summary_table_budget = pd.DataFrame({
+        "Ukazovateľ": [
+            "Rok s najvyššími príjmami",
+            "Rok s najvyššími výdavkami",
+            "Rok s najväčším prebytkom",
+            "Rok s najväčším schodkom",
+            "Celkové príjmy za sledované obdobie",
+            "Celkové výdavky za sledované obdobie",
+            "Priemerná efektivita hospodárenia",
+            "Celkový výsledok hospodárenia"
+        ],
+        "Hodnota": [
+            f"{int(max_income_row['Rok'])} ({max_income_row['Príjmy']:,.2f} €)".replace(",", " "),
+            f"{int(max_expense_row['Rok'])} ({max_expense_row['Výdavky']:,.2f} €)".replace(",", " "),
+            f"{int(max_surplus_row['Rok'])} ({max_surplus_row['Rozdiel']:,.2f} €)".replace(",", " "),
+            f"{int(min_surplus_row['Rok'])} ({min_surplus_row['Rozdiel']:,.2f} €)".replace(",", " "),
+            f"{total_income:,.2f} €".replace(",", " "),
+            f"{total_expense:,.2f} €".replace(",", " "),
+            f"{average_efficiency:.2f} %",
+            f"{overall_balance:,.2f} €".replace(",", " ")
+        ]
+    })
+
+    st.dataframe(summary_table_budget, use_container_width=True, hide_index=True)
+
 
 
 # =============================
@@ -188,19 +228,80 @@ with tab1:
 with tab2:
     st.header("Daňoví dlžníci")
 
-    df_debtors_filtered = df_debtors.copy()
+    df_debtors_nitra = df_debtors[
+        df_debtors["mesto"].astype(str).str.strip().str.lower() == "nitra"
+    ].copy()
 
-    top_debtors = df_debtors_filtered.sort_values("nedoplatok", ascending=False).head(10)
+    df_debtors_nitra["dlznik"] = df_debtors_nitra["dlznik"].fillna("").astype(str)
+    df_debtors_nitra["adresa"] = df_debtors_nitra["adresa"].fillna("").astype(str)
+    df_debtors_nitra["mesto"] = df_debtors_nitra["mesto"].fillna("").astype(str)
+    df_debtors_nitra["mena"] = df_debtors_nitra["mena"].fillna("EUR").astype(str)
 
-    fig_debt_1 = px.bar(
-        top_debtors.sort_values("nedoplatok", ascending=True),
-        x="nedoplatok",
-        y="dlznik",
-        orientation="h",
-        labels={"nedoplatok": "Suma nedoplatku", "dlznik": "Dlžník"},
-        title="Top 10 daňových dlžníkov podľa aktuálnej sumy"
+    df_debtors_nitra["nedoplatok"] = pd.to_numeric(
+        df_debtors_nitra["nedoplatok"], errors="coerce"
+    ).fillna(0)
+
+    df_debtors_nitra["nedoplatok_minuly"] = pd.to_numeric(
+        df_debtors_nitra["nedoplatok_minuly"], errors="coerce"
+    ).fillna(0)
+
+    df_debtors_nitra["zmena_nedoplatku"] = (
+        df_debtors_nitra["nedoplatok"] - df_debtors_nitra["nedoplatok_minuly"]
     )
-    st.plotly_chart(fig_debt_1, use_container_width=True, key="debtors_top_chart")
+
+    if df_debtors_nitra.empty:
+        st.warning("V datasete sa nenašli žiadni daňoví dlžníci pre mesto Nitra.")
+    else:
+        total_current_debt = df_debtors_nitra["nedoplatok"].sum()
+        total_previous_debt = df_debtors_nitra["nedoplatok_minuly"].sum()
+        total_debtors = len(df_debtors_nitra)
+        average_debt = df_debtors_nitra["nedoplatok"].mean()
+        median_debt = df_debtors_nitra["nedoplatok"].median()
+        increased_count = (df_debtors_nitra["zmena_nedoplatku"] > 0).sum()
+
+        top_debtor_row = df_debtors_nitra.loc[df_debtors_nitra["nedoplatok"].idxmax()]
+
+
+
+
+
+
+        top_debtors_current = (
+            df_debtors_nitra
+            .sort_values("nedoplatok", ascending=False)
+            .head(10)
+            .copy()
+        )
+
+        fig_debt_1 = px.bar(
+            top_debtors_current.sort_values("nedoplatok", ascending=True),
+            x="nedoplatok",
+            y="dlznik",
+            orientation="h",
+            text="nedoplatok",
+            labels={
+                "nedoplatok": "Suma nedoplatku (€)",
+                "dlznik": "Dlžník"
+            },
+            title="Top 10 daňových dlžníkov v meste Nitra"
+        )
+
+        fig_debt_1.update_traces(
+            texttemplate="%{text:.2f} €",
+            textposition="outside"
+        )
+
+        fig_debt_1.update_layout(
+            xaxis_title="Suma nedoplatku (€)",
+            yaxis_title="Dlžník",
+            height=600
+        )
+
+        st.plotly_chart(
+            fig_debt_1,
+            use_container_width=True,
+            key="debtors_nitra_top_current_chart"
+        )
 
 
 
@@ -208,42 +309,220 @@ with tab2:
 
 
 
-    top_debtors = (
-        df_debtors_filtered[
-            df_debtors_filtered["mesto"].astype(str).str.strip().str.lower() == "nitra"
+
+
+
+
+        bins = [0, 100, 500, 1000, 5000, 10000, float("inf")]
+        labels = [
+            "0 – 99 €",
+            "100 – 499 €",
+            "500 – 999 €",
+            "1 000 – 4 999 €",
+            "5 000 – 9 999 €",
+            "10 000 € a viac"
+        ]
+
+        df_debtors_nitra["pasmo_nedoplatku"] = pd.cut(
+            df_debtors_nitra["nedoplatok"],
+            bins=bins,
+            labels=labels,
+            right=False,
+            include_lowest=True
+        )
+
+        debt_distribution = (
+            df_debtors_nitra.groupby("pasmo_nedoplatku", as_index=False)
+            .size()
+            .rename(columns={"size": "pocet_dlznikov"})
+        )
+
+        fig_debt_3 = px.bar(
+            debt_distribution,
+            x="pasmo_nedoplatku",
+            y="pocet_dlznikov",
+            text="pocet_dlznikov",
+            labels={
+                "pasmo_nedoplatku": "Pásmo nedoplatku",
+                "pocet_dlznikov": "Počet dlžníkov"
+            },
+            title="Rozdelenie daňových dlžníkov podľa výšky nedoplatku"
+        )
+
+        fig_debt_3.update_traces(textposition="outside")
+
+        fig_debt_3.update_layout(
+            xaxis_title="Pásmo nedoplatku",
+            yaxis_title="Počet dlžníkov"
+        )
+
+        st.plotly_chart(
+            fig_debt_3,
+            use_container_width=True,
+            key="debtors_nitra_distribution_chart"
+        )
+        st.markdown("---")
+        st.subheader("Detail dlžníka")
+
+        debtor_search = st.text_input(
+            "Vyhľadávanie podľa mena alebo adresy",
+            placeholder="Zadajte meno dlžníka alebo časť adresy",
+            key="debtor_search_input"
+        )
+
+        min_debt = float(df_debtors_nitra["nedoplatok"].min())
+        max_debt = float(df_debtors_nitra["nedoplatok"].max())
+
+        debtor_range = st.slider(
+            "Rozsah aktuálneho nedoplatku (€)",
+            min_value=min_debt,
+            max_value=max_debt,
+            value=(min_debt, max_debt),
+            key="debtor_range_slider"
+        )
+
+        df_debtor_detail = df_debtors_nitra[
+            df_debtors_nitra["nedoplatok"].between(debtor_range[0], debtor_range[1])
+        ].copy()
+
+        if debtor_search:
+            debtor_search_lower = debtor_search.lower()
+            df_debtor_detail = df_debtor_detail[
+                df_debtor_detail["dlznik"].str.lower().str.contains(debtor_search_lower, na=False)
+                | df_debtor_detail["adresa"].str.lower().str.contains(debtor_search_lower, na=False)
             ]
-        .sort_values("nedoplatok", ascending=False)
-        .head(10)
-        .copy()
-    )
 
-    fig_debt_3 = px.bar(
-        top_debtors.sort_values("nedoplatok", ascending=True),
-        x="nedoplatok",
-        y="dlznik",
-        orientation="h",
-        text="nedoplatok",
-        labels={
-            "dlznik": "Dlžník",
-            "nedoplatok": "Suma nedoplatku (€)"
-        },
-        title="Top dlžníci podľa výšky nedoplatku v meste Nitra"
-    )
+        df_debtor_detail = df_debtor_detail.sort_values("nedoplatok", ascending=False).copy()
 
-    fig_debt_3.update_traces(
-        texttemplate="%{text:.2f} €",
-        textposition="outside"
-    )
+        st.caption(f"Nájdených dlžníkov: {len(df_debtor_detail)}")
 
-    fig_debt_3.update_layout(
-        xaxis_title="Suma nedoplatku (€)",
-        yaxis_title="Dlžník",
-        height=600
-    )
+        if not df_debtor_detail.empty:
+            selected_debtor_idx = st.selectbox(
+                "Vyber dlžníka",
+                df_debtor_detail.index.tolist(),
+                format_func=lambda idx: (
+                    f"{df_debtor_detail.loc[idx, 'dlznik']} | "
+                    f"{df_debtor_detail.loc[idx, 'adresa']} | "
+                    f"{df_debtor_detail.loc[idx, 'nedoplatok']:,.2f} €"
+                ).replace(",", " "),
+                key="selected_debtor_detail"
+            )
 
-    st.plotly_chart(fig_debt_3, use_container_width=True, key="debtors_nitra_top_chart")
+            selected_debtor = df_debtor_detail.loc[selected_debtor_idx]
 
+            st.markdown(f"### {selected_debtor['dlznik']}")
 
+            col5, col6, col7 = st.columns(3)
+
+            with col5:
+                st.metric(
+                    "Aktuálny nedoplatok",
+                    f"{selected_debtor['nedoplatok']:,.2f} €".replace(",", " ")
+                )
+
+            with col6:
+                st.metric(
+                    "Minulý nedoplatok",
+                    f"{selected_debtor['nedoplatok_minuly']:,.2f} €".replace(",", " ")
+                )
+
+            with col7:
+                st.metric(
+                    "Zmena",
+                    f"{selected_debtor['zmena_nedoplatku']:,.2f} €".replace(",", " ")
+                )
+
+            debtor_detail_table = pd.DataFrame({
+                "Pole": [
+                    "Dlžník",
+                    "Adresa",
+                    "Mesto",
+                    "Aktuálny nedoplatok",
+                    "Minulý nedoplatok",
+                    "Zmena nedoplatku",
+                    "Mena"
+                ],
+                "Hodnota": [
+                    selected_debtor["dlznik"] if selected_debtor["dlznik"] else "-",
+                    selected_debtor["adresa"] if selected_debtor["adresa"] else "-",
+                    selected_debtor["mesto"] if selected_debtor["mesto"] else "-",
+                    f"{selected_debtor['nedoplatok']:,.2f} €".replace(",", " "),
+                    f"{selected_debtor['nedoplatok_minuly']:,.2f} €".replace(",", " "),
+                    f"{selected_debtor['zmena_nedoplatku']:,.2f} €".replace(",", " "),
+                    selected_debtor["mena"] if selected_debtor["mena"] else "-"
+                ]
+            })
+
+            st.dataframe(
+                debtor_detail_table,
+                use_container_width=True,
+                hide_index=True
+            )
+
+            debtor_compare_df = pd.DataFrame({
+                "Obdobie": ["Minulý nedoplatok", "Aktuálny nedoplatok"],
+                "Suma": [
+                    selected_debtor["nedoplatok_minuly"],
+                    selected_debtor["nedoplatok"]
+                ]
+            })
+
+            fig_debt_4 = px.bar(
+                debtor_compare_df,
+                x="Obdobie",
+                y="Suma",
+                text="Suma",
+                labels={"Obdobie": "Obdobie", "Suma": "Suma (€)"},
+                title=f"Porovnanie nedoplatku dlžníka: {selected_debtor['dlznik']}"
+            )
+
+            fig_debt_4.update_traces(
+                texttemplate="%{text:.2f} €",
+                textposition="outside"
+            )
+
+            st.plotly_chart(
+                fig_debt_4,
+                use_container_width=True,
+                key="selected_debtor_compare_chart"
+            )
+
+        else:
+            st.info("Pre zadané filtre sa nenašiel žiadny dlžník.")
+
+        st.markdown("---")
+        st.subheader("Súhrnné štatistiky dlžníkov")
+
+        max_debtor_row = df_debtors_nitra.loc[df_debtors_nitra["nedoplatok"].idxmax()]
+        max_increase_row = df_debtors_nitra.loc[df_debtors_nitra["zmena_nedoplatku"].idxmax()]
+        max_decrease_row = df_debtors_nitra.loc[df_debtors_nitra["zmena_nedoplatku"].idxmin()]
+
+        summary_table_debtors = pd.DataFrame({
+            "Ukazovateľ": [
+                "Počet daňových dlžníkov v meste Nitra",
+                "Celkový aktuálny nedoplatok",
+                "Celkový minulý nedoplatok",
+                "Priemerný nedoplatok",
+                "Najväčší dlžník podľa aktuálnej sumy",
+                "Najväčší nárast nedoplatku",
+                "Najväčší pokles nedoplatku"
+            ],
+            "Hodnota": [
+                f"{total_debtors}",
+                f"{total_current_debt:,.2f} €".replace(",", " "),
+                f"{total_previous_debt:,.2f} €".replace(",", " "),
+                f"{average_debt:,.2f} €".replace(",", " "),
+                f"{max_debtor_row['dlznik']} ({max_debtor_row['nedoplatok']:,.2f} €)".replace(",", " "),
+                f"{max_increase_row['dlznik']} ({max_increase_row['zmena_nedoplatku']:,.2f} €)".replace(",", " "),
+                f"{max_decrease_row['dlznik']} ({max_decrease_row['zmena_nedoplatku']:,.2f} €)".replace(",", " ")
+            ]
+        })
+
+        st.dataframe(
+            summary_table_debtors,
+            use_container_width=True,
+            hide_index=True
+        )
 with tab3:
     st.header("Objednávky")
 
@@ -316,9 +595,8 @@ with tab3:
     fig_orders_3.update_traces(textposition="outside")
 
     st.plotly_chart(fig_orders_3, use_container_width=True, key="orders_supplier_count_chart")
-
-
-
+    st.markdown("---")
+    st.subheader("Najväčšie objednávky")
 
     top_orders = (
         df_orders_filtered
@@ -346,10 +624,7 @@ with tab3:
         hide_index=True
     )
 
-
-
-
-
+    st.markdown("---")
     st.subheader("Detail dodávateľa")
     supplier_options = sorted(df_orders["dodavatel"].dropna().unique().tolist())
     supplier_options_with_empty = ["-- Vyber dodávateľa --"] + supplier_options
@@ -428,6 +703,7 @@ with tab3:
     else:
         st.info("Vyberte dodávateľa, aby sa zobrazili podrobné informácie.")
 
+    st.markdown("---")
     st.subheader("Detail objednávky")
 
     df_order_detail = df_orders_filtered.copy()
@@ -543,83 +819,89 @@ with tab3:
     st.caption(f"Nájdených objednávok: {len(filtered_order_detail)}")
 
     if not filtered_order_detail.empty:
-        table_df = filtered_order_detail[[
-            "cislo_faktury",
-            "dodavatel",
-            "predmet",
-            "cena",
-            "datum_vystavenia",
-            "ico"
-        ]].copy()
+        filtered_order_detail["datum_text"] = filtered_order_detail["datum_vystavenia"].dt.strftime("%d.%m.%Y").fillna(
+            "")
 
-        table_df = table_df.rename(columns={
-            "cislo_faktury": "Číslo faktúry",
-            "dodavatel": "Dodávateľ",
-            "predmet": "Predmet",
-            "cena": "Cena (€)",
-            "datum_vystavenia": "Dátum vystavenia",
-            "ico": "IČO"
-        })
-
-        table_df["Dátum vystavenia"] = pd.to_datetime(
-            table_df["Dátum vystavenia"],
-            errors="coerce"
-        ).dt.strftime("%d.%m.%Y")
-
-        event = st.dataframe(
-            table_df,
-            use_container_width=True,
-            hide_index=True,
-            on_select="rerun",
-            selection_mode="single-row",
-            key="orders_detail_table"
+        filtered_order_detail["select_label"] = (
+                filtered_order_detail["cislo_faktury"].replace("", "Bez čísla")
+                + " | "
+                + filtered_order_detail["dodavatel"].replace("", "Neznámy dodávateľ").str[:35]
+                + " | "
+                + filtered_order_detail["predmet"].replace("", "Bez predmetu").str[:45]
+                + " | "
+                + filtered_order_detail["datum_text"]
+                + " | "
+                + filtered_order_detail["cena"].map(lambda x: f"{x:,.2f} €".replace(",", " "))
         )
 
-        selected_rows = event.selection["rows"]
+        selected_order_idx = st.selectbox(
+            "Vyber objednávku",
+            filtered_order_detail.index.tolist(),
+            format_func=lambda idx: filtered_order_detail.loc[idx, "select_label"],
+            key="selected_order_detail_record"
+        )
 
-        if selected_rows:
-            selected_row_position = selected_rows[0]
-            selected_order = filtered_order_detail.iloc[selected_row_position]
+        selected_order = filtered_order_detail.loc[selected_order_idx]
 
-            st.markdown("### Vybraná objednávka")
+        st.markdown("### Vybraná objednávka")
 
-            col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns(3)
 
-            with col1:
-                st.metric("Cena objednávky", f"{selected_order['cena']:,.2f} €".replace(",", " "))
 
-            with col2:
-                order_date = selected_order["datum_vystavenia"]
-                st.metric(
-                    "Dátum vystavenia",
-                    order_date.strftime("%d.%m.%Y") if pd.notna(order_date) else "-"
-                )
+        order_date = selected_order["datum_vystavenia"]
+        detail_table = pd.DataFrame({
+            "Pole": [
+                "Číslo faktúry",
+                "Dodávateľ",
+                "Predmet",
+                "Cena (€)",
+                "Dátum vystavenia",
+                "IČO"
+            ],
+            "Hodnota": [
+                selected_order["cislo_faktury"] if selected_order["cislo_faktury"] else "-",
+                selected_order["dodavatel"] if selected_order["dodavatel"] else "-",
+                selected_order["predmet"] if selected_order["predmet"] else "-",
+                f"{selected_order['cena']:,.2f}".replace(",", " "),
+                order_date.strftime("%d.%m.%Y") if pd.notna(order_date) else "-",
+                selected_order["ico"] if selected_order["ico"] else "-"
+            ]
+        })
 
-            with col3:
-                st.metric("Dodávateľ", selected_order["dodavatel"] if selected_order["dodavatel"] else "-")
-
-            detail_table = pd.DataFrame({
-                "Pole": [
-                    "Číslo faktúry",
-                    "Dodávateľ",
-                    "Predmet",
-                    "Cena (€)",
-                    "Dátum vystavenia",
-                    "IČO"
-                ],
-                "Hodnota": [
-                    selected_order["cislo_faktury"] if selected_order["cislo_faktury"] else "-",
-                    selected_order["dodavatel"] if selected_order["dodavatel"] else "-",
-                    selected_order["predmet"] if selected_order["predmet"] else "-",
-                    f"{selected_order['cena']:,.2f}".replace(",", " "),
-                    order_date.strftime("%d.%m.%Y") if pd.notna(order_date) else "-",
-                    selected_order["ico"] if selected_order["ico"] else "-"
-                ]
-            })
-
-            st.dataframe(detail_table, use_container_width=True, hide_index=True)
-        else:
-            st.info("Kliknite na riadok v tabuľke, aby sa zobrazili podrobnosti objednávky.")
+        st.dataframe(detail_table, use_container_width=True, hide_index=True)
 
     else:
         st.warning("Pre zadané filtre sa nenašla žiadna objednávka.")
+
+    st.markdown("---")
+    st.subheader("Súhrnné štatistiky objednávok")
+
+    top_supplier_sum_row = top_suppliers.iloc[0]
+    top_supplier_count_row = top_suppliers_count.iloc[0]
+    top_order_day_row = orders_by_date.loc[orders_by_date["cena"].idxmax()]
+
+    total_orders = len(df_orders_filtered)
+    total_orders_sum = df_orders_filtered["cena"].sum()
+    average_order_value = df_orders_filtered["cena"].mean()
+
+    summary_table_orders = pd.DataFrame({
+        "Ukazovateľ": [
+            "Celkový počet objednávok",
+            "Celkový objem objednávok",
+            "Priemerná hodnota objednávky",
+            "Dodávateľ s najvyšším objemom objednávok",
+            "Dodávateľ s najvyšším počtom objednávok",
+            "Deň s najvyšším objemom objednávok"
+        ],
+        "Hodnota": [
+            f"{total_orders}",
+            f"{total_orders_sum:,.2f} €".replace(",", " "),
+            f"{average_order_value:,.2f} €".replace(",", " "),
+            f"{top_supplier_sum_row['dodavatel']} ({top_supplier_sum_row['cena']:,.2f} €)".replace(",", " "),
+            f"{top_supplier_count_row['dodavatel']} ({int(top_supplier_count_row['pocet_objednavok'])})",
+            f"{pd.to_datetime(top_order_day_row['datum_vystavenia']).strftime('%d.%m.%Y')} ({top_order_day_row['cena']:,.2f} €)".replace(
+                ",", " ")
+        ]
+    })
+
+    st.dataframe(summary_table_orders, use_container_width=True, hide_index=True)
