@@ -232,7 +232,9 @@ def load_debtors_data():
 
     df["nedoplatok"] = df["nedoplatok"].apply(clean_number)
     df["nedoplatok_minuly"] = df["nedoplatok_minuly"].apply(clean_number)
-
+    df = df[
+        df["mesto"].astype(str).str.strip().str.lower() == "nitra"
+        ].copy()
     return df
 
 
