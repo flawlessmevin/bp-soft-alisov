@@ -14,10 +14,9 @@ st.write("""
 Táto aplikácia slúži na vizualizáciu a prehlad otvorených dát mesta Nitra.
 
 
-Aplikácia obsahuje tri hlavné časti:
+Aplikácia obsahuje hlavné časti:
 - Demografia mesta
 - Rozpočet mesta
-- Kvalita ovzdušia
 """)
 
 
