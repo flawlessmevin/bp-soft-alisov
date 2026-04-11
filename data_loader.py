@@ -41,7 +41,7 @@ def clean_number(x):
 # DEMOGRAFIA
 # =============================
 
-
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_age_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=920:0::plac1140:_144053_5_8"
     local_path = "data/demografia/pocet_obcanov_podla_veku_DATA.json"
@@ -95,7 +95,7 @@ def load_age_data():
     return df
 #######################################
 
-
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_street_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=900:0::plac520:_144017_5_8"
     local_path = "data/demografia/pocet_obcanov_podla_ulic.json"
@@ -142,6 +142,7 @@ def load_street_data():
     return df
 ################################
 
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_population_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=880:0::plac2009:_144107_5_8"
     local_path = "data/demografia/Zoznam_Počty_občanov_v_jednotlivých_rokoch.json"
@@ -191,7 +192,7 @@ def load_population_data():
 # ROZPOCET
 # =============================
 
-
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_budget_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=440:0::plac1989:_144106_5_8"
     local_path = "data/rozpocet/Zoznam_Rozdiel_príjmov_a_výdavkov_rozpočtov_po_rokoch.json"
@@ -214,7 +215,7 @@ def load_budget_data():
     return df
 
 
-
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_debtors_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=806:0::plac2117:_272003_5_8"
     local_path = "data/rozpocet/Zoznam_Zoznam_daňových_dlžníkov.json"
@@ -235,7 +236,7 @@ def load_debtors_data():
     return df
 
 
-
+@st.cache_data(show_spinner=False, ttl=3600)
 def load_orders_data():
     url = "https://klient.nitra.sk/Default.aspx?NavigationState=781:0::plac1931:_144104_5_8"
     local_path = "data/rozpocet/Zoznam_Dodávateľské_faktúry.json"
@@ -264,5 +265,5 @@ def load_orders_data():
 
     return df
 
-    
+
 
