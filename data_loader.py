@@ -2,6 +2,36 @@ import pandas as pd
 import requests
 from io import BytesIO
 
+from pathlib import Path
+import streamlit as st
+
+
+
+def _download_json_bytes(url: str, timeout: int = 20) -> bytes:
+    response = requests.get(url, timeout=timeout)
+    response.raise_for_status()
+    return response.content
+
+
+@st.cache_data(show_spinner=False, ttl=3600)
+def load_json_with_fallback(url: str, local_path: str) -> pd.DataFrame:
+    local_file = Path(local_path)
+    local_file.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        content = _download_json_bytes(url)
+        df = pd.read_json(io.BytesIO(content))
+        local_file.write_bytes(content)
+        return df
+
+    except Exception:
+        if local_file.exists():
+            return pd.read_json(local_file)
+        raise
+
+
+
+
 
 def clean_number(x):
     return float(str(x).replace(" ", "").replace(",", "."))
@@ -13,8 +43,9 @@ def clean_number(x):
 
 
 def load_age_data():
-    file_path = "data/demografia/pocet_obcanov_podla_veku_DATA.json"
-    df = pd.read_json(file_path)
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=920:0::plac1140:_144053_5_8"
+    local_path = "data/demografia/pocet_obcanov_podla_veku_DATA.json"
+    df = load_json_with_fallback(url, local_path)
 
     df = df.rename(columns={
         "Vek": "vek",
@@ -66,8 +97,9 @@ def load_age_data():
 
 
 def load_street_data():
-    file_path = "data/demografia/pocet_obcanov_podla_ulic.json"
-    df = pd.read_json(file_path)
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=900:0::plac520:_144017_5_8"
+    local_path = "data/demografia/pocet_obcanov_podla_ulic.json"
+    df = load_json_with_fallback(url, local_path)
 
     df = df.rename(columns={
         "Ulica": "ulica",
@@ -111,15 +143,17 @@ def load_street_data():
 ################################
 
 def load_population_data():
-    file_path = "data/demografia/pocety_obcanov_v_jednotlivych_rokoch.xlsx"
-    df = pd.read_excel(file_path)
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=880:0::plac2009:_144107_5_8"
+    local_path = "data/demografia/Zoznam_Počty_občanov_v_jednotlivých_rokoch.json"
+    df = load_json_with_fallback(url, local_path)
 
-    df["Rok"] = df["Rok"].astype(int)
-    df = df.sort_values("Rok").reset_index(drop=True)
-    df["Saldo"] = df["Prírastok"] - df["Úbytok"]
-    df["Zmena_%"] = df["Počet občanov spolu"].pct_change() * 100
-
-
+    df = df.rename(columns={
+        "Počet_občanov_spolu": "Počet občanov spolu",
+        "Počet_mužov": "Počet mužov",
+        "Počet_žien": "Počet žien",
+        "Úbytok": "Úbytok",
+        "Prírastok": "Prírastok"
+    })
 
     numeric_cols = [
         "Počet občanov spolu",
@@ -132,10 +166,16 @@ def load_population_data():
     for col in numeric_cols:
         df[col] = df[col].apply(clean_number)
 
+    df["Rok"] = pd.to_numeric(df["Rok"], errors="coerce")
+    df = df.dropna(subset=["Rok"]).copy()
+    df["Rok"] = df["Rok"].astype(int)
+
+    df = df.sort_values("Rok").reset_index(drop=True)
+
+    df["Saldo"] = df["Prírastok"] - df["Úbytok"]
+    df["Zmena_%"] = df["Počet občanov spolu"].pct_change() * 100
 
     return df
-
-
 
 
 
@@ -153,8 +193,9 @@ def load_population_data():
 
 
 def load_budget_data():
-    file_path = "data/rozpocet/Rozpocet.xlsx"
-    df = pd.read_excel(file_path)
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=440:0::plac1989:_144106_5_8"
+    local_path = "data/rozpocet/Zoznam_Rozdiel_príjmov_a_výdavkov_rozpočtov_po_rokoch.json"
+    df = load_json_with_fallback(url, local_path)
 
 
 
@@ -175,7 +216,9 @@ def load_budget_data():
 
 
 def load_debtors_data():
-    df = pd.read_json("data/rozpocet/Zoznam_Zoznam_daňových_dlžníkov.json")
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=806:0::plac2117:_272003_5_8"
+    local_path = "data/rozpocet/Zoznam_Zoznam_daňových_dlžníkov.json"
+    df = load_json_with_fallback(url, local_path)
 
     df = df.rename(columns={
         "Dlžník": "dlznik",
@@ -194,7 +237,10 @@ def load_debtors_data():
 
 
 def load_orders_data():
-    df = pd.read_json("data/rozpocet/Zoznam_Dodávateľské_faktúry.json")
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=781:0::plac1931:_144104_5_8"
+    local_path = "data/rozpocet/Zoznam_Dodávateľské_faktúry.json"
+
+    df = load_json_with_fallback(url, local_path)
 
     df = df.rename(columns={
         "Číslo_faktúry": "cislo_faktury",
@@ -217,4 +263,6 @@ def load_orders_data():
     df["rok"] = df["datum_vystavenia"].dt.year
 
     return df
+
+    
 
