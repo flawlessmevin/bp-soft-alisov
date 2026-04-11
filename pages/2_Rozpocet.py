@@ -274,7 +274,7 @@ with tab2:
                 "nedoplatok": "Suma nedoplatku (€)",
                 "dlznik": "Dlžník"
             },
-            title="Top 10 daňových dlžníkov v meste Nitra"
+            title="10 najväčších daňových dlžníkov v meste Nitra"
         )
 
         fig_debt_1.update_traces(

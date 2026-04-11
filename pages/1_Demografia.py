@@ -102,12 +102,13 @@ elif selected_gender_view == "Ženy":
 tab1, tab2, tab3 = st.tabs([
     "Veková štruktúra",
     "Vývoj populácie",
-    "Ulice mesta"
+    "Štatistika ulíc"
 ])
 # =============================
 # TAB 1 - VEKOVÁ ŠTRUKTÚRA
 # =============================
 with tab1:
+    st.header("Veková štruktúra")
     df_filtered = df_age[
         (df_age["vek"] >= selected_age_range[0]) &
         (df_age["vek"] <= selected_age_range[1])
@@ -235,7 +236,7 @@ with tab1:
 # TAB 2 - VÝVOJ POPULÁCIE
 # =============================
 with tab2:
-    st.header("Vývoj populácie mesta Nitra")
+    st.header("Vývoj populácie")
 
     df_pop_filtered = df_pop[
         (df_pop["Rok"] >= selected_year_range[0]) &
@@ -331,7 +332,7 @@ with tab2:
 # TAB 3 - Demografia podľa ulíc
 # =============================
 with tab3:
-    st.header("Demografia podľa ulíc")
+    st.header("Štatistika ulíc")
 
     df_street_filtered = df_street.copy()
 
