@@ -50,7 +50,7 @@ only_increased_debt_sidebar = st.sidebar.checkbox(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("Objednávky")
+st.sidebar.subheader("Dodávateľské faktúry")
 
 
 order_price_range = st.sidebar.slider(
@@ -103,7 +103,7 @@ st.sidebar.button("🔄 Resetovať filtre", on_click=reset_filters)
 tab1, tab2, tab3,  = st.tabs([
     "Príjmy a výdavky",
     "Daňoví dlžníci",
-    "Objednávky"
+    "Dodávateľské faktúry"
 ])
 # =============================
 # TAB 1 - PRÍJMY A VÝDAVKY
@@ -187,8 +187,8 @@ with tab1:
             "Rok s najväčším schodkom",
             "Celkové príjmy za sledované obdobie",
             "Celkové výdavky za sledované obdobie",
-            "Priemerná efektivita hospodárenia",
-            "Celkový výsledok hospodárenia"
+            "Priemerná efektívnosť riadenia",
+            "Celkový výsledok riadenia"
         ],
         "Hodnota": [
             f"{int(max_income_row['Rok'])} ({max_income_row['Príjmy']:,.2f} €)".replace(",", " "),
@@ -203,7 +203,8 @@ with tab1:
     })
 
     st.dataframe(summary_table_budget, use_container_width=True, hide_index=True)
-
+    st.markdown("---")
+    st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")
 
 
 # =============================
@@ -515,8 +516,10 @@ with tab2:
             use_container_width=True,
             hide_index=True
         )
+        st.markdown("---")
+        st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")
 with tab3:
-    st.header("Objednávky")
+    st.header("Dodávateľské faktúry")
 
 
 
@@ -892,3 +895,5 @@ with tab3:
     })
 
     st.dataframe(summary_table_orders, use_container_width=True, hide_index=True)
+    st.markdown("---")
+    st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")

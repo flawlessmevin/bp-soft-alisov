@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+import io
 from io import BytesIO
 
 from pathlib import Path
@@ -240,7 +241,7 @@ def load_debtors_data():
 
 @st.cache_data(show_spinner=False, ttl=3600)
 def load_orders_data():
-    url = "https://klient.nitra.sk/Default.aspx?NavigationState=781:0::plac1931:_144104_5_8"
+    url = "https://klient.nitra.sk/Default.aspx?NavigationState=779:0::plac1929:_144102_5_8"
     local_path = "data/rozpocet/Zoznam_Dodávateľské_faktúry.json"
 
     df = load_json_with_fallback(url, local_path)

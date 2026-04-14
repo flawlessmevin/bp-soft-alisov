@@ -230,7 +230,8 @@ with tab1:
     })
 
     st.dataframe(summary_table_tab1, use_container_width=True, hide_index=True)
-
+    st.markdown("---")
+    st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")
 
 # =============================
 # TAB 2 - VÝVOJ POPULÁCIE
@@ -326,7 +327,8 @@ with tab2:
     })
 
     st.dataframe(summary_table, use_container_width=True, hide_index=True)
-
+    st.markdown("---")
+    st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")
 
 # =============================
 # TAB 3 - Demografia podľa ulíc
@@ -517,3 +519,7 @@ with tab3:
     })
 
     st.dataframe(summary_table_tab3, use_container_width=True, hide_index=True)
+
+    st.markdown("---")
+    st.caption("Zdroj dát: [Mesto Nitra - OPEN DATA](https://klient.nitra.sk/default.aspx?NavigationState=1100:0:)")
+
