@@ -33,7 +33,27 @@ st.sidebar.subheader("Veková štruktúra")
 
 min_age = int(df_age["vek"].min())
 max_age = int(df_age["vek"].max())
+min_year = int(df_pop["Rok"].min())
+max_year = int(df_pop["Rok"].max())
 
+
+if "age_range" not in st.session_state:
+    st.session_state["age_range"] = (min_age, max_age)
+
+if "gender_view" not in st.session_state:
+    st.session_state["gender_view"] = "Všetci"
+
+if "year_range" not in st.session_state:
+    st.session_state["year_range"] = (min_year, max_year)
+
+if "street_metric" not in st.session_state:
+    st.session_state["street_metric"] = "Všetci"
+
+if "top_n_streets" not in st.session_state:
+    st.session_state["top_n_streets"] = 10
+
+if "selected_street" not in st.session_state:
+    st.session_state["selected_street"] = ""
 selected_age_range = st.sidebar.slider(
     "Vekový rozsah",
     min_age,
@@ -51,8 +71,7 @@ st.sidebar.markdown("---")
 
 st.sidebar.subheader("Vývoj populácie")
 
-min_year = int(df_pop["Rok"].min())
-max_year = int(df_pop["Rok"].max())
+
 
 selected_year_range = st.sidebar.slider(
     "Rozsah rokov",

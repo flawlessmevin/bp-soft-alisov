@@ -60,7 +60,7 @@
     "Adresa_dlžníka": "Novomeského 505/45",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   241,95",
-    "Suma_daňových_nedoplatkov": "   178,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -132,7 +132,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   575,08",
-    "Suma_daňových_nedoplatkov": "   575,08",
+    "Suma_daňových_nedoplatkov": "   522,08",
     "Mena": "EUR"
   },
   {
@@ -364,7 +364,7 @@
     "Adresa_dlžníka": "Petzwalova 544/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   430,63",
-    "Suma_daňových_nedoplatkov": "   403,87",
+    "Suma_daňových_nedoplatkov": "   390,49",
     "Mena": "EUR"
   },
   {
@@ -804,7 +804,7 @@
     "Adresa_dlžníka": "Rastislavova 261/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 396,90",
-    "Suma_daňových_nedoplatkov": "  2 396,90",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -812,7 +812,7 @@
     "Adresa_dlžníka": "Družstevná 2676/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   293,28",
-    "Suma_daňových_nedoplatkov": "   293,28",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -924,7 +924,7 @@
     "Adresa_dlžníka": "Lipová 178/49",
     "Mesto": "Čechynce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   393,23",
-    "Suma_daňových_nedoplatkov": "   393,23",
+    "Suma_daňových_nedoplatkov": "   363,23",
     "Mena": "EUR"
   },
   {
@@ -964,7 +964,7 @@
     "Adresa_dlžníka": "Orechov dvor 451/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 755,12",
-    "Suma_daňových_nedoplatkov": "  1 755,12",
+    "Suma_daňových_nedoplatkov": "  1 650,12",
     "Mena": "EUR"
   },
   {
@@ -996,7 +996,7 @@
     "Adresa_dlžníka": "Bajkalská 679/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   354,50",
-    "Suma_daňových_nedoplatkov": "   301,25",
+    "Suma_daňových_nedoplatkov": "   259,25",
     "Mena": "EUR"
   },
   {
@@ -1556,7 +1556,7 @@
     "Adresa_dlžníka": "Námestie sv. Michala 12",
     "Mesto": "Hlohovec",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -1764,7 +1764,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   292,88",
-    "Suma_daňových_nedoplatkov": "   292,88",
+    "Suma_daňových_nedoplatkov": "   92,88",
     "Mena": "EUR"
   },
   {
@@ -1780,7 +1780,7 @@
     "Adresa_dlžníka": "Mlynská 176/14",
     "Mesto": "Maňa",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   187,41",
-    "Suma_daňových_nedoplatkov": "   187,41",
+    "Suma_daňových_nedoplatkov": "   168,82",
     "Mena": "EUR"
   },
   {
@@ -1877,14 +1877,6 @@
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   520,30",
     "Suma_daňových_nedoplatkov": "   520,30",
-    "Mena": "EUR"
-  },
-  {
-    "Dlžník": "Anna Gombíková",
-    "Adresa_dlžníka": "Štúrova 1436/26",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   896,71",
-    "Suma_daňových_nedoplatkov": "   896,71",
     "Mena": "EUR"
   },
   {
@@ -2052,7 +2044,7 @@
     "Adresa_dlžníka": "Partizánska 442/87",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   303,75",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -2068,7 +2060,7 @@
     "Adresa_dlžníka": "Novomeského 498/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   204,23",
-    "Suma_daňových_nedoplatkov": "   204,23",
+    "Suma_daňových_nedoplatkov": "   70,00",
     "Mena": "EUR"
   },
   {
@@ -2332,7 +2324,7 @@
     "Adresa_dlžníka": "Panónska cesta 39",
     "Mesto": "Bratislava-Petržalka",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 791,80",
-    "Suma_daňových_nedoplatkov": "  2 791,80",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -2340,7 +2332,7 @@
     "Adresa_dlžníka": "Mostná 232/42",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 664,52",
-    "Suma_daňových_nedoplatkov": "  1 664,52",
+    "Suma_daňových_nedoplatkov": "  1 173,12",
     "Mena": "EUR"
   },
   {
@@ -2356,7 +2348,7 @@
     "Adresa_dlžníka": "Novozámocká 17/99",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 012,20",
-    "Suma_daňových_nedoplatkov": "  2 012,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -2412,7 +2404,7 @@
     "Adresa_dlžníka": "Škultétyho 531/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   243,00",
-    "Suma_daňových_nedoplatkov": "   190,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -2428,7 +2420,7 @@
     "Adresa_dlžníka": "Roľnícka 544/61",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   648,00",
-    "Suma_daňových_nedoplatkov": "   422,62",
+    "Suma_daňových_nedoplatkov": "   343,99",
     "Mena": "EUR"
   },
   {
@@ -2484,7 +2476,7 @@
     "Adresa_dlžníka": "Jurkovičova 412/33",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   581,98",
-    "Suma_daňových_nedoplatkov": "   416,92",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -2492,7 +2484,7 @@
     "Adresa_dlžníka": "Trieda Andreja Hlinku 605/11",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   166,59",
-    "Suma_daňových_nedoplatkov": "   166,59",
+    "Suma_daňových_nedoplatkov": "   60,69",
     "Mena": "EUR"
   },
   {
@@ -2604,7 +2596,7 @@
     "Adresa_dlžníka": "Látečkovej 876/1A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   169,60",
-    "Suma_daňových_nedoplatkov": "   169,60",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -2660,7 +2652,7 @@
     "Adresa_dlžníka": "Dubíkova 165/26",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   317,00",
-    "Suma_daňových_nedoplatkov": "   317,00",
+    "Suma_daňových_nedoplatkov": "   264,00",
     "Mena": "EUR"
   },
   {
@@ -2748,7 +2740,7 @@
     "Adresa_dlžníka": "Kľúčovského 650/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 038,94",
-    "Suma_daňových_nedoplatkov": "   462,00",
+    "Suma_daňových_nedoplatkov": "   50,00",
     "Mena": "EUR"
   },
   {
@@ -2893,14 +2885,6 @@
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   164,38",
     "Suma_daňových_nedoplatkov": "   0,00",
-    "Mena": "EUR"
-  },
-  {
-    "Dlžník": "Bohuš Viskup",
-    "Adresa_dlžníka": "súp. č. 455",
-    "Mesto": "Lehota",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   568,64",
-    "Suma_daňových_nedoplatkov": "   568,64",
     "Mena": "EUR"
   },
   {
@@ -3060,7 +3044,7 @@
     "Adresa_dlžníka": "Dvorčanská 386/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   264,65",
-    "Suma_daňových_nedoplatkov": "   264,65",
+    "Suma_daňových_nedoplatkov": "   214,65",
     "Mena": "EUR"
   },
   {
@@ -3068,7 +3052,7 @@
     "Adresa_dlžníka": "Doležalova 214/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   967,32",
-    "Suma_daňových_nedoplatkov": "   767,32",
+    "Suma_daňových_nedoplatkov": "   608,32",
     "Mena": "EUR"
   },
   {
@@ -3076,7 +3060,7 @@
     "Adresa_dlžníka": "Hlavná 195/47",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   426,01",
-    "Suma_daňových_nedoplatkov": "   426,01",
+    "Suma_daňových_nedoplatkov": "   414,01",
     "Mena": "EUR"
   },
   {
@@ -3196,7 +3180,7 @@
     "Adresa_dlžníka": "Priemyselná 84/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  5 054,50",
-    "Suma_daňových_nedoplatkov": "  5 054,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -3212,7 +3196,7 @@
     "Adresa_dlžníka": "Samova 983/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  5 376,80",
-    "Suma_daňových_nedoplatkov": "  5 376,80",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -3332,7 +3316,7 @@
     "Adresa_dlžníka": "Ďurková 1169/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   106,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -3404,7 +3388,7 @@
     "Adresa_dlžníka": "Zoborská 412/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   197,33",
-    "Suma_daňových_nedoplatkov": "   197,33",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -3476,7 +3460,7 @@
     "Adresa_dlžníka": "Fraňa Kráľa 90/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   53,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -3588,7 +3572,7 @@
     "Adresa_dlžníka": "Javorová 640/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   257,50",
-    "Suma_daňových_nedoplatkov": "   257,50",
+    "Suma_daňových_nedoplatkov": "   231,25",
     "Mena": "EUR"
   },
   {
@@ -3604,7 +3588,7 @@
     "Adresa_dlžníka": "Orechov dvor 490/32",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 955,46",
-    "Suma_daňových_nedoplatkov": "  1 955,46",
+    "Suma_daňových_nedoplatkov": "  1 877,86",
     "Mena": "EUR"
   },
   {
@@ -3625,10 +3609,10 @@
   },
   {
     "Dlžník": "Daniela Balleková",
-    "Adresa_dlžníka": "Rýnska 152/9",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   435,00",
-    "Suma_daňových_nedoplatkov": "   435,00",
+    "Suma_daňových_nedoplatkov": "   309,00",
     "Mena": "EUR"
   },
   {
@@ -3896,9 +3880,9 @@
     "Mena": "EUR"
   },
   {
-    "Dlžník": "Dariusz Žuk-Olszewski",
-    "Adresa_dlžníka": "Murániho 116/36",
-    "Mesto": "Nitra",
+    "Dlžník": "Dariusz Žuk-Olszewski, PhD.",
+    "Adresa_dlžníka": "Orgovánová ulica 4399/23",
+    "Mesto": "Cabaj-Čápor",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   168,94",
     "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
@@ -4324,7 +4308,7 @@
     "Adresa_dlžníka": "Diaľničná cesta súp. č. 2",
     "Mesto": "Senec",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  14 886,30",
-    "Suma_daňových_nedoplatkov": "  14 886,30",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -4348,7 +4332,7 @@
     "Adresa_dlžníka": "Medzi vodami 617/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   583,70",
-    "Suma_daňových_nedoplatkov": "   583,70",
+    "Suma_daňových_nedoplatkov": "   559,45",
     "Mena": "EUR"
   },
   {
@@ -4548,7 +4532,7 @@
     "Adresa_dlžníka": "Štiavnická 689/18",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -4724,7 +4708,7 @@
     "Adresa_dlžníka": "Partizánska 439/69",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   162,00",
-    "Suma_daňových_nedoplatkov": "   162,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -4820,7 +4804,7 @@
     "Adresa_dlžníka": "Novohorská súp. č. 632",
     "Mesto": "Vinohrady nad Váhom",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 551,87",
-    "Suma_daňových_nedoplatkov": "  1 051,87",
+    "Suma_daňových_nedoplatkov": "   551,87",
     "Mena": "EUR"
   },
   {
@@ -4892,7 +4876,7 @@
     "Adresa_dlžníka": "Murániho 30/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -5148,7 +5132,7 @@
     "Adresa_dlžníka": "Priemyselná 349/11",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  8 065,20",
-    "Suma_daňových_nedoplatkov": "  8 065,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -5156,7 +5140,7 @@
     "Adresa_dlžníka": "Fraňa Kráľa 1716/43",
     "Mesto": "Komjatice",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   169,60",
-    "Suma_daňových_nedoplatkov": "   169,60",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -5188,7 +5172,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Martin",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 472,13",
-    "Suma_daňových_nedoplatkov": "  1 472,13",
+    "Suma_daňových_nedoplatkov": "   964,96",
     "Mena": "EUR"
   },
   {
@@ -5300,7 +5284,7 @@
     "Adresa_dlžníka": "Štefánikova trieda 20/35",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 970,89",
-    "Suma_daňových_nedoplatkov": "  2 953,63",
+    "Suma_daňových_nedoplatkov": "  2 945,21",
     "Mena": "EUR"
   },
   {
@@ -5412,7 +5396,7 @@
     "Adresa_dlžníka": "Bratislavská 254/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  8 758,41",
-    "Suma_daňových_nedoplatkov": "  3 658,41",
+    "Suma_daňových_nedoplatkov": "  2 650,26",
     "Mena": "EUR"
   },
   {
@@ -5617,7 +5601,7 @@
   },
   {
     "Dlžník": "Erika Bulková",
-    "Adresa_dlžníka": "Tokajská 135/2",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   182,00",
     "Suma_daňových_nedoplatkov": "   182,00",
@@ -5652,7 +5636,7 @@
     "Adresa_dlžníka": "Hlavná súp. č. 92",
     "Mesto": "Klasov",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -5820,7 +5804,7 @@
     "Adresa_dlžníka": "Bratislavská 2946/24",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 740,10",
-    "Suma_daňových_nedoplatkov": "  2 740,10",
+    "Suma_daňových_nedoplatkov": "  1 740,10",
     "Mena": "EUR"
   },
   {
@@ -5860,7 +5844,7 @@
     "Adresa_dlžníka": "Inovecká 526/26",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   174,00",
-    "Suma_daňových_nedoplatkov": "   174,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -5972,7 +5956,7 @@
     "Adresa_dlžníka": "Cabaj súp. č. 923",
     "Mesto": "Cabaj-Čápor",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   336,05",
-    "Suma_daňových_nedoplatkov": "   336,05",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -6012,7 +5996,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   245,50",
-    "Suma_daňových_nedoplatkov": "   124,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -6060,7 +6044,7 @@
     "Adresa_dlžníka": "Vodná 1119/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -6436,7 +6420,7 @@
     "Adresa_dlžníka": "Vinohradská ulica 372/12",
     "Mesto": "Kolíňany",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 775,54",
-    "Suma_daňových_nedoplatkov": "  1 775,54",
+    "Suma_daňových_nedoplatkov": "   700,18",
     "Mena": "EUR"
   },
   {
@@ -6452,7 +6436,7 @@
     "Adresa_dlžníka": "Murgašova 1165/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  5 546,20",
-    "Suma_daňových_nedoplatkov": "  5 546,20",
+    "Suma_daňových_nedoplatkov": "   66,00",
     "Mena": "EUR"
   },
   {
@@ -6596,7 +6580,7 @@
     "Adresa_dlžníka": "Ivanská 1308/1",
     "Mesto": "Mojmírovce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   180,90",
-    "Suma_daňových_nedoplatkov": "   180,90",
+    "Suma_daňových_nedoplatkov": "   151,00",
     "Mena": "EUR"
   },
   {
@@ -6636,7 +6620,7 @@
     "Adresa_dlžníka": "Jurkovičova 371/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -6788,7 +6772,7 @@
     "Adresa_dlžníka": "Hornozoborská 1626/65",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   586,56",
-    "Suma_daňových_nedoplatkov": "   586,56",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -7092,7 +7076,7 @@
     "Adresa_dlžníka": "Svätourbanská 103/29",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  4 453,40",
-    "Suma_daňových_nedoplatkov": "  2 687,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -7180,7 +7164,7 @@
     "Adresa_dlžníka": "Novomeského 514/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   221,00",
-    "Suma_daňových_nedoplatkov": "   221,00",
+    "Suma_daňových_nedoplatkov": "   198,00",
     "Mena": "EUR"
   },
   {
@@ -7252,7 +7236,7 @@
     "Adresa_dlžníka": "Telgártska 115/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
-    "Suma_daňových_nedoplatkov": "   209,42",
+    "Suma_daňových_nedoplatkov": "   139,20",
     "Mena": "EUR"
   },
   {
@@ -7316,7 +7300,7 @@
     "Adresa_dlžníka": "Partizánska 443/91",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   278,59",
-    "Suma_daňových_nedoplatkov": "   278,59",
+    "Suma_daňových_nedoplatkov": "   66,59",
     "Mena": "EUR"
   },
   {
@@ -7580,7 +7564,7 @@
     "Adresa_dlžníka": "Farská 1322/16",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  4 138,60",
-    "Suma_daňových_nedoplatkov": "  4 138,60",
+    "Suma_daňových_nedoplatkov": "  3 332,60",
     "Mena": "EUR"
   },
   {
@@ -7632,14 +7616,6 @@
     "Mena": "EUR"
   },
   {
-    "Dlžník": "Igor Baláž",
-    "Adresa_dlžníka": "Bellova 447/12",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   349,70",
-    "Suma_daňových_nedoplatkov": "   349,70",
-    "Mena": "EUR"
-  },
-  {
     "Dlžník": "Igor Benca",
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
@@ -7673,7 +7649,7 @@
   },
   {
     "Dlžník": "Igor Brňo",
-    "Adresa_dlžníka": "Jurkovičova 392/23",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   299,00",
     "Suma_daňových_nedoplatkov": "   299,00",
@@ -7796,7 +7772,7 @@
     "Adresa_dlžníka": "Škultétyho 527/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   468,00",
-    "Suma_daňových_nedoplatkov": "   468,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -7916,7 +7892,7 @@
     "Adresa_dlžníka": "Dolné Sľažany súp. č. 733",
     "Mesto": "Sľažany",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   274,58",
-    "Suma_daňových_nedoplatkov": "   274,58",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -7996,7 +7972,7 @@
     "Adresa_dlžníka": "Hornozoborská 1611/35",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8060,7 +8036,7 @@
     "Adresa_dlžníka": "Kalinčiakova 503/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8156,7 +8132,7 @@
     "Adresa_dlžníka": "Južná 1633/36",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   435,00",
-    "Suma_daňových_nedoplatkov": "   435,00",
+    "Suma_daňových_nedoplatkov": "   285,00",
     "Mena": "EUR"
   },
   {
@@ -8180,7 +8156,7 @@
     "Adresa_dlžníka": "Ľudovíta Okánika 592/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  6 628,03",
-    "Suma_daňových_nedoplatkov": "  6 628,03",
+    "Suma_daňových_nedoplatkov": "  1 850,16",
     "Mena": "EUR"
   },
   {
@@ -8228,7 +8204,7 @@
     "Adresa_dlžníka": "Jelenecká 2305/46",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   543,50",
-    "Suma_daňových_nedoplatkov": "   543,50",
+    "Suma_daňových_nedoplatkov": "   274,25",
     "Mena": "EUR"
   },
   {
@@ -8289,7 +8265,7 @@
   },
   {
     "Dlžník": "Ing. Ján Ďuriš",
-    "Adresa_dlžníka": "Orechová 2333/11",
+    "Adresa_dlžníka": "Podhorská 5568/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   204,47",
     "Suma_daňových_nedoplatkov": "   204,47",
@@ -8300,7 +8276,7 @@
     "Adresa_dlžníka": "Čajkovského 428/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8356,7 +8332,7 @@
     "Adresa_dlžníka": "Farská 1294/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   215,89",
-    "Suma_daňových_nedoplatkov": "   53,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8364,7 +8340,7 @@
     "Adresa_dlžníka": "Hornočermánska 1715/71D",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8388,7 +8364,7 @@
     "Adresa_dlžníka": "Stračia 664/46",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,77",
-    "Suma_daňových_nedoplatkov": "   53,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8580,7 +8556,7 @@
     "Adresa_dlžníka": "Brigádnická 274/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   290,00",
-    "Suma_daňových_nedoplatkov": "   290,00",
+    "Suma_daňových_nedoplatkov": "   190,00",
     "Mena": "EUR"
   },
   {
@@ -8596,7 +8572,7 @@
     "Adresa_dlžníka": "Sadová 5028/22",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   285,00",
-    "Suma_daňových_nedoplatkov": "   285,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8609,8 +8585,8 @@
   },
   {
     "Dlžník": "Ing. Lenka Droppová",
-    "Adresa_dlžníka": "Priezračná 917/3",
-    "Mesto": "Nitra",
+    "Adresa_dlžníka": "Na Štrkovisko 1406/23",
+    "Mesto": "Ivanka pri Nitre",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   234,00",
     "Suma_daňových_nedoplatkov": "   234,00",
     "Mena": "EUR"
@@ -8636,7 +8612,7 @@
     "Adresa_dlžníka": "Azalková 3394/31",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   340,50",
-    "Suma_daňových_nedoplatkov": "   210,84",
+    "Suma_daňových_nedoplatkov": "   1,84",
     "Mena": "EUR"
   },
   {
@@ -8652,7 +8628,7 @@
     "Adresa_dlžníka": "Na Hôrke 42/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   436,00",
-    "Suma_daňových_nedoplatkov": "   436,00",
+    "Suma_daňových_nedoplatkov": "   309,00",
     "Mena": "EUR"
   },
   {
@@ -8876,7 +8852,7 @@
     "Adresa_dlžníka": "Pod trnkami 289/36",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -8908,7 +8884,7 @@
     "Adresa_dlžníka": "Kamenná 5147/84",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9004,7 +8980,7 @@
     "Adresa_dlžníka": "Partizánska 45/55",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 344,20",
-    "Suma_daňových_nedoplatkov": "  1 344,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9012,7 +8988,7 @@
     "Adresa_dlžníka": "Vašinova 112/35",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   293,28",
-    "Suma_daňových_nedoplatkov": "   293,28",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9028,7 +9004,7 @@
     "Adresa_dlžníka": "Schurmannova 1207/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   213,78",
-    "Suma_daňových_nedoplatkov": "   213,78",
+    "Suma_daňových_nedoplatkov": "   118,38",
     "Mena": "EUR"
   },
   {
@@ -9044,7 +9020,7 @@
     "Adresa_dlžníka": "Jelenecká 2301/22",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9356,7 +9332,7 @@
     "Adresa_dlžníka": "Dobšinského 2813/31",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   919,56",
-    "Suma_daňových_nedoplatkov": "   919,56",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9364,7 +9340,7 @@
     "Adresa_dlžníka": "Gladiolová 2380/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   351,00",
-    "Suma_daňových_nedoplatkov": "   351,00",
+    "Suma_daňových_nedoplatkov": "   245,00",
     "Mena": "EUR"
   },
   {
@@ -9540,7 +9516,7 @@
     "Adresa_dlžníka": "Matičná ulica 905/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -9548,7 +9524,7 @@
     "Adresa_dlžníka": "Pod kostolíkom 767/25A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   424,00",
-    "Suma_daňových_nedoplatkov": "   424,00",
+    "Suma_daňových_nedoplatkov": "   224,00",
     "Mena": "EUR"
   },
   {
@@ -9636,7 +9612,7 @@
     "Adresa_dlžníka": "Dlhá 556/195",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9676,7 +9652,7 @@
     "Adresa_dlžníka": "Doležalova 1715/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   519,54",
-    "Suma_daňových_nedoplatkov": "   519,54",
+    "Suma_daňových_nedoplatkov": "   28,50",
     "Mena": "EUR"
   },
   {
@@ -9684,7 +9660,7 @@
     "Adresa_dlžníka": "Pri cvičisku 1694/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   254,12",
-    "Suma_daňových_nedoplatkov": "   106,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9700,7 +9676,7 @@
     "Adresa_dlžníka": "Piaristická 1366/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   343,54",
-    "Suma_daňových_nedoplatkov": "   298,54",
+    "Suma_daňových_nedoplatkov": "   268,54",
     "Mena": "EUR"
   },
   {
@@ -9716,7 +9692,7 @@
     "Adresa_dlžníka": "Kmeťova 24/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   780,18",
-    "Suma_daňových_nedoplatkov": "   780,18",
+    "Suma_daňových_nedoplatkov": "   561,18",
     "Mena": "EUR"
   },
   {
@@ -9788,7 +9764,7 @@
     "Adresa_dlžníka": "Bazovského 410/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -9828,7 +9804,7 @@
     "Adresa_dlžníka": "Považská 15/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   419,00",
-    "Suma_daňových_nedoplatkov": "   419,00",
+    "Suma_daňových_nedoplatkov": "   229,00",
     "Mena": "EUR"
   },
   {
@@ -9836,7 +9812,7 @@
     "Adresa_dlžníka": "Švermova 1139/25",
     "Mesto": "Šaľa",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   525,00",
-    "Suma_daňových_nedoplatkov": "   525,00",
+    "Suma_daňových_nedoplatkov": "   378,36",
     "Mena": "EUR"
   },
   {
@@ -9916,7 +9892,7 @@
     "Adresa_dlžníka": "Jazerná 654/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   257,26",
-    "Suma_daňových_nedoplatkov": "   53,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -9972,7 +9948,7 @@
     "Adresa_dlžníka": "Hlavná 1328/65",
     "Mesto": "Veľké Zálužie",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 688,40",
-    "Suma_daňových_nedoplatkov": "  2 688,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -10076,7 +10052,7 @@
     "Adresa_dlžníka": "Bulharská 1262/36",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -10120,14 +10096,6 @@
     "Mena": "EUR"
   },
   {
-    "Dlžník": "Ivan Čepček",
-    "Adresa_dlžníka": "Nedbalova 538/9",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   696,45",
-    "Suma_daňových_nedoplatkov": "   696,45",
-    "Mena": "EUR"
-  },
-  {
     "Dlžník": "Ivan Čerči",
     "Adresa_dlžníka": "súp. č. 801",
     "Mesto": "Jablonica",
@@ -10140,7 +10108,7 @@
     "Adresa_dlžníka": "Tekovská 1829/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 206,04",
-    "Suma_daňových_nedoplatkov": "   978,04",
+    "Suma_daňových_nedoplatkov": "   902,04",
     "Mena": "EUR"
   },
   {
@@ -10156,7 +10124,7 @@
     "Adresa_dlžníka": "Kláštorská 377/110",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   245,11",
-    "Suma_daňových_nedoplatkov": "   245,11",
+    "Suma_daňových_nedoplatkov": "   139,11",
     "Mena": "EUR"
   },
   {
@@ -10412,7 +10380,7 @@
     "Adresa_dlžníka": "Moyzesova 543/27",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   285,70",
-    "Suma_daňových_nedoplatkov": "   285,70",
+    "Suma_daňových_nedoplatkov": "   20,70",
     "Mena": "EUR"
   },
   {
@@ -10436,7 +10404,7 @@
     "Adresa_dlžníka": "Južná 1656/42",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -10540,7 +10508,7 @@
     "Adresa_dlžníka": "súp. č. 296",
     "Mesto": "Alekšince",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   362,00",
-    "Suma_daňových_nedoplatkov": "   362,00",
+    "Suma_daňových_nedoplatkov": "   292,00",
     "Mena": "EUR"
   },
   {
@@ -10652,7 +10620,7 @@
     "Adresa_dlžníka": "Orechov dvor 490/18",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   347,14",
-    "Suma_daňových_nedoplatkov": "   347,14",
+    "Suma_daňových_nedoplatkov": "   207,14",
     "Mena": "EUR"
   },
   {
@@ -10932,7 +10900,7 @@
     "Adresa_dlžníka": "Jelenecká 3261/45C",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   274,00",
-    "Suma_daňových_nedoplatkov": "   274,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -11004,7 +10972,7 @@
     "Adresa_dlžníka": "Horné lúky 4540/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  15 547,55",
-    "Suma_daňových_nedoplatkov": "  15 552,95",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -11212,7 +11180,7 @@
     "Adresa_dlžníka": "Petzwalova 550/32",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   193,00",
-    "Suma_daňových_nedoplatkov": "   193,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -11265,7 +11233,7 @@
   },
   {
     "Dlžník": "Ján Greguš",
-    "Adresa_dlžníka": "Tokajská 143/16",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   219,00",
     "Suma_daňových_nedoplatkov": "   219,00",
@@ -11292,7 +11260,7 @@
     "Adresa_dlžníka": "Orechov dvor 490/12A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -11676,7 +11644,7 @@
     "Adresa_dlžníka": "Školská ulica 989/2",
     "Mesto": "Jarok",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   184,50",
-    "Suma_daňových_nedoplatkov": "   184,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -11937,7 +11905,7 @@
   },
   {
     "Dlžník": "Jana Gardoňová",
-    "Adresa_dlžníka": "Rýnska 159/13",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   859,50",
     "Suma_daňových_nedoplatkov": "   859,50",
@@ -12004,7 +11972,7 @@
     "Adresa_dlžníka": "Hodžova 393/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   427,75",
-    "Suma_daňových_nedoplatkov": "   427,75",
+    "Suma_daňových_nedoplatkov": "   377,75",
     "Mena": "EUR"
   },
   {
@@ -12012,7 +11980,7 @@
     "Adresa_dlžníka": "Hlboká 61/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   222,02",
-    "Suma_daňových_nedoplatkov": "   222,02",
+    "Suma_daňových_nedoplatkov": "   0,02",
     "Mena": "EUR"
   },
   {
@@ -12084,7 +12052,7 @@
     "Adresa_dlžníka": "Hlavná 232/121",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   281,00",
-    "Suma_daňových_nedoplatkov": "   281,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12121,7 +12089,7 @@
   },
   {
     "Dlžník": "Jana Lakatošová",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 175,39",
     "Suma_daňových_nedoplatkov": "  2 175,39",
@@ -12220,7 +12188,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Bratislava-Staré Mesto",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   250,33",
-    "Suma_daňových_nedoplatkov": "   250,33",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12244,7 +12212,7 @@
     "Adresa_dlžníka": "Dubíkova 169/34",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12252,7 +12220,7 @@
     "Adresa_dlžníka": "91",
     "Mesto": "Bobrovček",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   209,04",
-    "Suma_daňových_nedoplatkov": "   209,04",
+    "Suma_daňových_nedoplatkov": "   62,40",
     "Mena": "EUR"
   },
   {
@@ -12324,7 +12292,7 @@
     "Adresa_dlžníka": "Staničná 1569/13",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   194,50",
-    "Suma_daňových_nedoplatkov": "   194,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12372,7 +12340,7 @@
     "Adresa_dlžníka": "Petzwalova 548/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12420,7 +12388,7 @@
     "Adresa_dlžníka": "Žatevná 131/57",
     "Mesto": "Veľké Zálužie",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   586,56",
-    "Suma_daňových_nedoplatkov": "   586,56",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12473,8 +12441,8 @@
   },
   {
     "Dlžník": "Jarmila Jankovičová",
-    "Adresa_dlžníka": "Hornozoborská 1713/76",
-    "Mesto": "Nitra",
+    "Adresa_dlžníka": "Pustý chotár súp. č. 896",
+    "Mesto": "Beladice",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
     "Suma_daňových_nedoplatkov": "   212,00",
     "Mena": "EUR"
@@ -12772,7 +12740,7 @@
     "Adresa_dlžníka": "Novozámocká 2/69",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   300,00",
-    "Suma_daňových_nedoplatkov": "   300,00",
+    "Suma_daňových_nedoplatkov": "   229,50",
     "Mena": "EUR"
   },
   {
@@ -12836,7 +12804,7 @@
     "Adresa_dlžníka": "Viničky 38/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12900,7 +12868,7 @@
     "Adresa_dlžníka": "Pelhřimovská 1192/4",
     "Mesto": "Dolný Kubín",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   207,27",
-    "Suma_daňových_nedoplatkov": "   207,27",
+    "Suma_daňových_nedoplatkov": "   67,27",
     "Mena": "EUR"
   },
   {
@@ -12916,7 +12884,7 @@
     "Adresa_dlžníka": "Biovetská 697/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   293,28",
-    "Suma_daňových_nedoplatkov": "   293,28",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -12980,7 +12948,7 @@
     "Adresa_dlžníka": "Martina Hrubíka 42A",
     "Mesto": "Báčsky Petrovec",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   292,00",
-    "Suma_daňových_nedoplatkov": "   292,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -13132,7 +13100,7 @@
     "Adresa_dlžníka": "Vikárska 1075/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   281,97",
-    "Suma_daňových_nedoplatkov": "   98,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -13276,7 +13244,7 @@
     "Adresa_dlžníka": "Orechov dvor 450/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   182,00",
-    "Suma_daňových_nedoplatkov": "   122,00",
+    "Suma_daňových_nedoplatkov": "   92,00",
     "Mena": "EUR"
   },
   {
@@ -13316,7 +13284,7 @@
     "Adresa_dlžníka": "Borová 2935/26",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   229,00",
-    "Suma_daňových_nedoplatkov": "   229,00",
+    "Suma_daňových_nedoplatkov": "   209,00",
     "Mena": "EUR"
   },
   {
@@ -13524,7 +13492,7 @@
     "Adresa_dlžníka": "Novomeského 501/25",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   210,62",
-    "Suma_daňových_nedoplatkov": "   83,42",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -13588,7 +13556,7 @@
     "Adresa_dlžníka": "Novomeského 514/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -14188,7 +14156,7 @@
     "Adresa_dlžníka": "Chmeľová dolina 2174/100",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   229,46",
-    "Suma_daňových_nedoplatkov": "   229,46",
+    "Suma_daňových_nedoplatkov": "   202,96",
     "Mena": "EUR"
   },
   {
@@ -14500,7 +14468,7 @@
     "Adresa_dlžníka": "Gaštanová 2770/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   593,43",
-    "Suma_daňových_nedoplatkov": "   293,43",
+    "Suma_daňových_nedoplatkov": "   93,43",
     "Mena": "EUR"
   },
   {
@@ -14548,7 +14516,7 @@
     "Adresa_dlžníka": "Hlavná 43/25",
     "Mesto": "Zlaté Moravce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   325,45",
-    "Suma_daňových_nedoplatkov": "   325,45",
+    "Suma_daňových_nedoplatkov": "   275,45",
     "Mena": "EUR"
   },
   {
@@ -14668,7 +14636,7 @@
     "Adresa_dlžníka": "Ščasného 314/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   185,00",
-    "Suma_daňových_nedoplatkov": "   185,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -14708,7 +14676,7 @@
     "Adresa_dlžníka": "Holubyho 778/8A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   560,00",
-    "Suma_daňových_nedoplatkov": "   560,00",
+    "Suma_daňových_nedoplatkov": "   348,00",
     "Mena": "EUR"
   },
   {
@@ -14868,7 +14836,7 @@
     "Adresa_dlžníka": "Novomeského 513/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   209,00",
-    "Suma_daňových_nedoplatkov": "   209,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -14956,7 +14924,7 @@
     "Adresa_dlžníka": "Zvolenská 3/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 586,22",
-    "Suma_daňových_nedoplatkov": "   131,20",
+    "Suma_daňových_nedoplatkov": "   78,20",
     "Mena": "EUR"
   },
   {
@@ -15020,7 +14988,7 @@
     "Adresa_dlžníka": "Považská 15/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   347,00",
-    "Suma_daňových_nedoplatkov": "   347,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15044,7 +15012,7 @@
     "Adresa_dlžníka": "Štúrova 1438/36",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   267,25",
-    "Suma_daňových_nedoplatkov": "   267,25",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15052,7 +15020,7 @@
     "Adresa_dlžníka": "Parkové nábrežie 877/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   179,86",
-    "Suma_daňových_nedoplatkov": "   24,86",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15140,7 +15108,7 @@
     "Adresa_dlžníka": "Hornočermánska 1494/49A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 131,43",
-    "Suma_daňových_nedoplatkov": "  1 131,43",
+    "Suma_daňových_nedoplatkov": "  1 054,78",
     "Mena": "EUR"
   },
   {
@@ -15148,7 +15116,7 @@
     "Adresa_dlžníka": "súp. č. 81",
     "Mesto": "Černík",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   324,95",
-    "Suma_daňových_nedoplatkov": "   324,95",
+    "Suma_daňových_nedoplatkov": "   0,69",
     "Mena": "EUR"
   },
   {
@@ -15156,7 +15124,7 @@
     "Adresa_dlžníka": "Cirmánska 505/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   525,68",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15236,7 +15204,7 @@
     "Adresa_dlžníka": "Fraňa Mojtu 279/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 125,73",
-    "Suma_daňových_nedoplatkov": "  1 566,24",
+    "Suma_daňových_nedoplatkov": "  1 419,60",
     "Mena": "EUR"
   },
   {
@@ -15300,7 +15268,7 @@
     "Adresa_dlžníka": "Pod Sokolom 646/7",
     "Mesto": "Nitrianske Hrnčiarovce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   324,00",
-    "Suma_daňových_nedoplatkov": "   324,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15388,7 +15356,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   171,63",
-    "Suma_daňových_nedoplatkov": "   171,63",
+    "Suma_daňových_nedoplatkov": "   100,00",
     "Mena": "EUR"
   },
   {
@@ -15404,7 +15372,7 @@
     "Adresa_dlžníka": "Partizánska 440/77",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   396,00",
-    "Suma_daňových_nedoplatkov": "   396,00",
+    "Suma_daňových_nedoplatkov": "   296,00",
     "Mena": "EUR"
   },
   {
@@ -15564,7 +15532,7 @@
     "Adresa_dlžníka": "Štúrova 1433/16",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   324,73",
-    "Suma_daňových_nedoplatkov": "   324,73",
+    "Suma_daňových_nedoplatkov": "   224,73",
     "Mena": "EUR"
   },
   {
@@ -15788,7 +15756,7 @@
     "Adresa_dlžníka": "Vendelínska 933/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   531,69",
-    "Suma_daňových_nedoplatkov": "   381,69",
+    "Suma_daňových_nedoplatkov": "   302,19",
     "Mena": "EUR"
   },
   {
@@ -15948,7 +15916,7 @@
     "Adresa_dlžníka": "Topoľčianska 736/10A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -15964,7 +15932,7 @@
     "Adresa_dlžníka": "Borová 867/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   766,45",
-    "Suma_daňových_nedoplatkov": "   711,72",
+    "Suma_daňových_nedoplatkov": "   693,24",
     "Mena": "EUR"
   },
   {
@@ -16124,7 +16092,7 @@
     "Adresa_dlžníka": "Panenská 6",
     "Mesto": "Bratislava-Staré Mesto",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  5 428,50",
-    "Suma_daňových_nedoplatkov": "  5 428,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -16236,7 +16204,7 @@
     "Adresa_dlžníka": "Čulenova 154/33",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   224,00",
-    "Suma_daňových_nedoplatkov": "   224,00",
+    "Suma_daňových_nedoplatkov": "   212,00",
     "Mena": "EUR"
   },
   {
@@ -16428,7 +16396,7 @@
     "Adresa_dlžníka": "Piaristická 1377/27",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   205,00",
-    "Suma_daňových_nedoplatkov": "   205,00",
+    "Suma_daňových_nedoplatkov": "   145,00",
     "Mena": "EUR"
   },
   {
@@ -16524,7 +16492,7 @@
     "Adresa_dlžníka": "Damborského 1458/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -16593,7 +16561,7 @@
   },
   {
     "Dlžník": "Kristína Stojková",
-    "Adresa_dlžníka": "Borová 1717/22",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   580,66",
     "Suma_daňových_nedoplatkov": "   580,66",
@@ -16628,7 +16596,7 @@
     "Adresa_dlžníka": "Baničova 520/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   285,00",
-    "Suma_daňových_nedoplatkov": "   179,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -16772,7 +16740,7 @@
     "Adresa_dlžníka": "Jurkovičova 385/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   185,44",
-    "Suma_daňových_nedoplatkov": "   185,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -16940,7 +16908,7 @@
     "Adresa_dlžníka": "Brigádnická 290/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   807,20",
-    "Suma_daňových_nedoplatkov": "   548,25",
+    "Suma_daňových_nedoplatkov": "   448,25",
     "Mena": "EUR"
   },
   {
@@ -16948,7 +16916,7 @@
     "Adresa_dlžníka": "Brigádnická 290/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   179,00",
-    "Suma_daňových_nedoplatkov": "   179,00",
+    "Suma_daňových_nedoplatkov": "   169,00",
     "Mena": "EUR"
   },
   {
@@ -17188,7 +17156,7 @@
     "Adresa_dlžníka": "Nábrežie mládeže 979/93",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   304,56",
-    "Suma_daňových_nedoplatkov": "   304,56",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17212,7 +17180,7 @@
     "Adresa_dlžníka": "Hornočermánska 5215/15B",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17268,7 +17236,7 @@
     "Adresa_dlžníka": "Viničky 39/21",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   636,00",
-    "Suma_daňových_nedoplatkov": "   636,00",
+    "Suma_daňových_nedoplatkov": "   562,00",
     "Mena": "EUR"
   },
   {
@@ -17404,7 +17372,7 @@
     "Adresa_dlžníka": "Jarocká 1290/2",
     "Mesto": "Veľké Zálužie",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   166,62",
-    "Suma_daňových_nedoplatkov": "   166,62",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17428,7 +17396,7 @@
     "Adresa_dlžníka": "Kmeťova 22/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -17444,7 +17412,7 @@
     "Adresa_dlžníka": "Novomeského 497/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   548,00",
-    "Suma_daňových_nedoplatkov": "   548,00",
+    "Suma_daňových_nedoplatkov": "   474,00",
     "Mena": "EUR"
   },
   {
@@ -17476,7 +17444,7 @@
     "Adresa_dlžníka": "Dolnohorská 528/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   140,00",
     "Mena": "EUR"
   },
   {
@@ -17644,7 +17612,7 @@
     "Adresa_dlžníka": "Cintorínska 1408/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   475,00",
-    "Suma_daňových_nedoplatkov": "   475,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17668,7 +17636,7 @@
     "Adresa_dlžníka": "Štúrova 247/165",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 756,20",
-    "Suma_daňových_nedoplatkov": "   741,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17772,7 +17740,7 @@
     "Adresa_dlžníka": "Jedlíkova 557/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -17780,7 +17748,7 @@
     "Adresa_dlžníka": "Mudrochova 1022/15",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   292,60",
-    "Suma_daňových_nedoplatkov": "   292,60",
+    "Suma_daňových_nedoplatkov": "   186,60",
     "Mena": "EUR"
   },
   {
@@ -17820,7 +17788,7 @@
     "Adresa_dlžníka": "Wilsonovo nábrežie 186/150",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   468,41",
-    "Suma_daňových_nedoplatkov": "   186,50",
+    "Suma_daňových_nedoplatkov": "   136,50",
     "Mena": "EUR"
   },
   {
@@ -17924,7 +17892,7 @@
     "Adresa_dlžníka": "Sitnianska 675/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   166,00",
-    "Suma_daňových_nedoplatkov": "   106,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -17956,7 +17924,7 @@
     "Adresa_dlžníka": "Petzwalova 549/22",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -18220,7 +18188,7 @@
     "Adresa_dlžníka": "Baničova 520/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   299,00",
-    "Suma_daňových_nedoplatkov": "   171,00",
+    "Suma_daňových_nedoplatkov": "   31,00",
     "Mena": "EUR"
   },
   {
@@ -18377,7 +18345,7 @@
   },
   {
     "Dlžník": "Lucia Lakatošová",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
     "Suma_daňových_nedoplatkov": "   416,00",
@@ -18508,7 +18476,7 @@
     "Adresa_dlžníka": "Jedlíkova 560/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   553,61",
-    "Suma_daňových_nedoplatkov": "   553,61",
+    "Suma_daňových_nedoplatkov": "   483,61",
     "Mena": "EUR"
   },
   {
@@ -18548,7 +18516,7 @@
     "Adresa_dlžníka": "súp. č. 270",
     "Mesto": "Babindol",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   316,96",
-    "Suma_daňových_nedoplatkov": "   316,96",
+    "Suma_daňových_nedoplatkov": "   275,96",
     "Mena": "EUR"
   },
   {
@@ -19084,7 +19052,7 @@
     "Adresa_dlžníka": "Škultétyho 526/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 688,40",
-    "Suma_daňových_nedoplatkov": "  2 688,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -19428,7 +19396,7 @@
     "Adresa_dlžníka": "Cintorínska ulica 1457/30",
     "Mesto": "Mojmírovce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   280,29",
-    "Suma_daňových_nedoplatkov": "   271,00",
+    "Suma_daňových_nedoplatkov": "   123,05",
     "Mena": "EUR"
   },
   {
@@ -19796,7 +19764,7 @@
     "Adresa_dlžníka": "Nové Sady súp. č. 245",
     "Mesto": "Nové Sady",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   252,10",
-    "Suma_daňových_nedoplatkov": "   252,10",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -19809,7 +19777,7 @@
   },
   {
     "Dlžník": "Marek Rafael",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
     "Suma_daňových_nedoplatkov": "   416,00",
@@ -19828,7 +19796,7 @@
     "Adresa_dlžníka": "Orechov dvor 451/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   199,00",
-    "Suma_daňových_nedoplatkov": "   199,00",
+    "Suma_daňových_nedoplatkov": "   174,00",
     "Mena": "EUR"
   },
   {
@@ -20004,7 +19972,7 @@
     "Adresa_dlžníka": "Škultétyho 531/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20028,7 +19996,7 @@
     "Adresa_dlžníka": "Hlavná 270/26",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20044,7 +20012,7 @@
     "Adresa_dlžníka": "Hornohorská 404/13",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   100,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20149,14 +20117,6 @@
     "Mesto": "Viedeň",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   420,25",
     "Suma_daňových_nedoplatkov": "   420,25",
-    "Mena": "EUR"
-  },
-  {
-    "Dlžník": "Mária Bálešová",
-    "Adresa_dlžníka": "Za Ferenitkou 133/1",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   527,00",
-    "Suma_daňových_nedoplatkov": "   527,00",
     "Mena": "EUR"
   },
   {
@@ -20316,7 +20276,7 @@
     "Adresa_dlžníka": "Benkova 377/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   504,49",
-    "Suma_daňových_nedoplatkov": "   428,49",
+    "Suma_daňových_nedoplatkov": "   390,49",
     "Mena": "EUR"
   },
   {
@@ -20372,7 +20332,7 @@
     "Adresa_dlžníka": "Trieda Andreja Hlinku 616/36",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 372,80",
-    "Suma_daňových_nedoplatkov": "  1 372,80",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20380,7 +20340,7 @@
     "Adresa_dlžníka": "Wilsonovo nábrežie 140/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   122,26",
     "Mena": "EUR"
   },
   {
@@ -20396,7 +20356,7 @@
     "Adresa_dlžníka": "Nábrežie mládeže 563/59",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   229,00",
-    "Suma_daňových_nedoplatkov": "   229,00",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -20444,7 +20404,7 @@
     "Adresa_dlžníka": "Janka Kráľa 2045/132",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   358,75",
-    "Suma_daňových_nedoplatkov": "   184,75",
+    "Suma_daňových_nedoplatkov": "   78,75",
     "Mena": "EUR"
   },
   {
@@ -20484,7 +20444,7 @@
     "Adresa_dlžníka": "Orechov dvor 450/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   213,50",
-    "Suma_daňových_nedoplatkov": "   213,50",
+    "Suma_daňových_nedoplatkov": "   93,50",
     "Mena": "EUR"
   },
   {
@@ -20628,7 +20588,7 @@
     "Adresa_dlžníka": "Levická 340/86",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20676,7 +20636,7 @@
     "Adresa_dlžníka": "Jelenecká 213/242",
     "Mesto": "Nitrianske Hrnčiarovce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   293,28",
-    "Suma_daňových_nedoplatkov": "   293,28",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -20753,7 +20713,7 @@
   },
   {
     "Dlžník": "Mária Pilová",
-    "Adresa_dlžníka": "K rieke 806/1",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   902,62",
     "Suma_daňových_nedoplatkov": "   902,62",
@@ -20913,7 +20873,7 @@
   },
   {
     "Dlžník": "Mária Slezáková",
-    "Adresa_dlžníka": "Rýnska 159/13",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   627,44",
     "Suma_daňových_nedoplatkov": "   627,44",
@@ -20988,7 +20948,7 @@
     "Adresa_dlžníka": "Bizetova 459/37",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   245,68",
-    "Suma_daňových_nedoplatkov": "   245,68",
+    "Suma_daňových_nedoplatkov": "   195,68",
     "Mena": "EUR"
   },
   {
@@ -21116,7 +21076,7 @@
     "Adresa_dlžníka": "Wilsonovo nábrežie 141/16",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   219,96",
-    "Suma_daňových_nedoplatkov": "   219,96",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -21332,7 +21292,7 @@
     "Adresa_dlžníka": "Štúrova 1417/35",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 449,62",
-    "Suma_daňových_nedoplatkov": "  1 449,62",
+    "Suma_daňových_nedoplatkov": "  1 117,62",
     "Mena": "EUR"
   },
   {
@@ -21444,7 +21404,7 @@
     "Adresa_dlžníka": "Jarková 3118/93",
     "Mesto": "Prešov",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   234,37",
-    "Suma_daňových_nedoplatkov": "   477,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -21484,7 +21444,7 @@
     "Adresa_dlžníka": "Horná 560/11",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 097,14",
-    "Suma_daňových_nedoplatkov": "   851,46",
+    "Suma_daňových_nedoplatkov": "   674,62",
     "Mena": "EUR"
   },
   {
@@ -21745,7 +21705,7 @@
   },
   {
     "Dlžník": "Mário Bihary",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   371,78",
     "Suma_daňových_nedoplatkov": "   371,78",
@@ -22084,7 +22044,7 @@
     "Adresa_dlžníka": "súp. č. 19",
     "Mesto": "Nová Bošáca",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   235,37",
-    "Suma_daňových_nedoplatkov": "   235,37",
+    "Suma_daňových_nedoplatkov": "   105,00",
     "Mena": "EUR"
   },
   {
@@ -22100,7 +22060,7 @@
     "Adresa_dlžníka": "Teslova 982/87",
     "Mesto": "Lužianky",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   315,00",
-    "Suma_daňových_nedoplatkov": "   219,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -22116,7 +22076,7 @@
     "Adresa_dlžníka": "Bajkalská 680/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   168,50",
-    "Suma_daňových_nedoplatkov": "   168,50",
+    "Suma_daňových_nedoplatkov": "   142,00",
     "Mena": "EUR"
   },
   {
@@ -22228,7 +22188,7 @@
     "Adresa_dlžníka": "Chmeľová dolina 2174/100",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   242,63",
-    "Suma_daňových_nedoplatkov": "   242,63",
+    "Suma_daňových_nedoplatkov": "   102,63",
     "Mena": "EUR"
   },
   {
@@ -22412,7 +22372,7 @@
     "Adresa_dlžníka": "Hlavná ulica 126/43",
     "Mesto": "Malý Lapáš",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   266,00",
-    "Suma_daňových_nedoplatkov": "   266,00",
+    "Suma_daňových_nedoplatkov": "   241,00",
     "Mena": "EUR"
   },
   {
@@ -22460,7 +22420,7 @@
     "Adresa_dlžníka": "Novomeského 508/63",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   219,00",
-    "Suma_daňových_nedoplatkov": "   219,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -22508,7 +22468,7 @@
     "Adresa_dlžníka": "Ľudovíta Okánika 590/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   171,50",
-    "Suma_daňových_nedoplatkov": "   171,50",
+    "Suma_daňových_nedoplatkov": "   53,00",
     "Mena": "EUR"
   },
   {
@@ -22532,7 +22492,7 @@
     "Adresa_dlžníka": "Lomnická 1228/42",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 344,20",
-    "Suma_daňových_nedoplatkov": "  1 344,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -22580,7 +22540,7 @@
     "Adresa_dlžníka": "Pri mlyne 890/28A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   312,22",
-    "Suma_daňových_nedoplatkov": "   312,22",
+    "Suma_daňových_nedoplatkov": "   92,22",
     "Mena": "EUR"
   },
   {
@@ -22932,7 +22892,7 @@
     "Adresa_dlžníka": "Rýnska 151/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   287,00",
-    "Suma_daňových_nedoplatkov": "   287,00",
+    "Suma_daňových_nedoplatkov": "   187,00",
     "Mena": "EUR"
   },
   {
@@ -22996,7 +22956,7 @@
     "Adresa_dlžníka": "Baničova 521/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   184,00",
-    "Suma_daňových_nedoplatkov": "   184,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23004,7 +22964,7 @@
     "Adresa_dlžníka": "Bizetova 459/37",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   192,00",
-    "Suma_daňových_nedoplatkov": "   192,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23052,7 +23012,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   355,60",
-    "Suma_daňových_nedoplatkov": "   355,60",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23188,7 +23148,7 @@
     "Adresa_dlžníka": "Topoľčianska 87/76",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23260,7 +23220,7 @@
     "Adresa_dlžníka": "Novomeského 514/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 075,67",
-    "Suma_daňových_nedoplatkov": "   969,67",
+    "Suma_daňových_nedoplatkov": "   658,00",
     "Mena": "EUR"
   },
   {
@@ -23316,7 +23276,7 @@
     "Adresa_dlžníka": "Pod kostolíkom 288/23",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 447,68",
-    "Suma_daňových_nedoplatkov": "  1 447,68",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23452,7 +23412,7 @@
     "Adresa_dlžníka": "Hviezdna 1405/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23476,7 +23436,7 @@
     "Adresa_dlžníka": "Pražská 7/13",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 321,80",
-    "Suma_daňových_nedoplatkov": "  1 958,90",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23508,7 +23468,7 @@
     "Adresa_dlžníka": "8. mája 700/29",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   150,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -23572,7 +23532,7 @@
     "Adresa_dlžníka": "Klinčeková 3233/19",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   259,18",
-    "Suma_daňových_nedoplatkov": "   259,18",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -23668,7 +23628,7 @@
     "Adresa_dlžníka": "Nad Hrabinou 3802/34",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -23892,7 +23852,7 @@
     "Adresa_dlžníka": "Klinčeková 3233/19",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   337,55",
-    "Suma_daňových_nedoplatkov": "   337,55",
+    "Suma_daňových_nedoplatkov": "   53,00",
     "Mena": "EUR"
   },
   {
@@ -24020,7 +23980,7 @@
     "Adresa_dlžníka": "Partizánska 21/66",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   620,00",
-    "Suma_daňových_nedoplatkov": "   620,00",
+    "Suma_daňových_nedoplatkov": "   546,00",
     "Mena": "EUR"
   },
   {
@@ -24132,7 +24092,7 @@
     "Adresa_dlžníka": "Ždiarska 704/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   489,79",
-    "Suma_daňových_nedoplatkov": "   200,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -24148,7 +24108,7 @@
     "Adresa_dlžníka": "Jaseňová 4176/1A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   198,82",
-    "Suma_daňových_nedoplatkov": "   198,82",
+    "Suma_daňových_nedoplatkov": "   119,32",
     "Mena": "EUR"
   },
   {
@@ -24156,7 +24116,7 @@
     "Adresa_dlžníka": "Lúčna 630/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -24164,7 +24124,7 @@
     "Adresa_dlžníka": "Podzámska 925/32",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   182,00",
-    "Suma_daňových_nedoplatkov": "   129,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -24556,7 +24516,7 @@
     "Adresa_dlžníka": "Telgártska 116/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   176,35",
-    "Suma_daňových_nedoplatkov": "   176,35",
+    "Suma_daňových_nedoplatkov": "   53,00",
     "Mena": "EUR"
   },
   {
@@ -24612,7 +24572,7 @@
     "Adresa_dlžníka": "Inovecká 536/46",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 887,11",
-    "Suma_daňových_nedoplatkov": "   53,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -24780,7 +24740,7 @@
     "Adresa_dlžníka": "Partizánska 443/91",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   209,00",
-    "Suma_daňových_nedoplatkov": "   209,00",
+    "Suma_daňových_nedoplatkov": "   27,00",
     "Mena": "EUR"
   },
   {
@@ -25172,7 +25132,7 @@
     "Adresa_dlžníka": "Dunajská 13/16",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   185,50",
-    "Suma_daňových_nedoplatkov": "   185,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -25412,7 +25372,7 @@
     "Adresa_dlžníka": "Vašinova 136/20",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -25513,7 +25473,7 @@
   },
   {
     "Dlžník": "Milan Rafael",
-    "Adresa_dlžníka": "Borová 1717/22",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
     "Suma_daňových_nedoplatkov": "   416,00",
@@ -25620,7 +25580,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   359,62",
-    "Suma_daňových_nedoplatkov": "   359,62",
+    "Suma_daňových_nedoplatkov": "   53,00",
     "Mena": "EUR"
   },
   {
@@ -25652,7 +25612,7 @@
     "Adresa_dlžníka": "Bajzova 1224/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   127,20",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -25684,7 +25644,7 @@
     "Adresa_dlžníka": "Trieda Andreja Hlinku 612/14",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -25756,7 +25716,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   548,09",
-    "Suma_daňových_nedoplatkov": "   548,09",
+    "Suma_daňových_nedoplatkov": "   494,86",
     "Mena": "EUR"
   },
   {
@@ -25972,7 +25932,7 @@
     "Adresa_dlžníka": "Alexyho 366/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  3 308,80",
-    "Suma_daňových_nedoplatkov": "  3 308,80",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -26540,7 +26500,7 @@
     "Adresa_dlžníka": "Petzwalova 550/34",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   192,00",
-    "Suma_daňových_nedoplatkov": "   192,00",
+    "Suma_daňových_nedoplatkov": "   132,00",
     "Mena": "EUR"
   },
   {
@@ -26716,7 +26676,7 @@
     "Adresa_dlžníka": "Nábrežie mládeže 566/71",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   546,00",
-    "Suma_daňových_nedoplatkov": "   546,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -26764,7 +26724,7 @@
     "Adresa_dlžníka": "Baničova 520/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -26804,7 +26764,7 @@
     "Adresa_dlžníka": "Pri strelnici 1277/66",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   317,58",
-    "Suma_daňových_nedoplatkov": "   317,58",
+    "Suma_daňových_nedoplatkov": "   264,58",
     "Mena": "EUR"
   },
   {
@@ -26940,7 +26900,7 @@
     "Adresa_dlžníka": "Štefánikova trieda 82/64",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   234,00",
-    "Suma_daňových_nedoplatkov": "   234,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -27004,7 +26964,7 @@
     "Adresa_dlžníka": "Ružová 752/22",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   179,00",
-    "Suma_daňových_nedoplatkov": "   179,00",
+    "Suma_daňových_nedoplatkov": "   53,00",
     "Mena": "EUR"
   },
   {
@@ -27188,7 +27148,7 @@
     "Adresa_dlžníka": "B. S. Timravy 308/3",
     "Mesto": "Zlaté Moravce",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 122,37",
-    "Suma_daňových_nedoplatkov": "  1 122,37",
+    "Suma_daňových_nedoplatkov": "  1 022,37",
     "Mena": "EUR"
   },
   {
@@ -27196,7 +27156,7 @@
     "Adresa_dlžníka": "Jána Zelenáka 269/42",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   839,50",
-    "Suma_daňových_nedoplatkov": "   839,50",
+    "Suma_daňových_nedoplatkov": "   789,50",
     "Mena": "EUR"
   },
   {
@@ -27332,7 +27292,7 @@
     "Adresa_dlžníka": "Jarná 83/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 694,40",
-    "Suma_daňových_nedoplatkov": "  2 694,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -27340,7 +27300,7 @@
     "Adresa_dlžníka": "Farská 1310/31",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 688,40",
-    "Suma_daňových_nedoplatkov": "  2 688,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -27852,7 +27812,7 @@
     "Adresa_dlžníka": "Palánok 4605/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   234,00",
     "Mena": "EUR"
   },
   {
@@ -28017,7 +27977,7 @@
   },
   {
     "Dlžník": "Nikola Lakatošová",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
     "Suma_daňových_nedoplatkov": "   206,00",
@@ -28084,7 +28044,7 @@
     "Adresa_dlžníka": "Borová 858/19",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   514,39",
-    "Suma_daňových_nedoplatkov": "   438,39",
+    "Suma_daňových_nedoplatkov": "   400,39",
     "Mena": "EUR"
   },
   {
@@ -28092,7 +28052,7 @@
     "Adresa_dlžníka": "K rieke 806/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   269,00",
-    "Suma_daňových_nedoplatkov": "   269,00",
+    "Suma_daňových_nedoplatkov": "   139,00",
     "Mena": "EUR"
   },
   {
@@ -28156,7 +28116,7 @@
     "Adresa_dlžníka": "Pivonková 3642/11",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   100,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -28169,7 +28129,7 @@
   },
   {
     "Dlžník": "Nikoleta Lakatošová",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   285,91",
     "Suma_daňových_nedoplatkov": "   285,91",
@@ -28212,7 +28172,7 @@
     "Adresa_dlžníka": "Jána Zelenáka 247/43",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -28364,7 +28324,7 @@
     "Adresa_dlžníka": "Svätourbanská 121/26",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 833,63",
-    "Suma_daňových_nedoplatkov": "  2 833,63",
+    "Suma_daňových_nedoplatkov": "  1 205,08",
     "Mena": "EUR"
   },
   {
@@ -28876,7 +28836,7 @@
     "Adresa_dlžníka": "Ďurková 1181/22",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   304,00",
-    "Suma_daňových_nedoplatkov": "   280,00",
+    "Suma_daňových_nedoplatkov": "   243,00",
     "Mena": "EUR"
   },
   {
@@ -28900,7 +28860,7 @@
     "Adresa_dlžníka": "Štúrova 1436/24",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   193,00",
-    "Suma_daňových_nedoplatkov": "   193,00",
+    "Suma_daňových_nedoplatkov": "   163,00",
     "Mena": "EUR"
   },
   {
@@ -29332,7 +29292,7 @@
     "Adresa_dlžníka": "Hornočermánska 769/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -29444,7 +29404,7 @@
     "Adresa_dlžníka": "Petzwalova 544/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   152,00",
     "Mena": "EUR"
   },
   {
@@ -29484,7 +29444,7 @@
     "Adresa_dlžníka": "Bellova 446/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   180,00",
-    "Suma_daňových_nedoplatkov": "   180,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -29556,7 +29516,7 @@
     "Adresa_dlžníka": "Novozámocká 79/100",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 692,00",
-    "Suma_daňových_nedoplatkov": "  1 692,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -30136,14 +30096,6 @@
     "Mena": "EUR"
   },
   {
-    "Dlžník": "Peter Hubinský",
-    "Adresa_dlžníka": "Golianova 564/66",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   170,00",
-    "Suma_daňových_nedoplatkov": "   170,00",
-    "Mena": "EUR"
-  },
-  {
     "Dlžník": "Peter Chrenko",
     "Adresa_dlžníka": "Mikovíniho 408/20",
     "Mesto": "Nitra",
@@ -30388,7 +30340,7 @@
     "Adresa_dlžníka": "Jána Zelenáka 268/40",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   461,03",
-    "Suma_daňových_nedoplatkov": "   461,03",
+    "Suma_daňových_nedoplatkov": "   441,03",
     "Mena": "EUR"
   },
   {
@@ -30668,7 +30620,7 @@
     "Adresa_dlžníka": "Lipová 626/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31064,7 +31016,7 @@
     "Mena": "EUR"
   },
   {
-    "Dlžník": "Peter Toman  P+P KONZUM",
+    "Dlžník": "Peter Toman P+P KONZUM",
     "Adresa_dlžníka": "Beethovenova 451/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   597,84",
@@ -31180,7 +31132,7 @@
     "Adresa_dlžníka": "Bizetova 460/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   370,00",
-    "Suma_daňových_nedoplatkov": "   317,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31284,7 +31236,7 @@
     "Adresa_dlžníka": "Palánok 4605/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -31292,7 +31244,7 @@
     "Adresa_dlžníka": "súp. č. 912",
     "Mesto": "Jelenec",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   247,09",
-    "Suma_daňových_nedoplatkov": "   109,09",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31468,7 +31420,7 @@
     "Adresa_dlžníka": "Andreja Žarnova 8089/13",
     "Mesto": "Trnava",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   219,00",
-    "Suma_daňových_nedoplatkov": "   219,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31476,7 +31428,7 @@
     "Adresa_dlžníka": "Podzámska 925/32",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   249,00",
-    "Suma_daňových_nedoplatkov": "   196,00",
+    "Suma_daňových_nedoplatkov": "   90,00",
     "Mena": "EUR"
   },
   {
@@ -31492,7 +31444,7 @@
     "Adresa_dlžníka": "Novozámocká 3613/222C",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  32 535,67",
-    "Suma_daňových_nedoplatkov": "  3 700,95",
+    "Suma_daňových_nedoplatkov": "  2 279,20",
     "Mena": "EUR"
   },
   {
@@ -31524,7 +31476,7 @@
     "Adresa_dlžníka": "Ivanská cesta 16733/15",
     "Mesto": "Bratislava-Ružinov",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  12 846,64",
-    "Suma_daňových_nedoplatkov": "  5 518,96",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31577,7 +31529,7 @@
   },
   {
     "Dlžník": "Radko Hrnčár",
-    "Adresa_dlžníka": "Rýnska 152/9",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   182,00",
     "Suma_daňových_nedoplatkov": "   182,00",
@@ -31636,7 +31588,7 @@
     "Adresa_dlžníka": "H. Meličkovej 738/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   211,99",
-    "Suma_daňových_nedoplatkov": "   211,99",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31692,7 +31644,7 @@
     "Adresa_dlžníka": "súp. č. 165",
     "Mesto": "Kamanová",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   269,97",
-    "Suma_daňových_nedoplatkov": "   269,97",
+    "Suma_daňových_nedoplatkov": "   169,97",
     "Mena": "EUR"
   },
   {
@@ -31700,7 +31652,7 @@
     "Adresa_dlžníka": "Nedbalova 3820/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31804,7 +31756,7 @@
     "Adresa_dlžníka": "Párovská 1188/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   227,24",
-    "Suma_daňových_nedoplatkov": "   122,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -31956,7 +31908,7 @@
     "Adresa_dlžníka": "Veľká Okružná 17",
     "Mesto": "Žilina",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 628,55",
-    "Suma_daňových_nedoplatkov": "  1 628,55",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -32292,7 +32244,7 @@
     "Adresa_dlžníka": "Štúrova 1436/24",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   193,00",
-    "Suma_daňových_nedoplatkov": "   193,00",
+    "Suma_daňových_nedoplatkov": "   163,00",
     "Mena": "EUR"
   },
   {
@@ -32452,7 +32404,7 @@
     "Adresa_dlžníka": "Na Priehon 701/50B",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  22 165,00",
-    "Suma_daňových_nedoplatkov": "  22 165,00",
+    "Suma_daňových_nedoplatkov": "  3 346,20",
     "Mena": "EUR"
   },
   {
@@ -32524,7 +32476,7 @@
     "Adresa_dlžníka": "Palánok 4605/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   388,00",
-    "Suma_daňových_nedoplatkov": "   70,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -32644,7 +32596,7 @@
     "Adresa_dlžníka": "Kultúrna 140/18",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -32713,7 +32665,7 @@
   },
   {
     "Dlžník": "Richard Turanovič",
-    "Adresa_dlžníka": "",
+    "Adresa_dlžníka": "Novomeského 513/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   222,36",
     "Suma_daňových_nedoplatkov": "   222,36",
@@ -32764,7 +32716,7 @@
     "Adresa_dlžníka": "Novozámocká 95/174",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  4 833,40",
-    "Suma_daňových_nedoplatkov": "  4 833,40",
+    "Suma_daňových_nedoplatkov": "  3 833,40",
     "Mena": "EUR"
   },
   {
@@ -32772,7 +32724,7 @@
     "Adresa_dlžníka": "Bizetova 461/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 740,10",
-    "Suma_daňových_nedoplatkov": "  2 740,10",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -32804,7 +32756,7 @@
     "Adresa_dlžníka": "Palkovičova 217/14",
     "Mesto": "Bratislava-Ružinov",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -33044,7 +32996,7 @@
     "Adresa_dlžníka": "Benkova 381/32",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   367,94",
-    "Suma_daňových_nedoplatkov": "   367,94",
+    "Suma_daňových_nedoplatkov": "   272,94",
     "Mena": "EUR"
   },
   {
@@ -33116,7 +33068,7 @@
     "Adresa_dlžníka": "Borová 1664/20",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 236,75",
-    "Suma_daňových_nedoplatkov": "  2 236,75",
+    "Suma_daňových_nedoplatkov": "  2 036,75",
     "Mena": "EUR"
   },
   {
@@ -33132,7 +33084,7 @@
     "Adresa_dlžníka": "Šúdolská 867/32A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   190,80",
-    "Suma_daňových_nedoplatkov": "   190,80",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -33324,7 +33276,7 @@
     "Adresa_dlžníka": "Novozámocká 5/75",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -33404,7 +33356,7 @@
     "Adresa_dlžníka": "Strmá 623/40",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   249,01",
-    "Suma_daňových_nedoplatkov": "   196,01",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -33761,7 +33713,7 @@
   },
   {
     "Dlžník": "Roman Lakatoš",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   274,00",
     "Suma_daňových_nedoplatkov": "   274,00",
@@ -34100,7 +34052,7 @@
     "Adresa_dlžníka": "Baničova 519/3",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   250,71",
-    "Suma_daňových_nedoplatkov": "   145,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -34132,7 +34084,7 @@
     "Adresa_dlžníka": "súp. č. 476",
     "Mesto": "Veľký Lapáš",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   462,48",
-    "Suma_daňových_nedoplatkov": "   462,48",
+    "Suma_daňových_nedoplatkov": "   315,84",
     "Mena": "EUR"
   },
   {
@@ -34372,7 +34324,7 @@
     "Adresa_dlžníka": "Biela 940/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 602,70",
-    "Suma_daňových_nedoplatkov": "  1 602,70",
+    "Suma_daňových_nedoplatkov": "   502,40",
     "Mena": "EUR"
   },
   {
@@ -34644,7 +34596,7 @@
     "Adresa_dlžníka": "Staromlynská 139/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 018,08",
-    "Suma_daňových_nedoplatkov": "   918,08",
+    "Suma_daňových_nedoplatkov": "   858,08",
     "Mena": "EUR"
   },
   {
@@ -34804,7 +34756,7 @@
     "Adresa_dlžníka": "Na Hôrke 117/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   397,00",
-    "Suma_daňových_nedoplatkov": "   344,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -34820,7 +34772,7 @@
     "Adresa_dlžníka": "Rýnska 160/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   267,00",
-    "Suma_daňových_nedoplatkov": "   267,00",
+    "Suma_daňových_nedoplatkov": "   237,00",
     "Mena": "EUR"
   },
   {
@@ -34836,7 +34788,7 @@
     "Adresa_dlžníka": "Orechov dvor 452/8",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   326,65",
-    "Suma_daňových_nedoplatkov": "   276,65",
+    "Suma_daňových_nedoplatkov": "   176,65",
     "Mena": "EUR"
   },
   {
@@ -34844,7 +34796,7 @@
     "Adresa_dlžníka": "K rieke 806/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   200,89",
-    "Suma_daňových_nedoplatkov": "   82,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -34852,7 +34804,7 @@
     "Adresa_dlžníka": "Štúrova 1847/61",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -34908,7 +34860,7 @@
     "Adresa_dlžníka": "Rýnska 151/5",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   206,00",
-    "Suma_daňových_nedoplatkov": "   206,00",
+    "Suma_daňových_nedoplatkov": "   106,00",
     "Mena": "EUR"
   },
   {
@@ -34916,7 +34868,7 @@
     "Adresa_dlžníka": "Šípová 68/23",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   212,00",
-    "Suma_daňových_nedoplatkov": "   212,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -34929,7 +34881,7 @@
   },
   {
     "Dlžník": "Simona Baksová",
-    "Adresa_dlžníka": "Rýnska 152/9",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   672,60",
     "Suma_daňových_nedoplatkov": "   672,60",
@@ -35364,7 +35316,7 @@
     "Adresa_dlžníka": "Orechov dvor 451/6",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 396,22",
-    "Suma_daňových_nedoplatkov": "  1 396,22",
+    "Suma_daňových_nedoplatkov": "  1 291,22",
     "Mena": "EUR"
   },
   {
@@ -35380,7 +35332,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 710,13",
-    "Suma_daňových_nedoplatkov": "  1 641,13",
+    "Suma_daňových_nedoplatkov": "  1 616,13",
     "Mena": "EUR"
   },
   {
@@ -35396,7 +35348,7 @@
     "Adresa_dlžníka": "Farská 1302/19",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 843,50",
-    "Suma_daňových_nedoplatkov": "  2 843,50",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -35748,7 +35700,7 @@
     "Adresa_dlžníka": "Kollárova 1500/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   435,00",
-    "Suma_daňových_nedoplatkov": "   435,00",
+    "Suma_daňových_nedoplatkov": "   309,00",
     "Mena": "EUR"
   },
   {
@@ -35764,7 +35716,7 @@
     "Adresa_dlžníka": "Štúrova 5273/150",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 016,30",
-    "Suma_daňových_nedoplatkov": "  2 016,30",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -35772,7 +35724,7 @@
     "Adresa_dlžníka": "Novozámocká 622/220",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  4 791,60",
-    "Suma_daňových_nedoplatkov": "  4 791,60",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -35780,7 +35732,7 @@
     "Adresa_dlžníka": "Ďurková 1179/18",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  1 912,88",
-    "Suma_daňových_nedoplatkov": "  1 912,88",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36044,7 +35996,7 @@
     "Adresa_dlžníka": "Jarmočná 773/9",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   268,32",
-    "Suma_daňových_nedoplatkov": "   268,32",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36169,7 +36121,7 @@
   },
   {
     "Dlžník": "Štefan Lakatoš",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
     "Suma_daňových_nedoplatkov": "   416,00",
@@ -36508,7 +36460,7 @@
     "Adresa_dlžníka": "Borová 865/4",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 238,96",
-    "Suma_daňových_nedoplatkov": "  2 182,94",
+    "Suma_daňových_nedoplatkov": "  2 110,94",
     "Mena": "EUR"
   },
   {
@@ -36548,7 +36500,7 @@
     "Adresa_dlžníka": "Na gruntoch 613/1",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   177,56",
-    "Suma_daňových_nedoplatkov": "   92,85",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36572,7 +36524,7 @@
     "Adresa_dlžníka": "Trieda Andreja Hlinku 608/55",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  4 704,70",
-    "Suma_daňových_nedoplatkov": "  4 704,70",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36580,7 +36532,7 @@
     "Adresa_dlžníka": "Pod Zlatým brehom 782/11",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 688,40",
-    "Suma_daňových_nedoplatkov": "  2 688,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36644,7 +36596,7 @@
     "Adresa_dlžníka": "Novomeského 509/67",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -36661,14 +36613,6 @@
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   249,00",
     "Suma_daňových_nedoplatkov": "   249,00",
-    "Mena": "EUR"
-  },
-  {
-    "Dlžník": "Tibor Kalman",
-    "Adresa_dlžníka": "Za Ferenitkou 135/17",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   340,44",
-    "Suma_daňových_nedoplatkov": "   340,44",
     "Mena": "EUR"
   },
   {
@@ -36724,7 +36668,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 178,53",
-    "Suma_daňových_nedoplatkov": "  2 178,53",
+    "Suma_daňových_nedoplatkov": "  2 088,53",
     "Mena": "EUR"
   },
   {
@@ -36876,7 +36820,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   324,00",
-    "Suma_daňových_nedoplatkov": "   324,00",
+    "Suma_daňových_nedoplatkov": "   271,00",
     "Mena": "EUR"
   },
   {
@@ -36884,7 +36828,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   283,00",
-    "Suma_daňových_nedoplatkov": "   283,00",
+    "Suma_daňových_nedoplatkov": "   240,60",
     "Mena": "EUR"
   },
   {
@@ -36964,7 +36908,7 @@
     "Adresa_dlžníka": "Čajkovského 433/38",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   258,25",
-    "Suma_daňových_nedoplatkov": "   258,25",
+    "Suma_daňových_nedoplatkov": "   103,00",
     "Mena": "EUR"
   },
   {
@@ -37044,7 +36988,7 @@
     "Adresa_dlžníka": "922/13",
     "Mesto": "Cabaj-Čápor",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   293,28",
-    "Suma_daňových_nedoplatkov": "   293,28",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -37092,7 +37036,7 @@
     "Adresa_dlžníka": "Cornovi Gardens súp. č. 15",
     "Mesto": "Oswestry",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   460,00",
-    "Suma_daňových_nedoplatkov": "   460,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -37204,7 +37148,7 @@
     "Adresa_dlžníka": "Hydinárska 48/48",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -37292,7 +37236,7 @@
     "Adresa_dlžníka": "Železničiarska 1202/13",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 683,00",
-    "Suma_daňových_nedoplatkov": "  2 688,40",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -37388,7 +37332,7 @@
     "Adresa_dlžníka": "Orechov dvor 490/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   189,65",
-    "Suma_daňových_nedoplatkov": "   189,65",
+    "Suma_daňových_nedoplatkov": "   139,65",
     "Mena": "EUR"
   },
   {
@@ -37444,7 +37388,7 @@
     "Adresa_dlžníka": "Považská 19/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   309,00",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -37501,14 +37445,6 @@
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   424,50",
     "Suma_daňových_nedoplatkov": "   424,50",
-    "Mena": "EUR"
-  },
-  {
-    "Dlžník": "Veronika Horváthová",
-    "Adresa_dlžníka": "Na Hôrke 43/15",
-    "Mesto": "Nitra",
-    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   747,00",
-    "Suma_daňových_nedoplatkov": "   747,00",
     "Mena": "EUR"
   },
   {
@@ -37620,7 +37556,15 @@
     "Adresa_dlžníka": "Dvorská 4328/9A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   546,93",
-    "Suma_daňových_nedoplatkov": "   309,00",
+    "Suma_daňových_nedoplatkov": "   209,00",
+    "Mena": "EUR"
+  },
+  {
+    "Dlžník": "Veronika Vilhemová",
+    "Adresa_dlžníka": "Na Hôrke 43/15",
+    "Mesto": "Nitra",
+    "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   747,00",
+    "Suma_daňových_nedoplatkov": "   747,00",
     "Mena": "EUR"
   },
   {
@@ -37876,7 +37820,7 @@
     "Adresa_dlžníka": "Cirmánska 506/7",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   265,00",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   132,50",
     "Mena": "EUR"
   },
   {
@@ -38164,7 +38108,7 @@
     "Adresa_dlžníka": "Piesková 1156/20",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   260,99",
-    "Suma_daňových_nedoplatkov": "   160,99",
+    "Suma_daňových_nedoplatkov": "   54,99",
     "Mena": "EUR"
   },
   {
@@ -38252,7 +38196,7 @@
     "Adresa_dlžníka": "Dolnohorská 3073/9A",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   345,94",
-    "Suma_daňových_nedoplatkov": "   265,00",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -38340,7 +38284,7 @@
     "Adresa_dlžníka": "Orechov dvor 453/10",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   191,00",
-    "Suma_daňových_nedoplatkov": "   191,00",
+    "Suma_daňových_nedoplatkov": "   141,00",
     "Mena": "EUR"
   },
   {
@@ -38692,7 +38636,7 @@
     "Adresa_dlžníka": "Kupecká 2978/2",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "  2 346,24",
-    "Suma_daňových_nedoplatkov": "  2 346,24",
+    "Suma_daňových_nedoplatkov": "   0,00",
     "Mena": "EUR"
   },
   {
@@ -38892,7 +38836,7 @@
     "Adresa_dlžníka": "Janka Kráľa 1598/130",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   195,20",
-    "Suma_daňových_nedoplatkov": "   121,70",
+    "Suma_daňových_nedoplatkov": "   97,20",
     "Mena": "EUR"
   },
   {
@@ -39052,7 +38996,7 @@
     "Adresa_dlžníka": "Jána Zelenáka 241/31",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   445,46",
-    "Suma_daňových_nedoplatkov": "   445,46",
+    "Suma_daňových_nedoplatkov": "   362,52",
     "Mena": "EUR"
   },
   {
@@ -39428,7 +39372,7 @@
     "Adresa_dlžníka": "Štúrova 1419/41",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   219,85",
-    "Suma_daňových_nedoplatkov": "   219,85",
+    "Suma_daňových_nedoplatkov": "   159,00",
     "Mena": "EUR"
   },
   {
@@ -39460,7 +39404,7 @@
     "Adresa_dlžníka": "Škultétyho 535/42",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   291,20",
-    "Suma_daňových_nedoplatkov": "   234,95",
+    "Suma_daňových_nedoplatkov": "   152,17",
     "Mena": "EUR"
   },
   {
@@ -39524,7 +39468,7 @@
     "Adresa_dlžníka": "Petzwalova 545/17",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   657,00",
-    "Suma_daňových_nedoplatkov": "   657,00",
+    "Suma_daňových_nedoplatkov": "   396,00",
     "Mena": "EUR"
   },
   {
@@ -39884,7 +39828,7 @@
     "Adresa_dlžníka": "Brigádnická 290/12",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   756,00",
-    "Suma_daňových_nedoplatkov": "   756,00",
+    "Suma_daňových_nedoplatkov": "   736,00",
     "Mena": "EUR"
   },
   {
@@ -39929,7 +39873,7 @@
   },
   {
     "Dlžník": "Žaneta Lakatošová",
-    "Adresa_dlžníka": "Borová 1664/20",
+    "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   416,00",
     "Suma_daňových_nedoplatkov": "   416,00",
@@ -39964,7 +39908,7 @@
     "Adresa_dlžníka": "",
     "Mesto": "Nitra",
     "Suma_daňových_nedoplatkov_k_31.12._predch._roka": "   165,46",
-    "Suma_daňových_nedoplatkov": "   165,46",
+    "Suma_daňových_nedoplatkov": "   112,46",
     "Mena": "EUR"
   },
   {

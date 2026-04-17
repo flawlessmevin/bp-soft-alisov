@@ -81,8 +81,9 @@ st.markdown("---")
 st.subheader("Súhrnné informácie")
 st.dataframe(summary_table_home, use_container_width=True, hide_index=True)
 
+
 st.markdown("---")
-st.subheader("Sekcie aplikácie")
+st.subheader("Sekcie aplikácie:")
 
 col3, col4 = st.columns(2)
 
